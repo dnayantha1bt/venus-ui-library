@@ -1,0 +1,49 @@
+.drawer-item-wrapper {
+    @include flex-column;
+  
+    .drawer-item {
+        border-bottom: 3px solid transparent;
+        cursor: pointer;
+        color: $black-wo;
+        float: left;
+        font-weight: $bold;
+        @include font-size(13);
+        margin-right: 20px;
+        padding: 8px 5px 5px 5px;  
+
+       .drawer-icon {
+           color: $black;  
+           @include font-size(20);
+           margin-right: 9.6px;      
+           vertical-align: middle;   
+        }
+  
+        &:hover {
+           color: $black;
+        }
+  
+        &.active {
+           color: $black;
+        }
+
+        &.drawer-title {
+           color: $black;
+           @include font-size(20);        
+        }
+
+        .btn-login {
+            min-width: 130px;
+        }
+    
+        .btn-register {
+            min-width: 130px;
+        }
+    }  
+    
+    .menu-separator {
+        margin: 8px 0;
+    }
+   
+}
+
+ 

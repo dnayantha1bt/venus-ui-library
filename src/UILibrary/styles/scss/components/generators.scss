@@ -1,0 +1,305 @@
+.field-wrapper {
+  .input-field {
+    color: $black;
+    @include font-size(14);
+    height: 35px;
+    border: 1px solid $light-grey;
+
+    outline: none;
+    box-shadow: none;
+
+    @include placeholder {
+      color: $black-wo;
+    }
+
+    &.has-error {
+      border-color: $red;
+    }
+
+    &.text-area {
+      height: 80px !important;
+    }
+  }
+
+  &.select-field {
+    .ant-select-selection {
+      border: 1px solid $light-grey;
+      box-shadow: none;
+      color: $black;
+      @include font-size(14);
+      min-height: 35px;
+      outline: none;
+
+      &:focus {
+        border: 1px solid $light-grey;
+      }
+
+      &:hover {
+        border: 1px solid $light-grey;
+      }
+
+      .ant-select-selection-selected-value {
+        line-height: 33px;
+      }
+    }
+
+    .ant-select-selection--multiple {
+      height: auto;
+    }
+
+    &.has-error {
+      .ant-select-selection {
+        border-color: $red;
+      }
+    }
+  }
+
+  &.date-field {
+    .ant-calendar-picker-input {
+      color: $black;
+      height: 35px;
+      border: 1px solid $light-grey;
+      box-shadow: none;
+      @include font-size(14);
+      outline: none;
+
+      &:hover {
+        border: 1px solid $light-grey;
+      }
+
+      &:focus {
+        border: 1px solid $light-grey;
+      }
+    }
+
+    &.has-error {
+      .ant-calendar-picker-input {
+        border-color: $red;
+      }
+    }
+  }
+
+  .error {
+    color: $red;
+    @include font-size(12);
+    font-weight: $light;
+    text-align: left;
+    display: block;
+    margin-top: 3.2px;
+  }
+
+  .button-group {
+    padding: 8px;
+    background-color: $white;
+    border-radius: 4px;
+    border: 1px solid $light-grey;
+
+    color: $black;
+    display: inline-block;
+    flex: 0 0 auto;
+    text-align: center;
+
+    @include font-size(14);
+
+    margin-bottom: 0;
+    outline: none;
+    overflow: hidden;
+    text-transform: none;
+    width: 47%;
+
+    &.active {
+      background-color: $blue;
+      border: 1px solid $blue;
+      color: $white;
+    }
+
+    &.disabled {
+      background-color: $light-grey;
+      border: 1px solid $light-grey;
+      color: $white;
+    }
+
+    .button-icon {
+      margin-right: 8px;
+    }
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  &.prefix-wrapper {
+    .prefix {
+      color: $black-wo;
+      @include font-size(14);
+      left: 4%;
+      line-height: 0;
+
+      position: absolute;
+      top: 17px;
+      z-index: 2;
+    }
+
+    .input-field {
+      padding-left: 21px;
+    }
+  }
+
+  &.suffix-wrapper {
+    .suffix {
+      color: $black-wo;
+      @include font-size(14);
+      right: 4%;
+      line-height: 0;
+
+      position: absolute;
+      top: 17px;
+      z-index: 2;
+    }
+
+    .input-field {
+      padding-right: 21px;
+    }
+  }
+
+  &.checkbox-holder {
+    margin-right: 15px;
+    float: left;
+  }
+}
+
+.password-strength-holder {
+  width: 100%;
+
+  .password-line {
+    border-radius: 2px;
+    border: 1px solid $light-grey;
+    display: inline-block;
+    height: 5px;
+    margin: 0 2px;
+    width: 22.3%;
+
+    &.weak {
+      background-color: $red;
+      border-color: $red;
+    }
+
+    &.medium {
+      background-color: $yellow;
+      border-color: $yellow;
+    }
+
+    &.strong {
+      background-color: $green;
+      border-color: $green;
+    }
+  }
+}
+
+.btn-upload {
+  font-weight: 700 !important;
+
+  .btn-text {
+    margin-left: 10px;
+  }
+}
+
+.resource-wrapper {
+  .fa-icon {
+    color: $black-wo;
+    @include font-size(14);
+  }
+
+  .right-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .download-file-wrap {
+    @include flex-row;
+    justify-content: flex-end;
+
+    .resource-name {
+      color: $blue;
+      cursor: pointer;
+      @include font-size(14);
+      display: inline-block;
+
+      margin-left: 5px;
+      margin-right: 5px;
+
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-align: left;
+      vertical-align: text-bottom;
+      white-space: nowrap;
+      width: 155px;
+
+      &.error-txt {
+        color: $red;
+      }
+
+      &.success-txt {
+        color: $green;
+      }
+    }
+  }
+
+  .right-wrap {
+    cursor: pointer;
+
+    .fa-icon {
+      vertical-align: top;
+      margin-top: 2.3px;
+    }
+  }
+}
+
+.autocomplete {
+  .caret-wrap {
+    color: $black-wo;
+    cursor: pointer;
+    @include font-size(14);
+    right: 11px;
+    position: absolute;
+    top: 7px;
+    z-index: 100;
+  }
+
+  .input-field {
+    padding-right: 35px;
+  }
+}
+
+.custom-date {
+  .custom-date-select {
+    @include font-size(14);
+    &.left {
+      float: left;
+      width: 48%;
+    }
+
+    &.right {
+      float: right;
+      width: 48%;
+    }
+  }
+}
+
+.download-pdf-error {
+  color: $black;
+  @include flex-column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  @include font-size(18);
+
+  .fa-download {
+    margin-right: 5px;
+  }
+}

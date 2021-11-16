@@ -1,0 +1,100 @@
+.why-wrap {
+
+    padding: 60px 0;
+    text-align: center;
+    
+    .bottom-text {
+        color: $black-wo !important;
+        @include font-size(13);
+        line-height: 1.5;
+        text-align: left;
+    }
+
+    .card-wrap {
+        margin-top: 16px;
+
+        .card {
+            border-radius: 10px;
+            color: $black;
+            margin-bottom: 16px;
+            min-height: 153px;
+            padding: 10px !important;  
+        
+            .ant-card-body {
+                padding: 0 !important;  
+            }
+            
+            &.card-blue {
+                background-color: $blue-shade;
+                border: 1px solid $blue
+            }
+            
+            &.card-orange {
+                background-color: $yellow-shade;
+                border: 1px solid $yellow;
+            }
+            
+            &.card-green {
+                background-color: $green-shade;
+                border: 1px solid $green;
+            }
+            
+            &.card-red {
+                background-color: $red-shade;
+                border: 1px solid $red;
+            }
+            
+            .card-title {
+                @include font-size(45);
+                font-weight: $bold;
+                margin-bottom: 0 !important;
+            }
+            
+            .card-description {
+                @include font-size(18);
+                font-weight: $bold;
+            }
+
+            @include tablet-landscape {            
+                    min-height: 184px;            
+            }
+
+            @include tablet-portrait {
+                    min-height: 184px;
+            }
+
+         }
+
+    }
+
+    .section-title {
+        color: $black;
+        @include font-size(30);
+        font-weight: $bold;
+    }
+
+    .section-subtitle {
+        color: $black-wo;
+        @include font-size(15);
+        font-weight: $medium;
+    }
+
+    .text-sup {
+        @include font-size(12);
+        top: -6px;
+        right: -6px;
+        position: relative;
+    }
+
+    .text-sub {
+        @include font-size(12);
+        bottom: -6px;
+        right: -6px;
+        position: relative;
+    }
+
+    .why-row {
+        display: flex;
+    }    
+
+}

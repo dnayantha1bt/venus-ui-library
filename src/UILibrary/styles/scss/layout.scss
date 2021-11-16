@@ -1,0 +1,612 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700');
+@import '~antd/dist/antd.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~font-awesome/css/font-awesome.css';
+
+@import 'variables';
+@import 'mixins';
+@import '../scss/components/chat/chat-bubble';
+@import '../scss/components/chat/chat-window';
+
+.lgim-spinner {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.lgim-holder {
+  position: relative;
+  background-color: $gray;
+  height: 100vh;
+}
+
+.lgim-styles-wrapper {
+  @import 'components/index';
+  @import 'containers/index';
+  font-family: $font-family;
+  font-size: 16px !important;
+
+  @import 'custom-ant-styles';
+
+  .root-form-wrapper .card-wrapper .ant-tabs-nav .ant-tabs-tab {
+    width: 25%;
+    margin: 0px;
+    padding: 12px 13px;
+    text-align: center;
+  }
+
+  .child-wrapper {
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+}
+
+//- popover styles
+.ant-popover {
+  padding: 0;
+  @import 'components/popover/index';
+}
+
+.ant-select-dropdown {
+  &.liability-dropdown {
+    width: auto !important;
+  }
+
+  &.funding-dropdown {
+    width: auto !important;
+  }
+
+  .wrap-option-text {
+    white-space: pre-wrap !important;
+    text-overflow: initial !important;
+  }
+}
+
+.zero-bottom-padding {
+  .ant-tabs-bar {
+    margin-bottom: 0;
+  }
+}
+
+.lgim-styles-wrapper .register-form .input-wrap {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.lgim-styles-wrapper .contact-us-form .input-wrap {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.lgim-styles-wrapper .proposal-registration-section .request-iaa-container .span-dashed {
+  border: 1px solid #1899cc;
+  border-style: dashed;
+  background-color: transparent;
+  color: #1899cc;
+  font-size: 0.845em;
+  height: 35px;
+  min-width: 200px;
+  padding-top: 8.6px;
+  padding-bottom: 8.6px;
+  padding-left: 65px;
+  padding-right: 60px;
+}
+
+.card-wrapper .form-body .input-row .remove-icon {
+  cursor: pointer;
+  position: absolute;
+  opacity: 0.8;
+  right: 1%;
+  top: 15%;
+  z-index: 1;
+  -webkit-text-stroke: 1px white;
+
+  @include tablet-landscape {
+    right: 5%;
+    top: 47%;
+  }
+
+  &.deficit-icon {
+    right: 0% !important;
+  }
+}
+
+.assign-user-component {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.assign-flex-wrapper {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+
+  .ant-input {
+    font-size: 14px !important;
+  }
+}
+
+.assign-user {
+  padding: 12px 16px;
+  width: 100%;
+  background-color: $gray-wo;
+  margin-bottom: 2px;
+
+  .ant-input, .ant-input:focus, .ant-input:hover, .ant-input:active{
+    border: none !important;
+  }
+}
+
+.assign-user-label {
+  padding-right: 10px;
+  font-size: 0.875em;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.assign-user-label-container {
+  text-align: right;
+}
+
+.autocomplete-container {
+  float: right;
+  padding-right: 10px;
+  max-width: 210px;
+  min-width: 210px;
+}
+
+.ant-select-dropdown-menu-item {
+  word-break: break-all;
+  overflow: hidden;
+  white-space: initial !important;
+}
+
+.dot {
+  border-radius: 50%;
+  display: inline-block;
+  height: 8px;
+  margin-right: 6px;
+  width: 8px;
+
+  &.green-dot {
+    background-color: $green;
+  }
+
+  &.red-dot {
+    background-color: $red;
+  }
+
+  &.yellow-dot {
+    background-color: $yellow;
+  }
+
+  &.orange-dot {
+    background-color: $yellow;
+  }
+
+  &.blue-dot {
+    background-color: $blue;
+  }
+
+  &.grey-dot {
+    background-color: $black-wo;
+  }
+}
+
+.report-dropdown-input {
+  padding: 15px;
+
+  .tpip-btn-blue { 
+    color: $white !important;
+    @include font-size(14);
+    font-weight: $bold;
+    text-transform: capitalize;
+  
+    background-color: $blue;
+    border-radius: 3px;
+    border: 1px solid $blue;
+    outline: 0;
+    box-shadow: none;
+  
+    &.regular {
+      border-radius: 3px;
+    }
+  
+    &:hover {
+      background-color: $dark-blue !important;
+      color: $white !important;
+    }
+  
+    &:active {
+      outline: 0;
+    }
+  
+    &.text-auto {
+      text-transform: none;
+    }
+  }
+
+  
+  .btn-grey-o { 
+    color: $black;
+    @include font-size(14);
+    font-weight: $bold;
+    text-transform: capitalize;
+  
+    background-color: $white;
+    border-radius: 3px;
+    border: 1px solid $light-grey !important;
+  
+    outline: none;
+    box-shadow: none !important;
+  
+    &.regular {
+      border-radius: 3px;
+    }
+  
+    &:hover {
+      background-color: $light-grey !important;
+      color: $black !important;
+    }
+    
+    &:active {
+      outline: none;
+    }
+  
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  .ant-checkbox-group {
+    &:last-of-type {
+      margin-bottom: 0px !important;
+    }
+  }
+
+  .ant-checkbox-wrapper {
+    margin-bottom: 15px;
+    font-size: 14px;
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+
+    span {
+      font-size: 14px;
+      color: $black;
+    }
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner  {
+    background-color: $blue !important;
+    border-color: $blue !important;
+  }
+  
+  .ant-checkbox-checked:after {
+    border: 1px solid $blue !important;
+  }
+  
+  .ant-checkbox-indeterminate .ant-checkbox-inner:after  {
+    background-color: $blue !important;
+  }
+
+  .btn-search {
+    width: 47%;
+    min-width: 80px;
+    height: 36px;
+    font-weight: $bold;
+    background-color: $blue !important;
+    color: $white !important;
+    font-size: 14px;
+  }
+
+  .btn-reset {
+    width: 47%;
+    min-width: 80px;
+    height: 36px;
+    background: none;
+    font-weight: $bold;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .ant-checkbox-group {
+    &:last-of-type {
+      margin-bottom: 0px !important;
+    }
+  }
+
+  .ant-checkbox-wrapper {
+    margin-bottom: 15px;
+    font-size: 14px;
+
+    &:last-of-type {
+      margin-bottom: 0px;
+    }
+
+    span {
+      font-size: 14px;
+      color: $black;
+    }
+  }
+
+  .ant-checkbox-checked .ant-checkbox-inner  {
+    background-color: $blue !important;
+    border-color: $blue !important;
+  }
+  
+  .ant-checkbox-checked:after {
+    border: 1px solid $blue !important;
+  }
+  
+  .ant-checkbox-indeterminate .ant-checkbox-inner:after  {
+    background-color: $blue !important;
+  }
+
+  .btn-search {
+    width: 47%;
+    min-width: 80px;
+    height: 36px;
+    font-weight: $bold;
+    background-color: $blue !important;
+    color: $white !important;
+    font-size: 14px;
+  }
+
+  .btn-reset {
+    width: 47%;
+    min-width: 80px;
+    height: 36px;
+    background: none;
+    font-weight: $bold;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+
+  .report-input {
+    width: 175px;
+    margin-bottom: 10px;
+    display: 'block';
+  }
+}
+.report-modal-footer {
+  .btn {
+    min-width: 120px;
+    height: 40px;
+    border-radius: 4px;
+  }
+
+  .btn-yes {
+    background: $red;
+  }
+
+  .btn-no {
+    margin-right: 5px;
+    border: 1px solid #e1e1e1;
+  }
+}
+
+.tab-move {
+  text-align: center;
+  padding: 40px 0;
+
+  .btn-blue-o {
+    height: 38px;
+    @include font-size(14);
+    font-weight: $bold;
+    min-width: 120px;
+    max-width: 130px;
+    padding: 0;
+
+    .icon {
+      margin: 0 5px;
+      vertical-align: middle;
+    }
+
+    &.right {
+      &.border-less {
+        border-right: none !important;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+
+    &.left {
+      &.border-less {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+  }
+}
+
+.title-sclla {
+  font-size: 0.9em;
+}
+
+.files-sclla {
+  text-align: left;
+}
+
+.ant-col.input-wrapper.custom-input.ant-col-xs-24.ant-col-lg-12.ant-col-xl-20 {
+  margin-right: 10px;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.font-15 {
+  font-size: 15px;
+}
+.report-range-picker {
+  .ant-calendar-range-middle {
+    left: 43% !important;
+  }
+}
+
+.ant-modal-mask {
+   background-color: rgba(0, 0, 0, 0.60) !important;
+}
+
+.menu-wrapper-dropdown {
+  min-width: 156px;
+  max-width: 156px;
+  word-break: break-all;
+  overflow: hidden;
+
+  .custom-menu {
+    max-width: 100%;
+    display: block;
+    overflow: hidden;
+    word-break: break-word;
+    white-space: normal;
+    line-height: 1.2;
+  }
+
+  .dropdown-username {
+    font-size: 13px;
+    color: $black;
+    display: block;
+    margin-bottom: 1px;
+  }
+
+   .dropdown-email {
+    font-size: 13px;
+    color: $blue;
+  }
+
+}
+
+.ant-modal-confirm {
+
+  .ant-modal-body {
+    padding: 30px;
+
+    .ant-modal-confirm-btns {
+       margin-top: 20px;
+    }
+  }
+
+  .ant-btn {
+    font-weight: $bold;
+  }
+
+  .anticon {
+    color: $blue !important;
+  }
+
+  .ant-modal-confirm-title {
+    color: $black !important;
+    font-weight: $bold !important;
+    font-size: 15px !important;
+    text-align: left;
+  }
+
+  .ant-modal-confirm-content {
+    color: $black !important;
+  }
+
+  .ant-btn:first-child{
+    color: $black;
+    border: 1px solid $light-grey !important;
+  }
+
+  .ant-btn-primary {
+    background-color: $blue !important;
+    border-color: $blue !important;
+    color: $white !important
+  }
+}
+
+.ant-notification {
+  .ant-notification-notice-icon {
+    font-size: 19px;
+    line-height: 21px;
+    vertical-align: middle;
+  }
+
+  .ant-notification-notice-message {
+    font-size: 14px;
+  }
+
+  .ant-notification-notice-description {
+    font-size: 14px;
+  }
+}
+
+.hide-ele {
+  display: none !important;
+}
+
+.custom-loader {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.75;
+  z-index: 100;
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: calc(50vh - 110px);
+
+  .ant-progress-text {
+      color: $white !important;
+      font-size: 25px !important;
+      font-weight: $bold;
+
+      .anticon {
+        display: inline-table;
+      }
+  }
+
+  .text-white {
+      color: $white;
+      display: block;
+      font-size: 13px;
+      margin-top: 10px;
+      z-index: 100;
+  }
+}
+
+.active-scheme-options {
+  .content {
+      position: relative;
+  }
+}
+
+.ant-tooltip-inner {
+  width: 140%;
+}
+
+.ant-table-filter-dropdown-btns {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+
+  .ant-table-filter-dropdown-link {
+      &.confirm {
+        background-color: $blue;
+        padding: 0 8px;
+        color: $white;
+      }
+  }
+}
+
+.task-model-wrap {
+  padding-top: 20px;
+}
+
+.step-icon {
+  width: 20px!important;
+  height: 20px!important;
+}

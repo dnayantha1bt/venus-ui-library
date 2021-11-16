@@ -1,0 +1,179 @@
+.approval-status-container,
+.approval-status-container-single {
+  @include flex-row;
+  justify-content: space-around;
+  padding: 32px 32px 12px 32px;
+
+  .clickable-box {
+    .title {
+      font-size: 14px !important;
+      font-style: italic;
+    }
+    .count {
+      font-size: 25px;
+    }
+  }
+
+  .status-box {
+    @include flex-column;
+    flex-wrap: nowrap !important;
+    flex-grow: 1;
+    padding: 14px 20px;
+    padding-bottom: 0px;
+    border-radius: 8px;
+    margin: 8px;
+    min-height: 50px !important;
+
+    &.clickable-box {
+      cursor: pointer;
+    }
+
+    .title {
+      align-self: flex-start;
+      margin-top: 7px;
+      margin-bottom: 0;
+      margin-top: 0;
+      @include font-size(14);
+    }
+
+    .count {
+      align-self: flex-end;
+      margin-bottom: 0;
+      @include font-size(24);
+    }
+  }
+  .approve-box-container {
+    @include flex-row;
+    flex-grow: 1;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin: 10px;
+
+    .approve-user {
+      padding-left: 10px;
+
+      .name {
+        @include font-size(14);
+        font-weight: bold;
+        color: $green;
+      }
+
+      .date {
+        @include font-size(13);
+        color: $black-wo;
+        padding-left: 8px;
+      }
+
+      .comment {
+        @include font-size(14);
+        padding-top: 6px;
+      }
+    }
+  }
+  .approved-box {
+    background: $green-shade;
+    border: 1px solid $green;
+  }
+  .pending-box {
+    background: $yellow-shade;
+    border: 1px solid $yellow;
+  }
+  .rejected-box {
+    background: $red-shade;
+    border: 1px solid $red;
+  }
+
+  .published-box {
+    background: $green-shade;
+    border: 1px solid $green;
+  }
+}
+
+.approval-status-container-single {
+  @include flex-row;
+  justify-content: flex-start;
+  padding-top: 32px;
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-bottom: 12px;
+
+  .pending-box {
+    align-self: flex-start;
+    flex-grow: 0;
+    padding: 28px 50px;
+  }
+}
+
+.doc-preview-container {
+  @include flex-column;
+  justify-content: flex-start;
+  margin: 16px;
+  // min-height: 600px;
+
+  .pdf-viewer {
+    @include flex-column;
+    flex-grow: 1;
+    background-color: $light-grey;
+    padding: 12px;
+    height: 700px;
+  }
+
+  .doc-list-container {
+    @include flex-column;
+    flex-grow: 1;
+    padding: 8px;
+
+    .doc-list-item {
+      @include flex-column;
+      justify-content: space-between;
+    }
+  }
+
+  .pdf-viewer-container {
+    margin: 0 !important;
+  }
+}
+
+.comment-container {
+  @include flex-column;
+  padding: 30px 30px 16px;
+
+  h3.header {
+    padding: 0;
+    font-weight: 600;
+    @include font-size(15);
+  }
+
+  .comment-list {
+    @include flex-column;
+
+    .rejected-text {
+      font-weight: 600;
+      color: $red;
+    }
+    .approved-text {
+      font-weight: 600;
+      color: $green;
+    }
+  }
+}
+
+.add-comment-container {
+  @include flex-column;
+  padding: 0 0 16px;
+
+  button {
+    align-self: flex-end;
+    margin-top: 16px;
+  }
+}
+
+.loading-container {
+  text-align: center;
+  border-radius: 4px;
+  padding: 30px 50px;
+}
+
+.review-comment-input {
+  height: 100px !important;
+}

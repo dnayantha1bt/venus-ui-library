@@ -1,0 +1,82 @@
+.users-for-approval-wrapper {
+  .inner-header {
+    border-bottom: 1px solid $light-grey;
+    padding: 0 16px 10px;
+
+    .title {
+      font-weight: 700;
+      @include font-size(14);
+      margin-bottom: 0;
+    }
+
+    .selected-users {
+      color: $blue;
+      font-weight: $bold;
+      @include font-size(13);
+      float: right;
+      text-align: right;
+
+      @include mobile {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+    }
+  }
+
+  .content-holder {
+    padding: 0;
+
+    .approval-list-items {
+      .list {
+        padding: 16px;
+        text-align: left;
+        width: 100%;
+
+        .ant-list-item-meta {
+          align-items: center;
+        }
+
+        .ant-list-item-meta-title {
+          width: 200px;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+
+        .image {
+          width: 30px;
+        }
+
+        .btn-approval {
+          color: $white;
+          @include font-size(14);
+          font-weight: $bold;
+          border-radius: 100px;
+          outline: 0;
+          box-shadow: none;
+          padding: 6px 0px;
+
+          text-transform: capitalize;
+          width: 100px;
+
+          &.btn-true {
+            background-color: $light-grey;
+            border: 1px solid $light-grey;
+          }
+
+          &.btn-false {
+            background-color: $blue;
+            border: 1px solid $blue;
+          }
+
+          //changes button loading spinner to red
+          &.red-spinner {
+            .anticon-loading {
+              color: $red;
+            }
+          }
+        }
+      }
+    }
+  }
+}

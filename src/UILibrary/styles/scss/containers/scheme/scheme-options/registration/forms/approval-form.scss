@@ -1,0 +1,33 @@
+
+.approval-wrap{
+
+    .approval-header{
+        border-bottom: 1px solid $light-grey;
+        padding: 0 16px 16px 16px;
+      }
+
+      .approval-title{
+        font-weight: 700;
+        @include font-size(14);
+      }
+
+      .approval-link{
+        color: $blue;
+        font-weight: $bold;
+        @include font-size(14);
+        float: right;
+        text-align: right;
+      }
+} 
+
+.initial-proposal-form-container {
+  .ant-empty {
+    padding-top: 80px;
+  }
+}
+
+.initial-proposal-form {
+  .ant-input {
+    font-size: 14px !important;
+  }
+}

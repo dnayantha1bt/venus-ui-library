@@ -1,0 +1,12 @@
+.coming-soon-wrapper {
+    width: 100%;
+    @include getViewHeight();
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .dp {
+        display: block;
+        height: 70%;
+    }
+}

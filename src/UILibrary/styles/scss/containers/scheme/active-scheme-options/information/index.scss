@@ -1,0 +1,63 @@
+.active-update-navigator {
+    margin: 20px 0;   
+
+    .content{
+
+        .menu-list {
+            color: $black;
+        }
+
+        .step-list {
+            margin-left: 35px;
+            margin-top: 10px;
+            background-color: transparent;
+        }
+
+        .image{
+            vertical-align: top;
+            width: 20px;
+        }
+        
+        .ant-steps-item {
+            cursor: pointer;
+        }
+
+        .ant-menu-submenu-title {
+            &:hover {
+                color: $black;
+            }
+
+            .ant-menu-submenu-arrow {
+                color: $black;
+            }
+        }
+
+        .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+            color: $green;
+        }
+
+        .ant-steps-item-custom.ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
+            color: $green;
+        }
+
+        .ant-steps-item-finish > .ant-steps-item-tail:after {
+            background-color: $green;
+        }
+
+        .ant-steps-vertical.ant-steps-small .ant-steps-item-tail {
+            left: 10px;
+        }
+
+        .ant-steps-item-title {
+            margin-top: -2px;
+            color: $black;
+        }
+
+        .custom-step {
+            .ant-steps-item-content {
+                min-height: 65px;
+            }
+        }
+    }
+
+}

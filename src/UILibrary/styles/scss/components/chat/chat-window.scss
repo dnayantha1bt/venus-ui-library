@@ -1,0 +1,206 @@
+.chat-popover {
+    position: fixed !important;
+    top: inherit !important;
+    bottom: 4rem;
+    right: 2rem;  
+    min-height: 300px;
+    width: 297px;  
+
+    .ant-popover-inner {
+        border-radius: 9px;
+    }
+
+    .ant-popover-arrow {
+       display: none;
+    }
+
+    .ant-popover-title {
+        font-size: 14px !important;
+        font-weight: lighter !important;
+        background-color: $blue !important;
+    }
+
+    .message-tab {
+        min-height: 300px;
+        width: 297px;       
+    }
+
+    .flex-wrap {
+        @include flex-row;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
+
+        .title {
+            @include font-size(15);
+            font-weight: lighter;
+            color: $white;
+        }
+
+        .close-icon {
+            cursor: pointer;
+            @include font-size(15);
+            color: $white;
+            font-weight: lighter;
+        }
+    }
+    
+    .content {
+        border-radius: 30px;
+        height: 100%;
+        position: relative;    
+  
+        .content-body {
+                background-color: #f5f8fb;
+                overflow-y: auto;
+                max-height: 280px;
+                min-height: 280px;
+                padding: 15px 10px; 
+                position: relative;
+                
+                .content-message {
+                    min-height: 40px;
+                    padding: 10px 7px;
+                    text-align: left;
+                    @include font-size(14);
+
+                    .leaf-icon {
+                        background: #fff;
+                        border-radius: 32px 32px 0 32px;
+                        box-shadow: 5px 7px 6px 0px #e3e5e7;
+                        color: #fff;
+                        font-weight: 700;
+                        min-height: 40px;
+                        min-width: 44px;
+
+                        .logo-img {
+                            width: 30px;
+                            height: 30px;
+                        }
+                    }
+
+                    .text {
+                        border-radius: 30px;
+                        min-width: 85px;
+                        padding: 10px 15px;
+                        font-family: $font-family !important; 
+                        font-size: 13px;
+                    }
+        
+                    &.them {
+                        max-width: 100%;
+                        @include flex-row;
+                        align-items: flex-start;
+                        flex-wrap: nowrap;
+
+                        .leaf-icon {
+                            display: inline-block;
+                            margin-right: 10px;
+                            text-align: center;
+                            padding: 2px;
+                        }
+
+                        .text {
+                            background-color: #ffffff;                                    
+                            color: #000000;
+                            max-width: 481px;
+                            word-break: break-word;
+
+                            .content-time {
+                                color: rgba($color: #000, $alpha: 0.5);
+                            }
+                        }
+
+                        pre {
+                            overflow-x: auto;
+                            white-space: pre-wrap;
+                            white-space: -moz-pre-wrap;
+                            white-space: -pre-wrap;
+                            white-space: -o-pre-wrap;
+                            word-wrap: break-word;
+                        }
+                    }
+
+                    &.type-message {
+                        color: $black-wo;
+                    }
+        
+                    &.me {
+                        max-width: 100%;
+
+                        .leaf-icon {
+                            display: none;
+                        }
+
+                        .text {
+
+                            background-color: $blue;
+                            color: #ffffff;
+                            float: right;
+                            max-width: 393px;
+                            word-break: break-word;
+        
+                            .content-time {
+                                color: rgba($color: #fff, $alpha: 0.5);
+                            }
+                        }
+
+                        pre {
+                            overflow-x: auto;
+                            white-space: pre-wrap;
+                            white-space: -moz-pre-wrap;
+                            white-space: -pre-wrap;
+                            white-space: -o-pre-wrap;
+                            word-wrap: break-word;
+                        }
+                    }
+                }    
+        
+                .clear {
+                    clear: both;
+                    display: block;
+                    overflow: hidden;
+                }
+        }
+    
+        .content-footer {
+                display: flex;
+                justify-content: space-between;   
+                align-items: center; 
+                flex-wrap: nowrap;
+        
+                border-top: 1px solid #ececec;
+                background-color: #fff;
+                bottom: 0;
+                padding: 15px 10px; 
+                // position: absolute;
+                width: 100%;
+                z-index: 99;
+
+                .icon-image {
+                    color: $blue;
+                    cursor: pointer;
+                    margin: 0 5px;
+                    vertical-align: middle;
+                }
+        
+                .footer-message {
+                    @include font-size(14);
+                    width: 90%;
+                    word-break: break-all;
+                    border-radius: 30px;
+                    border: none;
+                    background-color: #f5f8fb;
+                    outline: none;
+                    box-shadow: none;
+                    resize: none;
+                    height: 40px;
+                    padding: 4px 17px;
+        
+                    hr {
+                        display: none;
+                    }
+                }                                                  
+         }
+    }
+}

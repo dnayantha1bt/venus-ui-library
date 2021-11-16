@@ -1,0 +1,37 @@
+.initiate-active-container {    
+    margin: 70px;
+    min-height: 500px;
+    padding: 16px 32px;
+
+    @include mobile {
+        margin: 0px;
+    }
+
+    .title {
+        color: $black;
+        @include font-size(15);
+        font-weight: $bold;
+    }
+
+    .sub-title {
+        color: $black-wo;
+        @include font-size(14);
+        font-weight: $medium;
+    }
+
+    .custom-input {        
+           color: $black-wo;
+           @include font-size(20);
+           letter-spacing: 4.5px;
+    }
+
+    .btn-activate {
+        margin-top: 20px;
+        height: 40px;
+        width: 200px;
+
+        .fa-icon {
+            margin-right: 5px;
+        }
+    }
+}

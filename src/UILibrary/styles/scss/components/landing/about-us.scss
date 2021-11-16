@@ -1,0 +1,142 @@
+.about-us-section {
+    border-bottom: 2px solid $dark-blue;
+    background-color: $white;
+
+    .about-wrap {
+        padding: 20px 0;    
+        text-align: center;
+
+        @include mobile {
+            padding: 32px 16px;
+        }   
+        
+        @include tablet-portrait {
+            padding: 32px 16px;
+        }
+
+
+        .about-row {
+            @include flex-row;        
+            
+            .btn-register {
+                color: $green;
+                cursor: pointer;
+                @include font-size(14);
+                font-weight: $bold;
+                padding-bottom: 4px;
+                text-transform: uppercase;
+            }
+        
+            .btn-register:hover {
+                border-bottom: 3px solid $green;
+                transition: 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+            }
+        
+            .btn-learn {
+                color: $blue;
+                cursor: pointer;
+                @include font-size(14);
+                font-weight: $bold;
+                margin-right: 16px;
+                padding-bottom: 4px;
+                text-transform: uppercase;
+            }
+        
+            .btn-learn:hover {
+                transition: 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+                border-bottom: 3px solid #09c;
+            }
+    
+            .left-wrap {
+                padding-right: 15px;
+                padding-left: 15px;
+                text-align: left;
+                width: 60%;
+                cursor: pointer;
+
+                .about-container {
+                    padding-right: 48px;
+
+                    .sub-title {
+                        color: $black;
+                        @include font-size(16);
+                    }
+
+                    .logo-container {                       
+                        .img {
+                            height: 79px;
+                            width: 79px;
+                            display: inline-block;
+                        }
+
+                        .content {
+                            margin-left: 14px;
+                            vertical-align: middle;
+                            display: inline-block;
+
+                            .title {
+                                color: #313b47;
+                                @include font-size(42);
+                                font-weight: medium;
+                                line-height: 1.1;
+                                display: inline-block;
+                                margin-bottom: 0;
+                            }
+    
+                            .sub-text {
+                                color: #9a9fa4;
+                                @include font-size(12);
+                                font-weight: medium;
+                            }
+                        }
+                    }
+        
+
+
+                    @include mobile {
+                        padding-right: 0;
+                    }
+
+                    @include tablet-portrait {
+                        padding-right: 0;
+                    }
+                }
+    
+                @include mobile {
+                    margin-top: 16px;
+                    padding: 0;
+                    text-align: center;
+                    width: 100%;
+                }
+            }                   
+            
+            .right-wrap{
+                width: 40%;
+                @include mobile {
+                    width: 100%;
+                }
+            }
+
+            @include mobile{
+                flex-direction: column-reverse;
+            }
+
+        }
+    
+        @include mobile {
+            .button-wrap {
+                text-align: center;
+            }
+        }
+
+    }
+
+    &.lgim-bridge-wrap {
+        height: calc(100vh - 250px);
+
+        .content {
+            margin-left: 0 !important;
+            margin-bottom: 16px !important;
+        }
+    }
+}

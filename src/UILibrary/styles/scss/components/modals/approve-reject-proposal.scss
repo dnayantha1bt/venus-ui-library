@@ -1,0 +1,34 @@
+&.rip-proposal-modal {    
+
+    .title {
+        font-weight: $bold;
+        text-align: left;
+        @include font-size(16);
+        margin-bottom: 19.2px;
+        color: $black;
+    }
+
+    .input-comment {
+        height: 100px;
+    }
+
+    .form-btn-container {
+        padding: 22px 0 0 0;
+
+        button {
+            margin-right: 10px;
+
+            &:nth-child(2) {
+                margin-right: 0 !important;
+            }
+        }
+    }
+
+    .comment-form-label {
+       @include font-size(14); 
+
+       .required-star {
+           color: $red;
+       }
+    }
+}

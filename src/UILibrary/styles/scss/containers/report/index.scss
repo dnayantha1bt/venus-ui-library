@@ -1,0 +1,444 @@
+.report-wrap  {
+    background-color: $gray;
+    padding: 30px 0;
+
+    .client-table {
+        th {
+            border-top: none !important;
+        }
+    }
+
+    .cursor {
+        .icon {
+            transform: rotate(90deg);
+            width: 2.8px;
+        }
+    }
+    
+    .anticon-filter  {
+       color: #9A9FA4 !important;
+    }
+
+    .table-row {
+        padding-left: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+
+        .anticon-search {
+            background: none !important;
+            right: 0;
+            top: 0;
+        }
+
+        .ant-select-selection__placeholder {
+           font-size: 14px;
+        }
+
+        .table-wrap {
+
+              td,th {
+                  background: transparent;
+
+                 &:first-child{
+                     padding-left: 30px !important;
+                 }
+
+                 &:last-child {
+                     padding-right: 28px;
+                 }
+
+                 .grey-text {
+                     color: $black-wo;
+                     font-style: italic;
+                 }
+
+                 .italic-text {
+                     font-style: italic;
+                     font-size: 13px;
+                 }
+
+                 .report-checkbox {
+                     min-width: 120px;
+                     outline: none;
+                 }
+                 
+              }
+
+              td {
+                &.name-column {
+                    color: $blue !important;
+                    font-weight: $medium;
+                }
+                
+                &.name-column-client {
+                    color: $blue !important;
+                    font-weight: $medium;
+                }
+              }
+
+              .name-column {
+                  max-width: 100px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+              }     
+
+              .name-column-client {
+                max-width: 100px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+
+             .ant-table-thead > tr > th {
+                 font-size: 14px;
+                 font-weight: $bold;
+                 border-bottom: 1px solid $light-grey;
+                 border-radius: 0;
+                 color: $black;
+                 padding-left: 7px;
+                 padding-top: 12.5px;
+                 padding-bottom: 11.5px;
+             }
+
+             .ant-table-tbody > tr > td {
+                 border-bottom: none;
+                 background-color: none;
+                 color: $black;
+                 padding-left: 7px;
+                 font-size: 14px;
+                 padding-top: 5px;
+                 padding-bottom: 5px;
+             }
+
+             tr {
+                 &:nth-child(1) {
+                     td {
+                        padding-top: 16px !important;
+                     }
+                 }
+             }
+             
+        }
+     }
+
+    .card { 
+        background-color: $white;
+        border-radius: 6px 5px 0px 0px;
+        border: none;
+        min-height: 480px; 
+        text-align: left; 
+
+        .cursor {
+            cursor: pointer;
+        }
+
+       
+        
+        .card-header {
+            background: #f1f1f1;
+            border: 1px solid #f1f1f1;
+            padding: 0;
+
+            .heading-row {
+                @include flex-row;
+                align-items: center;
+                justify-content: space-between;
+                min-height: 50px;
+                height: 50px;
+
+                .div-left {    
+                    padding: 0 30px;
+
+                    .title {
+                        color: $black;
+                        display: inline-block;
+                        font-size: 14px;
+                        font-weight: $bold;
+                        margin-bottom: 0;
+                    }
+                }
+
+                .div-right {
+                    padding: 0px !important;
+
+                    .input-search {
+
+                        border-radius: 6px 5px 0px 0px;
+                        height: 30px;
+                        margin-right: 15px;
+                        width: 220px;
+
+                    }
+
+                    .btn-continue {
+                        border-radius: 0 5px 0 0;
+                        font-weight: 700;
+                        @include font-size(14);
+                        height: 50px;
+                        outline: none !important;
+                    }
+
+                    .btn-generate {
+                        border-radius: 0 5px 0 0;
+                        font-weight: 700;
+                        @include font-size(14);
+                        height: 50px;
+                        outline: none !important;
+                        padding: 13px 24px;
+                        text-transform: inherit !important;
+                    }
+
+                    @include desktop {
+                        padding: 0;
+
+                    }
+
+                }
+
+            }
+            
+        }
+
+        .card-content {
+            min-height: 340px;
+
+            .tab-content {
+                .report-tab {
+
+                    .ant-tabs-bar {
+                        margin: 0;
+                    }
+
+                    .mt-30 {
+                        margin-top: 30px;                        
+                    }
+
+                    .mt-15 {
+                        padding-top: 15px !important;
+                    }   
+
+                    .border-table {
+                        .ant-table-thead > tr > th {
+                            border-top: 1px solid $light-grey;
+                        }           
+                    }
+
+                    .ant-tabs-tab {
+                        color: #9a9fa4;
+                        font-size: 14px;
+                        font-weight: 500;
+                        text-align: center;
+                        border: none;
+                        background-color: transparent;
+                        padding: 0 29px;
+                        width: auto !important;
+
+                        &.ant-tabs-tab-active {
+                            color: #303D46;
+                            font-weight: 500;
+                            border-bottom: 3px solid $blue;
+                        }
+                    }
+
+                    .custom-row {
+                        margin-bottom: 15px;
+                        padding-left: 30px;
+
+                        &.title-row {
+                            border: 1px solid $light-grey;
+                            border-right: none;
+                            border-left: none;
+                            font-weight: $bold;
+                            padding: 10px 0;
+
+                            .custom-title {
+                               font-size: 13px;
+                            }
+                        }
+
+                    }
+                    
+                    .custom-text {
+                        @include font-size(13);
+                    }
+                        
+                }
+                
+            }
+
+            .dot {
+                border-radius: 50%;
+                display: inline-block;
+                height: 8px;
+                margin-right: 6px;
+                width: 8px;
+
+                &.green-dot {
+                    background-color: $green;
+                }
+                
+                &.yellow-dot {
+                    background-color: #f7b61d;
+                }
+
+                &.orange-dot {
+                    background-color: #ff8000;
+                }
+                
+                &.blue-dot {
+                    background-color: $blue;
+                }
+
+                &.red-dot {
+                    background-color: $red;
+                }
+                                
+                &.grey-dot {
+                    background-color: $black-wo;
+                }
+
+                &.black-dot {
+                    background-color: $black;
+                }
+            }                          
+            
+        }
+
+        
+    }
+
+    .ant-select {
+        width: 150px;
+
+        .ant-select-selection {
+            box-shadow: none;
+            outline: none;
+
+            &:hover {
+                box-shadow: none;
+                border: 1px solid #d9d9d9;
+                outline: none;
+            }
+
+            &:active {
+                box-shadow: none;
+                border: 1px solid #d9d9d9;
+                outline: none;
+            }
+
+            &:focus {
+                box-shadow: none;
+                border: 1px solid #d9d9d9;
+                outline: none;
+            }
+        }
+
+       &.left-select {
+            .ant-select-selection {
+                border-radius: 4px 0 0 4px;
+                border-right: 0 !important;
+            }
+       }
+
+       &.right-select {
+            .ant-select-selection {
+                border-radius: 0 4px 4px 0;
+            }
+        }
+
+        .ant-select-selection-selected-value {
+            font-size: 13px;
+        }
+    }  
+
+    .ant-calendar-picker {
+        width: 300px;
+
+        .ant-calendar-picker-input {
+            font-size: 13px;
+        }
+
+    }
+
+    .anticon-search {
+        svg {
+            color: #9A9FA4;
+
+            path {
+               color: #9A9FA4;         
+            }
+        }
+    }
+
+    .ant-empty-description {
+        color: #303B46;
+        font-size: 13px;
+    }  
+
+    .ant-table-column-sorter-up.on {
+        color: $blue;
+    }
+    
+    .ant-radio-input:focus + .ant-radio-inner, .ant-radio-wrapper:hover .ant-radio, .ant-radio:hover .ant-radio-inner {
+        border-color: $blue;
+    }
+
+    .ant-radio-inner:after {
+        background-color: $blue;
+    }
+
+    .ant-tabs-nav-container {
+        height: 50px !important;
+    }
+
+    .ant-tabs-tab {
+        height: 50px !important;
+        line-height: 52px !important;
+    }
+
+    .report-col {
+        font-size: 13px;
+    }
+
+    .status-col {
+        font-size: 13px;
+    }
+
+    .fa-stack {
+        line-height: 20px;
+        height: 23px;
+        margin-right: 15px;
+
+        .fa-stack-2x {
+            font-size: 22px;
+        }
+    }
+
+    .report-checkbox {
+        .ant-select-selection__placeholder {
+            font-size: 13px;
+        }
+    }
+
+    .btn-approval {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .ant-ceckbox-wrapper {
+        font-size: 14px;
+    }
+
+    .ant-checkbox-wrapper-checked {
+        .ant-checkbox-inner:after {
+            top: 44% !important;
+            left: 22% !important;
+        }
+    }
+   
+}
+
+.table-upload-button{
+    margin-left: -11px;
+}

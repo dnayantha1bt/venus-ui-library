@@ -1,0 +1,30 @@
+.proposal-registration-section {
+  position: relative;
+  margin-bottom: 30px;
+
+  .loading-wrapper {
+    background-color: rgba(202, 202, 202, 0.2);
+    height: 100%;
+    @include  flex-row;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    margin: 0 auto;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .ant-select-auto-complete.ant-select .ant-input {
+    @include font-size(14);
+    color: $black;
+  }
+
+  @import "forms/index";
+  @import "task-navigator";
+  @import "publish-initial-proposal/index";
+  @import "request-iaa/index";
+  @import "review-iaa/index";
+  @import "publish-iaa-manage-letters/index";
+  @import "iaa-execution-status/index";
+  @import "initiate-active-status/index";
+}

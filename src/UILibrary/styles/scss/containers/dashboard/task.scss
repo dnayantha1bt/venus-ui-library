@@ -1,0 +1,58 @@
+.task-card {
+    background-color: $white;
+    box-shadow: 0px 0px 6px #00000029;
+    border-radius: 4px;
+    margin-top: 45px;
+    margin-bottom: 25px;
+    padding: 16px 20px;
+
+    @include flex-row;
+    justify-content: space-between;
+
+    .title {
+        color: $black;
+        font-size: 15px;
+        font-weight: $bold;
+    }
+
+    .count {
+        background-color: #1691C5;
+        border-radius: 13px;
+        color: #ffffff;
+        cursor: pointer;
+        padding: 4px 10px;
+        font-size: 14px;
+        font-weight: 900;
+        width: 36px;
+        height: 27px;
+    }
+
+}
+
+.task-table {
+    th:first-child {
+        padding-left: 30px;
+    }
+
+    tr td:first-child {
+        padding-left: 30px !important;
+    }
+
+    .ant-table-body {
+        overflow: auto;
+        max-height: unset !important;
+    }
+}
+
+.task-title-wrap {
+    background-color: $white;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 15px 30px;
+    padding-bottom: 5px;
+
+
+    .btn-refresh {
+        border-radius: 4px;
+        width: 115px;
+    }
+}

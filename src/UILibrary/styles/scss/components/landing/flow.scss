@@ -1,0 +1,179 @@
+.flow-wrap {
+    padding: 60px 0;
+    background-color: #f7fafb;
+    text-align: center; 
+    
+    .card-line { 
+        display: block;
+        width: 49.2%;
+
+        &:after {
+            border-top: 2px solid $blue;
+            border-right: none;
+            content: "";
+            display: table-cell;
+            position: relative;
+            right: 0;
+            top: 40%;
+            width: 20%;
+        }
+    }
+      
+    .card-row {
+        display: flex;  
+  
+       .card {
+            border: 2px solid $blue;
+            border-radius: 4px;
+            height: 250px;
+
+           .card-col::after {
+                border-top: 2px solid $blue;
+                border-right: none;
+                content: "";
+                display: table-cell;
+                position: relative;
+                right: 0;
+                top: 40%;
+                width: 20%;
+            }
+      
+            .card-title {
+                color: $black;
+                display: block;
+                font-weight: $bold;
+                @include font-size(15);
+                margin-top: 12.8px;
+            }
+      
+            .card-description {
+                color: $black-wo;
+                @include font-size(13);
+                font-weight: $medium;
+                margin-top: 4.8px;
+                word-break: break-word;
+            }
+      
+            .card-data {
+                text-align: center;
+            }
+
+            @include mobile {
+                margin-bottom: 0px;
+                height: 255px;
+            }
+
+            @include tablet-landscape {
+                margin-bottom: 0px;
+                height: 280px;
+            }
+            
+        }    
+        
+        @include tablet-portrait {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+     
+        @include mobile {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    .flow-col {
+        display: inline-block;
+        width: 30%;
+
+        @include mobile {
+            width: 100%;
+            display: inline-block;
+        }
+    } 
+
+    // .img-connector{
+    //     height: 60px;
+    //     display: block;
+    //     margin: 0 auto;
+    //     width: 80%;
+    //     background: url('../../../../icons/landing-connecting-line.svg'); 
+    //     background-repeat: no-repeat;
+    //     background-size: cover;
+
+    //     @include mobile{
+    //         display: none;
+    //     }
+
+    //     @include tablet-portrait{
+    //         display: none;
+    //     }
+
+    // }
+      
+    .line-connector {
+        width:9.5%;
+        margin: 0 auto;
+
+        .horizontal-line {
+        border: 1px solid $blue;
+        display: block;
+        position: absolute;
+        top: 90px;
+        width: 150px;
+
+        @include mobile {
+            display: none;
+        }
+
+        @include tablet-portrait {
+            display: none;
+        }
+    }
+        .vertical-line {
+            display: none;
+    
+            @include mobile {
+                border: none;
+                border-left: 2px solid $blue;
+                display: block;
+                height: 50px;
+                margin: 0 auto;
+                width: 2px;   
+            }
+
+            @include tablet-portrait {
+                border: none;
+                border-left: 2px solid $blue;
+                display: block;
+                height: 50px;
+                margin: 0 auto;
+                width: 2px;   
+            }
+        }
+    }    
+
+    .margin-row {
+        margin-bottom: 32px;
+    }
+  
+    .section-title {
+        color: $black;
+        @include font-size(30);
+        font-weight: $bold;
+    }
+
+    .text-link {
+        color: $blue;
+        cursor: pointer;
+    }
+
+    .ant-card-body {
+        padding: 24px 20px;
+
+        @include mobile {
+            padding: 21px;
+        }
+    }
+}

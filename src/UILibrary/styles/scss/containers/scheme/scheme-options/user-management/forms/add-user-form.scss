@@ -1,0 +1,25 @@
+.invite-users-form {
+  .input-row {
+    margin-top: 25px;
+
+    .input-title {
+      color: $black;
+      @include font-size(14);
+      margin: 0;
+    }
+  }
+
+  .footer {
+    text-align: right;
+    margin-top: 40px;
+
+    .btn-close {
+      margin-right: 5px;
+    }
+  }
+}
+
+label.ant-checkbox-group-item.ant-checkbox-wrapper {
+  width: 100%;
+  display: block;
+}

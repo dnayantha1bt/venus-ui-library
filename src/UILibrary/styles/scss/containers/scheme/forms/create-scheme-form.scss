@@ -1,0 +1,67 @@
+.create-scheme-form {
+  .ant-checkbox-wrapper {
+    display: flex !important;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @include font-size(14);
+    margin-bottom: 5px;
+
+    .ant-checkbox span {
+      top: 3px;
+
+      span {
+        word-break: break-all;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .ant-select-selection {
+      min-height: 35px !important;
+  }
+
+  .input-row {
+    margin-top: 15px !important;
+
+    .input-title {
+      color: $black;
+      @include font-size(14);
+      margin: 0;
+    }
+
+    .column-pad-right {
+      padding-right: 5xp;
+    }
+    .column-pad-left {
+      padding-left: 5px;
+    }
+  }
+
+  .footer {
+    text-align: right;
+    margin-top: 30px;
+
+    .btn-close {
+      margin-right: 10px;
+    }
+
+    &.dash-footer {
+        margin-top: 24px;
+    }
+  }
+}
+
+.form-sub-title {
+  padding-left: 12px;
+  font-weight: 400;
+  @include font-size(13);
+  color: $black-wo;
+}
+
+.form-title-seperator {
+  margin-top: 0;
+  margin-bottom: 30px;
+}

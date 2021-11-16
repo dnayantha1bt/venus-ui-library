@@ -1,0 +1,32 @@
+.register-wrap {
+    .register-header {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        text-align: left;
+        border-bottom: 2px solid $dark-blue;
+    }
+    
+      .register-text {
+        @include font-size(16);
+        font-weight: $bold;
+        color: $black;
+        margin-bottom: 0;
+    }
+
+    .register-container {
+        background-color: $gray;
+        padding: 32px;
+    }
+
+    .register-row {
+        @include flex-row();
+    }
+    
+    .register-content {
+        background-color: $white;
+        padding: 24px;
+        text-align: left;
+        margin: 0 auto;
+    }
+   
+}

@@ -1,0 +1,105 @@
+.user-table-container {
+  .user-table {
+    overflow-x: auto;
+
+    th,
+    td {
+      @include font-size(14);
+      border-bottom: none;
+      padding: 10px 16px;
+    }
+
+    .ellipsis-text {
+      cursor: pointer;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 120px;
+    }
+
+    .action-icon {
+      cursor: pointer;
+    }
+
+    .remove-hand {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 150px;
+      white-space: nowrap;
+    }
+
+    .action-column {
+      text-align: center;
+    }
+  }
+}
+
+&.action-list {
+  padding: 12px;
+
+  .action-list-item {
+    cursor: pointer;
+    @include font-size(14);
+    padding: 6px 0;
+
+    .action-list-title {
+      color: $black-wo;
+    }
+
+    .action-list-icon {
+      color: $black;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      .action-list-title {
+        color: $black;
+      }
+    }
+  }
+}
+
+.mandate-table-container {
+  .table-title {
+    @include font-size(14);
+    text-align: left;
+    padding-left: 5%;
+    font-weight: bold;
+  }
+  .mandate-table {
+    overflow-x: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+
+    th,
+    td {
+      @include font-size(14);
+      padding: 10px 16px;
+      border-block-width: 1px;
+      border-block-color: $black;
+    }
+
+    .ellipsis-text {
+      cursor: pointer;
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 150px;
+      white-space: nowrap;
+    }
+
+    .action-icon {
+      cursor: pointer;
+    }
+
+    .remove-hand {
+      display: inline-block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 150px;
+      white-space: nowrap;
+    }
+  }
+}

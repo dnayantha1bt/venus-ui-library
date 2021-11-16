@@ -1,0 +1,66 @@
+@mixin font-size($size) {
+    font-size: ($size / 16) * 1em;
+}
+
+@mixin getViewHeight() {
+    height: calc(100vh - 75px);
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+}
+
+@mixin flex-row() {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+@mixin flex-column() {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+$mobile-width-mx: 760px;
+$mobile-width-mn: 300px;
+$tablet-width: 768px;
+$laptop-width: 992px;
+$desktop-width: 1024px;
+$desktop-large-width: 1280px;
+$desktop-width_s: 1366px;
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width_s}) {
+        @content;
+    }
+}
+
+@mixin small-desktop {
+    @media (min-width: #{$desktop-width}) and (max-width: #{$desktop-large-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet-landscape {
+    @media only screen and (min-width: #{$laptop-width}) and (max-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+@mixin tablet-portrait {
+    @media only screen and (min-width: #{$tablet-width}) and (max-width: #{$laptop-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media only screen and (min-width: #{$mobile-width-mn}) and (max-width: #{$mobile-width-mx}) {
+        @content;
+    }
+}
+

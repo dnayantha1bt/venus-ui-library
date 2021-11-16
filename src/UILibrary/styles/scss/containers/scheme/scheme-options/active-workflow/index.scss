@@ -1,0 +1,110 @@
+.step-wrapper {
+  margin-left: 32px;
+  margin-top: 32px;
+}
+
+.loading-wrapper-dark {
+  background-color: rgba(202, 202, 202, 0.2);
+  width: 100%;
+  height: 100%;
+  max-height: 100% !important;
+}
+
+.stick-to-lefst {
+  margin-left: -15px;
+}
+
+.default-font-size {
+  font-size: 14px!important;
+
+  .ant-input {
+    font-size: 14px!important;
+  }
+}
+// TODO : this should be inport in the execution status tab
+
+.iaa-execution-status-container {
+  .status-table {
+    margin: 40px;
+
+    .ant-table {
+      border: 1px solid rgba(49, 60, 71, 0.1);
+    }
+
+    .client-table {
+      margin-bottom: 20px;
+
+       .client-table-wrap {
+         margin-bottom: 20px;
+       }
+    }
+
+    .title {
+      color: $black;
+      @include font-size(15);
+      font-weight: $bold;
+    }
+    .ant-table-thead {
+      border: 1px solid $gray-wo;
+      border-bottom: transparent;
+      border-top: transparent;
+
+      th {
+        background: $gray-wo;
+        color: $black;
+        font-weight: $bold;
+        @include font-size(14);
+      }
+    }
+
+    .ant-table-tbody {
+      border: 1px solid $gray-wo;
+      border-top: transparent;
+      overflow-x: scroll;
+
+      td {
+        border-bottom: none;
+        @include font-size(14);
+        padding: 14px;
+        text-align: left;
+        width: 25%;
+      }
+
+      .ant-select {
+        width: 150px;
+
+        .ant-select-selection {
+          @include font-size(14);
+        }
+      }
+    }
+
+    .dot {
+      border-radius: 50%;
+      display: inline-block;
+      height: 8px;
+      margin-right: 6px;
+      width: 8px;
+
+      &.green-dot {
+        background-color: $green;
+      }
+
+      &.orange-dot {
+        background-color: $yellow;
+      }
+
+      &.blue-dot {
+        background-color: $blue;
+      }
+
+      &.grey-dot {
+        background-color: $black-wo;
+      }
+
+      &.red-dot {
+        background-color: $red;
+      }
+    }
+  }
+}

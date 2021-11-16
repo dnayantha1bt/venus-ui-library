@@ -1,0 +1,28 @@
+.form-body {
+  padding: 16px;
+  @include font-size(16);
+
+  .input-row {
+    margin-bottom: 20px;
+
+    .label-wrapper {
+      text-align: left;
+
+      .input-title {
+        @include font-size(14);
+        color: $black;
+      }
+
+      .input-heading {
+        font-weight: $bold;
+      }
+    }
+  }
+
+  .checkbox-row {
+    border-bottom: 1px solid $light-grey;
+    margin-bottom: 0 !important;
+    padding: 14px;
+  }
+}
+

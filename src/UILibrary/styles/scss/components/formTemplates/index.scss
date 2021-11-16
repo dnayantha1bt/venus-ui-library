@@ -1,0 +1,81 @@
+@import 'form-header';
+@import 'form-body';
+@import 'information-form-header';
+
+.trustee-account-form-wrapper {
+  border-bottom: 1px solid $light-grey;
+  border-top: 1px solid $light-grey;
+}
+
+.root-form-wrapper {
+  background-color: $white;
+
+  @include mobile {
+    min-height: 200px;
+  }
+
+  .card-wrapper {
+    border: none;
+    margin: 20px 0;
+  }
+
+  &.mt-30 {
+    margin-top: 30px;
+  }
+}
+
+.modal-form-wrapper {
+  background-color: $white;
+
+  @include mobile {
+    min-height: 200px;
+  }
+}
+
+.root-form-wrapper-information {
+  background-color: $white;
+  margin: 30px 0;
+
+  @include mobile {
+    min-height: 200px;
+  }
+
+  .card-wrapper {
+    min-height: 303px;
+    border: none;
+  }
+}
+.top-margin {
+  margin-top: 20px;
+}
+
+.custom-informtion-wrp {
+  .ant-input {
+    font-size: 14px;
+  }
+
+  .doc-view {
+    .ant-select-selection-selected-value {
+      font-size: 14px;
+    }
+
+    .ant-select-selection {
+      min-height: 35px;
+      box-shadow: none;
+      border-color: #d9d9d9 !important;
+    }
+
+    .ant-select:nth-child(1) {
+      .ant-select-selection {
+        border-radius: 4px 0 0 4px;
+        border-right: none;
+      }
+    }
+
+    .ant-select:nth-child(2) {
+      .ant-select-selection {
+        border-radius: 0;
+      }
+    }
+  }
+}

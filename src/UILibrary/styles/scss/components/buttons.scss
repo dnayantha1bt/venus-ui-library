@@ -1,0 +1,261 @@
+.tpip-btn-blue {
+  padding: 6px 30px;
+
+  color: $white !important;
+  @include font-size(14);
+  font-weight: $bold;
+  text-transform: capitalize;
+
+  background-color: $blue;
+  border-radius: 100px;
+  border: 1px solid $blue;
+  outline: 0;
+  box-shadow: none;
+
+  &.regular {
+    border-radius: 3px;
+  }
+
+  &:hover {
+    background-color: $dark-blue;
+    color: $white !important;
+  }
+
+  &:active {
+    outline: 0;
+  }
+
+  &.text-auto {
+    text-transform: none;
+  }
+}
+
+.btn-blue-o {
+  padding: 6px 30px;
+
+  color: $blue;
+  @include font-size(14);
+  font-weight: $bold;
+  text-transform: capitalize;
+
+  background-color: $white;
+  border-radius: 100px;
+  border: 1px solid $blue !important;
+
+  outline: none;
+  box-shadow: none !important;
+
+  &.regular {
+    border-radius: 3px;
+  }
+
+  &:hover {
+    background-color: $blue-wo;
+    color: $blue;
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-green {
+  padding: 6px 30px;
+
+  color: $white;
+  @include font-size(14);
+  font-weight: $bold;
+  text-transform: capitalize;
+
+  background-color: $green;
+  border-radius: 100px;
+  border: 1px solid $green;
+
+  outline: none;
+  box-shadow: none;
+
+  &.regular {
+    border-radius: 3px;
+  }
+
+  &:hover {
+    background-color: $dark-green;
+    color: $white;
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-analytic-refresh-enabled {
+  border-radius: 3px 3px 3px 3px;
+  background-color: $blue;
+  border: 1px solid $blue;
+  box-shadow: none;
+  color: $white;
+  padding-left: 0px;
+
+  @include font-size(14);
+  font-weight: $bold;
+  height: 35px;
+  outline: 0;
+  opacity: 1;
+  position: absolute;
+  right: 0;
+  text-transform: capitalize;
+  z-index: 10;
+  width: 120px;
+
+  .icon {
+    margin-right: 3px;
+  }
+
+  &:hover {
+    background-color: $dark-blue;
+    color: $white;
+  }
+
+}
+
+.btn-green-o {
+  padding: 6px 30px;
+
+  color: $green;
+  @include font-size(14);
+  font-weight: $bold;
+  text-transform: capitalize;
+
+  background-color: $white;
+  border-radius: 100px;
+  border: 1px solid $green;
+
+  outline: none;
+  box-shadow: none;
+
+  &.regular {
+    border-radius: 3px;
+  }
+
+  &:hover {
+    background-color: $dark-green;
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-red {
+  padding: 6px 30px;
+
+  color: $white;
+  @include font-size(14);
+  font-weight: $bold;
+  text-transform: capitalize;
+
+  background-color: $red;
+  border-radius: 100px;
+  border: 1px solid $red;
+
+  outline: none;
+  box-shadow: none;
+
+  &.regular {
+    border-radius: 3px;
+  }
+
+  &:hover {
+    background-color: $dark-red !important;
+    color: $white !important;
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-red-o {
+  padding: 6px 30px;
+
+  color: $red;
+  @include font-size(14);
+  font-weight: $bold;
+  text-transform: capitalize;
+
+  background-color: $white;
+  border-radius: 100px;
+  border: 1px solid $red;
+
+  outline: none;
+  box-shadow: none;
+
+  &.regular {
+    border-radius: 3px;
+  }
+
+  &:hover {
+    background-color: $red-wo;
+    color: $white;
+  }
+  &:active {
+    outline: none;
+  }
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-grey-o {
+  padding: 6px 30px;
+
+  color: $black;
+  @include font-size(14);
+  font-weight: $bold;
+  text-transform: capitalize;
+
+  background-color: $white;
+  border-radius: 100px;
+  border: 1px solid $light-grey !important;
+
+  outline: none;
+  box-shadow: none !important;
+
+  &.regular {
+    border-radius: 3px;
+  }
+
+  &:hover {
+    background-color: $light-grey;
+    color: $black;
+  }
+  
+  &:active {
+    outline: none;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+button:disabled {
+  pointer-events: none;
+  border: 1px solid $light-grey !important;
+  background-color: $light-grey !important;
+  color: $white;
+}

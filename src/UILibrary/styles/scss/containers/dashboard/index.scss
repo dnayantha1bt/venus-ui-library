@@ -1,0 +1,476 @@
+.dashboard-main-wrap {
+  .dashboard-header {
+    background-color: $white;
+    padding: 20px;
+
+    .list {
+      float: right;
+
+      .list-items {
+        border-bottom: 3px solid transparent;
+        color: $black-wo;
+        cursor: pointer;
+        display: inline-block;
+        @include font-size(14);
+        margin: 0 5px;
+        padding: 0 9px;
+
+        &:last-child {
+          margin-right: 0;
+          padding-right: 0;
+        }
+
+        &:hover {
+          border-bottom: 3px solid $blue;
+          color: $black;
+          transition: 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+        }
+
+        &.active {
+          border-bottom: 3px solid $blue;
+          color: $black;
+        }
+      }
+
+      @include mobile {
+        float: none;
+        margin-top: 10px;
+        text-align: left;
+        width: 100%;
+      }
+    }
+  }
+
+  .delete-account {
+    th {
+      &.scheme-name {
+       .anticon-filter {
+         left: 54px;
+       }
+      }
+
+      &.email {
+       .anticon-filter {
+         left: 52px;
+       }
+     }
+    }
+  }
+
+  .my-navigator-user-managment-wrap {
+    border-bottom: 1px solid $light-grey;
+    background-color: $light-grey;
+    padding: 30px;
+    width: 100%;
+    height: 20%;
+  }
+
+  .my-navigator-wrap {
+    background-color: $gray;
+    padding-bottom: 32px;
+
+    .root-form-wrapper-information {
+      margin-top : 21px;
+      
+    }  
+
+    .task-content {
+      padding: 0 !important;
+      .task-list {
+        .task-item {
+          padding: 12px;
+          display: block;
+
+          .left-wrap {
+            float: left;
+            @include font-size(14);
+
+            .icon {
+              color: $black-wo;
+              margin-right: 10px;
+            }
+          }
+
+          .link {
+            color: $white;
+            cursor: pointer;
+            float: right;
+            @include font-size(12);
+          }
+
+          &:hover {
+            background: $blue-shade;
+
+            .link {
+              color: $blue;
+              font-weight: $bold;
+            }
+          }
+        }
+      }
+    }
+
+    .scheme-row {
+      .mt-45 {
+        margin-top: 45px;
+      }
+
+      .card {
+        background-color: $white;
+        border-radius: 4px;
+        border: none;
+        box-shadow: 0px 2px 6px #00000029;
+        min-height: 480px;
+
+        text-align: left;
+
+        .card-header {
+          background: transparent;
+          border-bottom: 1px solid $light-grey;
+
+          .heading-row {
+            @include flex-row;
+            align-items: center;
+            justify-content: space-between;
+
+            .div-left {
+              text-align: left;
+
+              .title {
+                color: $black;
+                display: inline-block;
+                @include font-size(16);
+                font-weight: $bold;
+                margin-bottom: 0;
+              }
+
+              @include mobile {
+                width: 100%;
+              }
+
+              @include tablet-landscape {
+                width: 33%;
+              }
+            }
+
+            .div-right {
+              .header-content {
+                float: right;
+
+                .btn-create {
+                  margin: 0;
+                  padding: 6px 19px;
+                  font-weight: bold !important;
+
+                  .fa-icon {
+                    margin-right: 5px;
+                    font-weight: 300;
+                    font-size: 10px;
+                  }
+
+                  @include mobile {
+                    margin-top: 15px;
+                  }
+                }
+
+                .input-search {
+                  width: 200px;
+                  margin-right: 5px;
+
+                  .ant-input {
+                    padding-left: 10px;
+                    font-size: 14px;
+                  }
+
+                  @include mobile {
+                    margin-top: 15px;
+                  }
+                }
+              }
+
+              @include mobile {
+                width: 100%;
+              }
+
+              @include tablet-landscape {
+                width: 67%;
+              }
+            }
+
+            @include mobile {
+              text-align: center;
+            }
+          }
+        }
+
+        .card-body {
+          max-height: 410px;
+          height: 340px;
+          overflow: auto;
+          padding: 12px;
+
+          .customized-card {
+            border-radius: 4px;
+            box-shadow: 0px 2px 6px #00000029;
+
+            min-height: 160px;
+            max-height: 160px;
+            margin-bottom: 16px;
+            overflow-y: auto;
+            padding: 12px;
+
+            text-align: left;
+
+            .customised-card-wrap {
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              .content {
+                color: $black-wo;
+                @include font-size(12);
+                margin-bottom: 5px;
+
+                .rate-row {
+                  float: right;
+                  text-align: right;
+                }
+              }
+
+              .black-content {
+                .content {
+                  color: $black !important;
+                }
+              }
+
+              .header {
+                margin-bottom: 5px;
+
+                .title-row {
+                  float: left;
+
+                  .in-register-title {
+                    color: $blue;
+                    cursor: pointer;
+                    display: block;
+                    @include font-size(14);
+                    font-weight: $bold;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    &:hover {
+                      text-decoration: underline;
+                    }
+                  }
+
+                  .card-title {
+                    color: $blue;
+                    @include font-size(14);
+                    display: block;
+                    font-weight: $bold;
+                    margin-bottom: 0;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+                    cursor: pointer;
+                  }
+
+                  .date-text {
+                    @include font-size(12);
+                    color: $black-wo;
+                    display: block;
+                    float: left;
+                  }
+                }
+                .rate-row {
+                  float: right;
+                  text-align: right;
+
+                  .fa-icon {
+                    cursor: pointer;
+                    font-size: 16px;
+
+                    &.selected {
+                      color: $yellow;
+                    }
+                  }
+                }
+              }
+            }
+          }
+
+          .full-height-div {
+            height: 100%;
+            @include flex-row;
+            justify-content: center;
+          }
+
+          .detail-div {
+            margin-bottom: 18px;
+
+            .icon-details {
+              .inline-div {
+                color: $black-wo;
+                display: inline-block;
+                @include font-size(12);
+                font-style: italic;
+                margin-right: 20px;
+              }
+            }
+
+            .menu-items {
+              .menu {
+                color: $black-wo;
+                cursor: pointer;
+                border-bottom: 3px solid transparent;
+                display: inline-block;
+                @include font-size(14);
+                padding: 0 20px;
+                margin: 0 10px;
+
+                &:hover {
+                  border-bottom: 3px solid $blue;
+                  color: $black;
+                  transition: 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+                }
+
+                &.active {
+                  border-bottom: 3px solid $blue;
+                  color: $black;
+                }
+              }
+            }
+          }
+
+          .dot {
+            border-radius: 50%;
+            display: inline-block;
+            height: 8px;
+            margin-right: 6px;
+            width: 8px;
+
+            &.green-dot {
+              background-color: $green;
+            }
+
+            &.orange-dot {
+              background-color: $yellow;
+            }
+
+            &.blue-dot {
+              background-color: $blue;
+            }
+
+            &.grey-dot {
+              background-color: $black-wo;
+            }
+          }
+        }
+      }
+
+      .custom-height {
+        min-height: 396px !important;
+        max-height: 396px;
+        overflow-y: auto;
+      }
+    }
+
+    .solution-wrap {
+      padding: 40px 0;
+      @include mobile {
+        padding: 32px 16px;
+      }
+      text-align: center;
+
+      .card-row {
+        margin-top: 32px;
+        @include flex-row;
+        justify-content: space-between;
+
+        .card-col {
+          width: 32%;
+
+          .card {
+            border-radius: 4px;
+            border: 1px solid #eeeeee;
+            cursor: pointer;
+            overflow: hidden;
+            min-height: 365px;
+
+            .ant-card-body {
+              padding: 24px 20px;
+            }
+
+            &:hover {
+              box-shadow: 0 2px 39px 0 rgba(0, 0, 0, 0.11);
+
+              .image {
+                transform: scale(1.03);
+                transition: 0.25s ease-in-out;
+              }
+            }
+
+            .card-title {
+              color: $black;
+              @include font-size(20);
+              font-weight: $bold;
+              height: 45px;
+              line-height: 1.1;
+              margin-bottom: 12px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+
+            .card-description {
+              color: $black-wo;
+              @include font-size(13);
+              font-weight: $medium;
+              line-height: 20px;
+              overflow: hidden;
+              text-overflow: ellipsis;
+
+              .text-link {
+                color: $blue;
+              }
+            }
+
+            .card-data {
+              text-align: left;
+            }
+
+            @include mobile {
+              margin-bottom: 30px;
+              min-height: 300px;
+            }
+
+            @include tablet-portrait {
+              margin-bottom: 30px;
+              min-height: 340px;
+            }
+
+            @include tablet-landscape {
+              min-height: 340px;
+            }
+          }
+
+          @include mobile {
+            width: 100%;
+          }
+
+          @include tablet-portrait {
+            width: 47%;
+          }
+        }
+      }
+
+      .section-title {
+        color: $black;
+        @include font-size(20);
+        font-weight: $bold;
+        text-align: left;
+      }
+    }
+  }
+}

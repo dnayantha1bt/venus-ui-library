@@ -1,0 +1,29 @@
+.list{
+    .width{
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        display: inline-block;
+        width:48%;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+    .min-width{
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        display: inline-block;
+        width:23%;
+        text-align: center;
+        padding: 0px;
+        margin: 0px;
+    }
+}
+
+
+.width{
+    width: 100%;
+}
+
+.padding-remove {
+    padding: 0px;
+}

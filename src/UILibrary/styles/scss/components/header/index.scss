@@ -1,0 +1,150 @@
+.tpip-header {
+  padding: 2px 15px;
+  border-bottom: 2px solid $blue;
+  background-color: $white;
+
+  .header-content {
+    @include flex-row;
+    justify-content: space-between;
+    width: 100%;
+
+    .logo-wrapper {
+      padding: 8px 10px;
+      width: 100px;
+      float: left;
+
+      .logo {
+        width: 100%;
+      }
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    
+    .header-items-wrapper {
+      float: right;
+      @include flex-row;
+
+
+      .header-item {
+        margin-right: 20px;
+        padding: 8px 5px 5px 5px;
+        float: left;
+
+        font-weight: 500;
+        @include font-size(14);
+        color: #9a9fa4;
+
+        cursor: pointer;
+
+        border-bottom: 3px solid transparent;
+
+        &:hover {
+          border-color: $blue;
+          color: $black;
+          font-weight: 500;
+        }
+
+        &.active {
+          border-color: $blue;
+          color: $black;
+          font-weight: 500;
+        }
+
+        &.ant-dropdown-open {
+          border-color: $blue;
+          color: $black;
+        }
+
+        .header-icon {
+          width: 30px;
+          vertical-align: middle;        
+        }
+
+        .header-username {
+          margin: 0 9.6px;
+          @include font-size(14);
+          word-break: break-all;
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          vertical-align: middle;
+        }
+
+        .fa-icon{
+          @include font-size(14);
+        }
+
+
+        .notification-icon{
+          width: 18px;
+          height: 23px;
+          vertical-align: middle;
+
+            &:hover {
+              border-color: $blue;
+              color: $black;
+            }
+
+            &.active {
+              border-color: $blue;
+            }
+        }
+
+       
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      @include tablet-portrait {
+        display: none;
+      } 
+
+      .btn-login {
+        margin-right: 16px;
+        min-width: 127px;
+      }
+
+      .btn-register {
+        min-width: 127px;
+      }
+    }
+
+    .bars-menu {
+      background: transparent;
+      border: 1px solid rgba(0,0,0,.1);
+      border-radius: 4px;
+
+      cursor: pointer;
+      display: none;
+
+      height: 33px;
+      margin-top: 8px;
+      padding: 9px;
+      position: absolute;
+      right: 14px;
+      top: 13px;
+      width: 39px;
+     
+      @include tablet-portrait {
+        display: block;
+      }
+
+      @include mobile {
+        display: block;
+      } 
+    }
+    
+    .bars-btn {
+      border-bottom: 2px solid $black-wo;
+      display: block;
+      margin-bottom: 4.8px;
+    }
+    
+  }
+}
+
+

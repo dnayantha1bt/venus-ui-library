@@ -1,0 +1,230 @@
+&.delete-account-modal {
+
+    .ant-modal-content {
+        border-radius: 10px;
+        width: 430px;
+
+        .ant-modal-close-x {
+            line-height: 52px;
+            width: 70px;
+    
+            .ant-modal-close-icon {
+                font-size: 14px;
+                color: $black;
+                font-weight: 900;
+            }
+        }
+
+        .ant-modal-header {
+            padding: 18px 30px;
+            border-radius: 4px 4px 0 0;
+        }
+
+        .ant-modal-title {
+            color: $black;
+            font-weight: $bold;
+            @include font-size(15);
+            margin-bottom: 0;
+            text-align: left;
+            text-transform: uppercase;
+        }
+    }
+
+    .content-title {
+        color: $black;
+        font-size: 14px;
+        margin-bottom: 2px;
+
+        &.delete-title {
+            margin-bottom: 25px !important;
+        }
+    }
+
+    &.change-user-modal {
+        .content {
+            clear: both;
+            overflow: hidden;         
+
+            .group-select {
+                font-size: 14px;
+                width: 100%;
+            }
+
+            .btn-change {
+                border-radius: 5px;
+                float: right;
+                font-size: 14px;
+                font-weight: lighter !important;
+                margin-top: 13px;
+                padding: 8px 9px;
+                text-transform: none !important;
+            }
+        }
+    }
+    
+    &.delete-request-modal {
+
+        .content {
+            clear: both;
+            overflow: hidden;
+
+            .content-title {
+               font-weight: 400;
+               color: $black;
+               margin-bottom: 5px;
+            }
+
+            .input-password {
+                font-size: 14px;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+
+            .btn-delete {
+                float: right;
+                font-weight: bold !important;
+                font-size: 14px;
+                margin-top: 13px;
+                padding: 12px 9px;
+                text-transform: none !important;
+            }
+
+            .ant-checkbox-wrapper {
+                @include font-size(13);
+                color: $black-wo;
+                margin-top: 8px;
+                display: flex;
+                align-items: flex-start;
+            }
+        }
+    }
+
+    &.delete-reject-modal {
+
+        .content-title {
+            font-weight: 400;
+            color: #000000;
+            margin-bottom: 5px;
+        }
+
+        .text-area {
+            @include font-size(14);
+            width: 100%;
+        }
+
+        .ant-modal-body {
+            padding: 20px 30px;
+        }
+
+        .content-footer {
+            @include flex-row;
+            justify-content: flex-end;
+            padding: 20px 0 10px 0;
+
+            .btn {
+                box-shadow: none !important;
+                outline: none !important;
+                @include font-size(14);
+                padding: 8px 22px;
+                font-weight: bold !important;
+                min-width: 120px;
+                text-transform: none !important;
+            }
+
+            .btn-outline {
+                border: 1px solid $light-grey;               
+            }
+
+            .btn-close {               
+                margin-right: 5px;                
+            }
+        }
+    }
+     
+    &.associated-modal {
+        .ant-modal-body {
+            padding: 0;
+        }
+
+        .ant-modal-content {
+            width: 484px;
+        }
+
+        .content-footer {
+            @include flex-row;
+            justify-content: flex-end;
+            padding: 30px;
+
+            .btn {
+                box-shadow: none !important;
+                outline: none !important;
+                @include font-size(14);
+                padding: 8px 22px;
+                font-weight: bold !important;
+                min-width: 120px;
+                text-transform: none !important;
+            }
+
+            .btn-outline {
+                border: 1px solid $blue;  
+                color: $blue;             
+            }
+        }
+
+        .delete-account-table {
+
+            &.customize-table {
+                td {
+                    padding: 12px;
+                }
+    
+                th {
+                    padding: 12px;
+                }
+            }
+
+            .scheme-name {
+                max-width: 160px;
+                overflow: hidden;
+                word-break: break-all;
+            }
+    
+            .ant-table-column-title {
+                font-weight: $bold;
+                font-size: 14px;
+            }
+    
+            th {
+                background: transparent;
+                border-radius: 0;
+                border-bottom: 2px solid $light-grey;
+                padding: 12px 30px; 
+
+                &:first-child {
+                    padding-right: 0;
+                }
+            }
+    
+            td {
+                border: none;
+                color: $black;
+                font-size: 14px;
+                padding: 15px 30px;
+                padding-bottom: 10 !important;
+                max-width: 50%;
+                vertical-align: top;
+                word-break: break-word;
+
+                &:first-child {
+                    padding-right: 0;
+                }
+            }
+    
+            .link {
+                color: $blue;
+                margin-left: 5px;
+            }
+        }
+    }
+  
+}

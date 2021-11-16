@@ -1,0 +1,53 @@
+&.multi-rip-modal {  
+
+    .ant-modal-close-x {
+        line-height: 52px;
+        width: 70px;
+
+        .ant-modal-close-icon {
+            font-size: 14px;
+            color: $black;
+            font-weight: 900;
+        }
+    }
+    
+    .ant-modal-body {
+        padding: 0;
+    }
+
+    .ant-modal-content {
+        width: 432px;
+    }
+
+    .title {
+        border-bottom: 1px solid #dcdddf;
+        color: $black;
+        font-weight: $bold;
+        @include font-size(15);
+        margin-bottom: 0;
+        padding: 18px 30px;
+        text-align: left;
+    }
+
+    .approve-comment-form {
+        padding: 20px 30px 30px 30px;
+
+        .comment-form-label {
+            color: $black;
+        }
+
+        .input-comment {
+            min-height: 128px;
+        }
+
+        .form-btn-container {
+            padding-top: 30px !important;
+
+            .btn {
+               height: 36px;
+            }
+        }
+    }
+}
+
+

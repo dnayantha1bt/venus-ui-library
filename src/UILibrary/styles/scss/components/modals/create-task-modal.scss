@@ -1,0 +1,103 @@
+&.create-task-modal {
+  .content-row {
+    .input-title {
+      @include font-size(14);
+      color: $black;
+    }
+
+    .input-field {
+      color: $black;
+      @include font-size(14);
+      height: 35px;
+      outline: none;
+      box-shadow: none;
+    }
+
+    .margin-wrap {
+      margin-bottom: 20px;
+    }
+
+    .text-area {
+      height: auto !important;
+    }
+
+    .select {
+      width: 100%;
+      .ant-select-selection {
+        color: $black;
+        @include font-size(14);
+        min-height: 35px;
+        border: 1px solid $light-grey;
+        outline: none;
+        box-shadow: none;
+      }
+    }
+
+    .button-group {
+      width: 50%;
+      margin-bottom: 13px;
+
+      &:first-child {
+        border-right: 0;
+        border-radius: 5px 0 0 5px;
+      }
+
+      &:last-child {
+        border-radius: 0 5px 5px 0;
+      }
+
+    }
+  }
+
+ 
+  .ant-modal-close-x {
+    line-height: 52px;
+    width: 70px;
+
+    .ant-modal-close-icon {
+        font-size: 14px;
+        color: $black;
+        font-weight: 900;
+    }
+  }
+
+  .ant-modal-body {
+      padding: 0;
+  }
+
+  .title {
+      border-bottom: 1px solid #dcdddf;
+      color: $black;
+      font-weight: $bold;
+      @include font-size(15);
+      margin-bottom: 0;
+      padding: 18px 30px;
+      text-align: left;
+  }
+
+  .form-body {
+      padding: 30px 30px;
+      padding-top: 0px;
+
+      .input-row {
+          margin-top: 15px !important;
+      }
+
+      .mt-20 {
+        margin-top: 20px;
+      }
+  }
+
+  .footer {
+    margin-top: 10px;
+    text-align: right;
+
+    .btn-create {
+      margin-left: 5px;
+    }
+
+    .btn-footer {
+      cursor: pointer;
+    }
+  }
+}

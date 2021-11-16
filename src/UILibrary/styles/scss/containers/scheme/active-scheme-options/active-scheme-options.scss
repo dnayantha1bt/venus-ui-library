@@ -1,0 +1,271 @@
+.active-scheme-options {
+  background-color: $gray;
+
+  .header {
+    background-color: $white;
+    padding: 20px 0;
+
+    .list {
+      float: right;
+
+      .list-items {
+        color: $black-wo;
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        display: inline-block;
+        @include font-size(14);
+        padding: 0 5px;
+
+        
+        &:last-child {
+          margin-right: 0;
+          padding-right: 0;
+        }
+
+        &:hover {
+          border-bottom: 3px solid $blue;
+          color: $black;
+          transition: 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+        }
+
+        &.active {
+          border-bottom: 3px solid $blue;
+          color: $black;
+        }
+
+        @include tablet-landscape {
+          padding: 0 9px;
+          margin: 0 5px;
+        }
+
+        @include desktop {
+          padding: 0 9px;
+          margin: 0 5px;
+        }
+      }
+
+      @include mobile {
+        float: none;
+        margin-top: 10px;
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    .div-back {
+      float: left;
+
+      .back-text {
+        color: $black-wo;
+        cursor: pointer;
+        @include font-size(12);
+        margin-right: 12px;
+
+        .icon {
+          color: $black-wo;
+          margin-right: 3px;
+        }
+      }
+
+      .user-name {
+        color: $black;
+        @include font-size(14);
+        font-weight: $bold;
+        max-width: 320px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: inline-flex;
+      }
+
+      @include mobile {
+        float: none;
+        text-align: left;
+        width: 100%;
+      }
+    }
+
+    .more-text{
+      .icon {
+        cursor: pointer;
+        vertical-align: middle;
+        opacity: 0.7;
+      }
+    }
+
+    @include desktop {
+      padding: 20px;
+    }
+
+    @include tablet-landscape {
+      padding: 20px;
+    }
+  }
+
+  
+  .address-content-wrap {
+    .input-wrapper {
+      max-width: 100% !important;
+      margin-right: 0 !important;
+    }
+
+    .extra-padding {
+      padding-left: 20px;
+    }
+  }
+
+  .empty-container {
+    @include flex-row;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    min-height: 400px;
+  }
+
+  .content {
+    .card-wrap {
+      border: none;
+      background-color: $white;
+      min-height: 303px;
+
+      .header {
+        padding: 16px;
+        border-bottom: 1px solid $light-grey;
+
+        .title {
+          color: $black;
+          @include font-size(16);
+          font-weight: $bold;
+        }
+      }
+
+      .icon {
+        vertical-align: middle;
+        margin-right: 10px;
+      }
+    }
+
+    .alert {
+      border-radius: 30px;
+      padding: 12px;
+      margin: 10px auto;
+
+      .icon {
+        margin-right: 8px;
+        vertical-align: middle;
+      }
+
+      .alert-message {
+        @include font-size(14);
+      }
+
+      &.info-alert {
+        background-color: $blue-shade;
+        color: $blue;
+      }
+    }
+  }
+}
+
+.slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-list {
+    padding-bottom: 70px;
+}
+
+.slick-dots {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 9px 10px;
+  text-align: center;
+  width: 100%;
+  z-index: 1000;
+
+  .pagination-title {
+    color: $black;
+    font-weight: $bold;
+    @include font-size(14);
+    margin-right: 10px;
+  }
+
+  .pagination-number {
+    color: $white;
+    background-color: $light-grey;
+    border-radius: 50%;
+    font-weight: $bold;
+    @include font-size(14);
+    padding: 5px 9px;
+    margin: 5px;
+    text-align: center;
+
+    &.active {
+      background-color: $black;
+    }
+  }
+}
+
+.slick-arrow {
+  display: none !important;
+}
+
+.slider-arrows {
+  .arrow {
+    position: fixed;
+    top: 50%;
+    width: 50px;
+    cursor: pointer;
+
+    &.left-arrow {
+      left: 0;
+    }
+
+    &.right-arrow {
+      right: 0;
+    }
+
+    @include mobile {
+      width: 25px;
+    }
+  }
+
+  @include mobile {
+       display: none;
+  } 
+}
+
+.range-picker-container {
+  margin-right: 16px;
+  display: inline-block;
+
+  label {
+    color: rgba(49, 60, 71, 0.6);
+    font-size: 0.875em;
+    margin: 0;
+    padding-right: 8px;
+  }
+
+  .daterange-picker {
+    color: rgb(49, 60, 71);
+    font-size: 0.875em;
+    height: 35px;
+    box-shadow: none;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(222, 222, 222);
+    border-image: initial;
+    outline: none;
+    border-radius: 0.25rem;
+    padding: 0.375rem 0.75rem !important;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  .react-datepicker__close-icon::after {
+    background-color: #ffffff;
+    color: #666;
+    font-size: 20px;
+    line-height: 0.7;
+    font-weight: 700;
+  }
+}

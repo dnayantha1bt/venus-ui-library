@@ -1,0 +1,400 @@
+.profile-container {
+
+    background-color: $gray;   
+
+    .profile-header {
+
+        background-color: $white;
+        padding: 20px;
+        padding-bottom: 5px;
+        margin-bottom: 30px;
+
+        .list {
+
+            float: right;
+
+            .list-items {
+                border-bottom: 3px solid transparent;
+                color: $black-wo;
+                cursor: pointer;
+                display: inline-block;
+                @include font-size(14);
+                padding: 0 9px;
+                margin: 0 5px;
+
+                &:last-child {
+                    margin-right: 0;
+                    padding-right: 0;
+                }
+
+                &:hover {
+                    border-bottom: 3px solid $blue;
+                    color: $black;
+                    transition: 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+                }
+
+
+                &.active {
+                    border-bottom: 3px solid $blue;
+                    color: $black;
+                }
+            }
+
+            @include mobile {
+                float: none;
+                margin-top: 10px;
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+        .div-back {
+            float: left;
+
+            .back-text {
+                color: $black-wo;
+                cursor: pointer;
+                @include font-size(12);
+                margin-right: 12px;
+
+                .icon {
+                    color: $black-wo;
+                    margin-right: 3px;
+                }
+            }
+
+            .sub-title {
+                color: $black;
+                @include font-size(14);
+                font-weight: $bold;
+            }
+
+            @include mobile {
+                float: none;
+                text-align: left;
+                width: 100%;
+            }
+        }
+
+    }
+
+    .profile-content {       
+        margin: 20px 0;
+        min-height: 300px;
+
+        .profile-navigator { 
+            background-color: $white;
+            min-height: 600px;            
+        
+            .card-wrap {
+                border: none;
+                background-color: $white;
+        
+                .header{
+                    padding: 16px;
+                    border-bottom: 1px solid $light-grey;
+        
+                    .title{
+                        color: $black;
+                        @include font-size(16);
+                        font-weight: $bold;
+                    }
+                }
+        
+                .content {        
+                    .step-items {                   
+                        color: $black;
+                        cursor: pointer;                
+                        @include font-size(14);
+                        margin-bottom: 10px;
+                        padding: 16px;
+                        
+                        &:hover{
+                            background-color: $blue;
+                            color: $white;
+                            transition: 0.25s cubic-bezier(0.6, -0.28, 0.74, 0.05);
+                        }
+
+                        &.active{
+                            background-color: $blue;
+                            color: $white;
+                        }
+                    }                
+                }
+            }
+
+            @include mobile {
+                margin-bottom: 20px;
+            }
+
+        }
+
+        .profile-wrap {
+            background-color: $white;
+            min-height: 600px;   
+            margin-bottom: 20px;
+
+            .card-wrapper {
+                margin-top: 0;
+            }
+
+            .header {
+                border-bottom: 1px solid $gray;
+                background-color: $gray-wo;
+                padding: 16px;
+    
+                .title {            
+                    color: $black;
+                    @include font-size(16);
+                    font-weight: $bold;                   
+                }
+            }   
+            
+            .content {
+                padding: 16px;
+
+                .title-wrap {
+                    border-bottom: 1px solid $light-grey;
+                    margin-bottom: 23px;
+                    padding-bottom: 5px;
+
+                    .title {
+                        font-weight: $bold;
+                        @include font-size(15);
+                    }
+                }
+
+                .input-wrap {
+                      margin-bottom: 0px;
+                      text-align: left;
+                }
+                  
+                .input-title {
+                      @include font-size(14);
+                      color: $black;
+                }
+
+                .margin-wrap {
+                    margin-bottom: 20px;
+                }
+                         
+                .role-wrap {
+                    .field-wrapper {
+                        @include flex-row();
+                        justify-content: space-between;
+    
+                        .button-group {
+                            @include font-size(14);
+                            margin-bottom: 16px !important;
+                            padding: 19px 22px;
+                            text-align: left;
+                            text-transform: capitalize;
+                        
+                            @include mobile {
+                              width: 100%;
+                            }
+
+                            @include tablet-landscape {
+                                padding: 19px;
+
+                            }
+                          }
+                    
+                        @include mobile {
+                          @include flex-column();
+                          justify-content: center;
+                        }
+                    
+                    }
+                }
+
+            }
+
+            &.profile-picture {
+                .upload-wrap {
+                    text-align: center;
+
+                    .full-content-wrap {
+                        margin-top: 25px;
+                       
+                    }
+
+                    .ant-upload {
+
+                        .btn-upload {
+                            font-weight: $bold !important;
+
+                            .btn-text {
+                                text-transform: none !important;
+                            }
+                        }
+
+                    }
+
+                    .img {
+                        display: block;
+                        margin: 20px auto;
+                        width: 250px;
+                    }
+
+                    .icon {
+                        margin-right: 10px;
+                    }
+                }
+            }
+            
+            &.account-access {
+                .change-link {
+                    color: $blue;
+                    cursor: pointer;
+                    @include font-size(12);
+                    position: absolute;
+                    padding: 0 12px;
+                    right: 10px;
+                    top: 8px;
+                }
+            }
+
+        } 
+
+        .delete-account-wrap {
+            color: $black;
+            
+            .btn-delete-account {
+                font-weight: bold !important;
+                height: 100%;
+                text-transform: none !important;
+            }
+            
+            .content {
+                padding : 0;
+
+                .delete-detail-wrapper {
+                    @include flex-row;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    flex-wrap: nowrap !important;
+
+                    border-radius: 8px;
+                    margin: 30px;
+                    padding: 12px 16px;
+
+                    &.red-wrap {
+                        background: #fffafa;
+                        border: 2px solid #f68a8a;
+                        color: $red;
+
+                        .icon {
+                            color: $red;
+                            width: 22px;
+                            vertical-align: middle;
+                        }
+
+                        .black-font {
+                            color: $black !important;
+                        }
+                    }
+
+                    &.blue-wrap {
+                        align-items: center !important;
+                        background: #effaff;
+                        border: 2px solid $blue;
+                        color: $blue;
+
+                        .icon {
+                            color: $blue;
+                            width: 22px;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    .info-wrap {
+                       @include font-size(13);
+                    }
+
+                  
+
+                    .image {
+                        border-radius: 50%;
+                        height: 40px;
+                        width: 40px;
+                    }
+
+                    .detail-wrap {
+                        margin-left: 20px;
+                        text-align: left;
+
+                        .detail {
+                            font-weight: $medium;
+                            @include font-size(14);
+                            margin-bottom: 1px;
+                            text-align: left;
+                            word-break: break-all;
+
+                            .day {
+                                color: $black-wo;
+                                @include font-size(13);
+                                margin-left: 5px;
+                                vertical-align: middle;
+                            }
+                        }
+
+                        .sub-detail {
+                            @include font-size(13);
+                            text-align: left;
+                            word-break: break-all;
+                        }
+                    }
+                }
+                
+
+                .delete-account-table {
+
+                    &.customize-table {
+                        td {
+                            padding: 12px;
+                        }
+
+                        th {
+                            padding: 12px;
+                        }
+                    }
+
+                    .ant-table-column-title {
+                        font-weight: $bold;
+                        @include font-size(13);
+                    }
+
+                    .scheme-name {
+                        max-width: 90px;
+                        overflow: hidden;
+                        word-break: break-all;
+                    }
+
+                    th {
+                        background: transparent;
+                        border-radius: 0;
+                        border-top: 2px solid $light-grey;
+                        border-bottom: 2px solid $light-grey;
+                        padding: 12px 30px;
+                    }
+
+                    td {
+                        border: none;
+                        color: $black;
+                        @include font-size(13);
+                        padding: 15px 30px;
+                        padding-bottom: 10 !important;
+                    }
+
+                    .link {
+                        color: $blue;
+                        margin-left: 5px;
+                        text-decoration: none;
+                    }
+                }
+            }       
+        }
+    }
+}
+

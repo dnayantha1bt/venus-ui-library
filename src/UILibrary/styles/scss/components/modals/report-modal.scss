@@ -1,0 +1,503 @@
+&.modal-report {
+    padding: 20px;
+
+    .report-modal-footer {
+        .btn {
+            padding: 0px 24px !important;
+            width: auto;
+            min-width: auto;
+            font-weight: 700;
+            font-size: 14px;
+            height: 36px;
+        }
+    }
+
+    .ant-modal-close-x {
+        line-height: 52px;
+        width: 70px;
+
+        .ant-modal-close-icon {
+            font-size: 14px;
+            color: $black;
+            font-weight: 900;
+        }
+    }    
+    
+    &.generate-modal {
+        .content {
+            font-size: 14px;
+        }
+
+        .content-text {
+            margin-bottom: 5px;
+            color: #171616;
+            font-size: 14px;
+        }
+
+        .content-sub-text {
+            color: $black-wo;
+        }
+
+        .ant-modal-header {
+            padding: 18px 30px;
+
+        }
+
+        .ant-modal-body {
+            padding: 20px 30px 30px 30px;
+        }
+
+        .ant-modal-title {            
+            color: $black;
+            font-weight: $bold;
+            @include font-size(15);
+            margin-bottom: 0;
+            text-align: left;        
+        }
+
+        .footer {
+            text-align: right;
+            margin: 30px 0;
+            margin-bottom: 0;
+            overflow: hidden; 
+
+            .btn-cancel {
+                padding: 6px 30px;
+
+                color: $black;
+                @include font-size(14);
+                font-weight: $bold;
+                text-transform: capitalize;
+              
+                background-color: $white;
+                border: 1px solid $light-grey !important;
+                margin-right: 10px;
+                height: 40px;
+            }
+
+            .btn-proceed {
+                color: $white;
+                border: 1px solid $blue;
+                border-radius: 3px;
+                background-color: $blue;
+                font-weight: $bold;
+                font-size: 14px;
+                height: 40px;
+            }
+        }
+    }
+
+    &.upload-modal {
+        width: 484px !important;
+
+       
+        .ant-modal-header {
+            padding: 18px 30px;
+
+        }
+
+        .ant-modal-body {
+            padding: 20px 30px 30px 30px;
+        }
+
+        .ant-modal-title {            
+            color: $black;
+            font-weight: $bold;
+            @include font-size(15);
+            margin-bottom: 0;
+            text-align: left;        
+        }
+
+        
+        .content {
+            .content-text {
+                margin-bottom: 0px;
+                font-size: 14px;
+                font-weight: $bold;
+                color: #171616;
+            }
+    
+            .content-sub-text {
+                color: $black-wo;
+                display: block;
+                font-size: 13px;
+                font-weight: lighter;
+            }
+
+            .italic {
+                font-style: italic;
+            }
+
+            .dragger {
+                display: block;
+                margin-top: 15px;
+
+                .ant-upload-drag-icon {
+                    margin-bottom: 0 !important;
+                }
+
+                .ant-upload-drag {
+                    min-height: 181px;
+                    .ant-upload-btn {
+                        min-height: 181px;
+                    }
+                } 
+
+                .icon {
+                    @include font-size(13);
+                   font-weight: $bold;
+                   color: $blue;
+                }
+
+                .ant-upload-text {
+                   @include font-size(13);
+                   font-weight: $bold;
+                   color: $blue;
+                   margin-bottom: 9px;
+                }
+
+                .ant-upload-hint {
+                    color: #303d46;
+                    font-weight: lighter;
+                    @include font-size(13);
+                    text-transform: initial !important;
+                }
+            }
+    
+        }
+      
+        .footer {
+            text-align: right;
+            margin: 30px 0;
+            margin-bottom: 0;
+            overflow: hidden; 
+
+            .btn-cancel {
+                padding: 6px 30px;
+
+                color: $black;
+                @include font-size(14);
+                font-weight: $bold;
+                text-transform: capitalize;
+              
+                background-color: $white;
+                border: 1px solid $light-grey !important;
+                margin-right: 10px;
+                height: 40px;
+            }
+
+            .btn-proceed {
+                color: $white;
+                border: 1px solid $blue;
+                border-radius: 3px;
+                background-color: $blue;
+                font-weight: $bold;
+                font-size: 14px;
+                height: 40px;
+            }
+        }
+    }
+
+    &.reject-modal {
+        .comment-wrap {
+            .comment {
+                font-size: 14px;
+                margin-top: 10px;
+            }
+
+            .ant-input {
+                min-height: 128px;
+            }
+        }
+
+        .btn-no {
+            margin-right: 10px;
+        }
+    }
+
+    &.approve-reject-modal {
+        width: 64% !important;
+
+        .ant-modal-body {
+            padding: 30px;
+        }
+
+        .doc-preview-container {
+            margin: 0;
+        }
+
+        .ant-modal-close-x {
+            display: none;
+        }
+
+        .close-wrap {
+            position: absolute;
+            right: 0;
+            top: -30px;
+            font-weight: 100;
+            color: white;
+            font-size: 13px;
+            text-shadow: none;
+            cursor: pointer;
+
+            .icon {
+                margin-left: 5px;
+            }
+        }
+
+        .report-approval-wrap {
+            .ant-comment-content-detail {
+                max-width: 100%;
+                word-break: break-all;
+                overflow: hidden;
+            }
+        }
+
+        .doc-preview-container {
+            padding: 0px !important;
+        }
+
+        .document-wrapper {
+            height: 800px;
+        }
+
+        .reject-wrap {
+            display: flex;
+            justify-content: space-between;
+            height: 100%;
+            border-radius: 4px;
+        }
+
+        .ant-modal-header {
+            padding: 0;
+            position: relative;
+            @include flex-row;
+            background-color: #f1f1f1;
+            border-bottom: none !important;
+
+            .ant-modal-title {
+                width: 100%;
+                line-height: inherit;
+            }
+        }
+
+        .ant-input::-webkit-input-placeholder {
+            font-size: 14px;
+        }
+
+        .approval-status-container-single {
+            max-width: 196px;
+            padding-right: 16px !important;
+            padding-left: 0 !important;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+        
+        .pdf-text {
+            display: block;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .status-box {
+            margin: 0;
+            margin-bottom: 20px;
+            font-size: 15px;
+            max-width: 196px;
+            min-height: 50px !important;
+            padding: 14px 20px!important;
+        }
+
+        .comment-container {         
+
+            .ant-comment-avatar {
+               svg {
+                   vertical-align: initial;
+               }
+            }
+
+            .ant-comment-content-author-time {
+                font-size: 12px;
+            }
+
+            .ant-comment-content-detail {
+                font-size: 13px;
+                color: $black;
+            }
+
+            .header {
+              margin-bottom: 10px;
+            }
+        }
+
+        .add-comment-container {
+            .comment-area {
+                font-size: 14px;
+            }
+
+            .btn-comment {
+                height: 40px;
+            }
+        }
+
+        .ant-comment-inner {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+
+        .ant-modal-close {
+            top: -44px;
+        }
+
+        .ant-modal-close-x {
+            color: $white;
+            width: 30px;
+            font-size: 15px;
+            font-weight: bolder;
+        }
+
+        .report-name {
+            font-weight: $bold;
+            @include font-size(14);
+            color: $black;
+            word-break: break-word;
+            line-height: initial;
+            padding: 16px 24px;
+            vertical-align: middle;
+            display: inline-block;
+            max-width: 100%;
+            word-break: break-word;
+            overflow: hidden;
+            flex: 1 1 auto;
+            
+            .report-type {
+                color: $black-wo;
+                font-size: 12px;
+                font-style: italic;
+                font-weight: 500 !important;
+                margin-left: 5px;
+            }
+
+        }
+
+        .btn-wrap {
+            float: none;
+            min-height: 49px;
+            min-width: 40%;
+            text-align: right;
+            border-top-right-radius: 4px;
+            flex: 1 1 auto;
+        }
+
+        .btn {
+            border-radius: 0;
+            font-weight: 700;
+            min-width: 133px;
+            @include font-size(14);
+            outline: none !important;
+            box-shadow: none !important;
+            height: 100%;
+
+           &.btn-reject {
+               background-color: #ee2222;
+               color: $white;
+               
+               .icon {                
+                    margin-right: 5px;
+                    color: $white;
+                    vertical-align: middle;
+                    font-size: 17px;
+                    line-height: 12px;
+                }
+           }
+
+           &.btn-approve {
+                background-color: #00aa55;
+                border-top-right-radius: 4px;
+                color: $white;
+
+                .icon {
+                    margin-right: 5px;
+                    color: $white;
+                    vertical-align: middle;
+                    font-size: 17px;
+                    line-height: 12px;
+                }
+           }
+        }
+    }
+
+    .approval-status-container,
+    .approval-status-container-single {
+        .status-box {
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            align-items: center;
+
+            .title {
+                align-self: center;
+            }
+        }
+
+        .img {
+            width: 15px;
+            height: 15px;
+        }
+
+        .icon {                
+            margin-right: 5px;
+            color: $white;
+            vertical-align: middle;
+            font-size: 16px;
+        }
+    }
+
+    &.report-update-modal {
+
+        .ant-modal-close-x {
+            display: none;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 15px;
+            margin-bottom: 16px;
+            border-bottom: none !important;
+            padding: 0;
+
+            .icon {
+                color: $blue;
+                margin-right: 13px;
+                font-size: 22px;
+                vertical-align: middle;
+            }
+        }
+
+        .content {
+            font-size: 14px;
+            display: block;
+            margin-bottom: 30px;
+        }
+
+        .footer {
+           .btn-cancel {
+               display: none;
+           }
+        }
+
+        .btn-ok {
+            float: right;
+            width: 122px;
+        }
+    }
+
+    textarea.ant-input {
+        font-size: 14px;
+    }
+}
+
+.report-range-picker {
+    .ant-calendar-range-middle {
+        left: 43% !important;
+    }
+}

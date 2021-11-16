@@ -1,0 +1,435 @@
+.multiClient-wrapper {
+    .multiClient-section { 
+
+        .ant-menu-submenu-title:hover {
+            .ant-menu-submenu-arrow::before, .ant-menu-submenu-arrow::after {
+                background: $blue !important;
+            }
+        }
+
+        .tasks-navigator {
+            .ant-menu-submenu-arrow {
+                top: 41%;
+            }
+        }
+
+        .change-upload-wrp {
+            .doc-preview-container {
+                margin-top: 30px !important;
+            }
+        }
+
+        .update-upload-wrap {
+            .doc-preview-container {
+                margin-top: 10px !important;
+            }
+
+            .custom-text {
+                font-size: 14px;
+            }
+        }
+
+        .form-action-wrapper {
+            .fa-icon {
+                font-size: 16px;
+                vertical-align: middle;
+                margin-right: 2px;
+            }
+        }
+
+        .update-approve-fma {
+            .doc-preview-container {
+                margin: 10px 30px 30px 30px;
+            }
+
+            .approval-status-container {
+                margin: 0;
+                padding: 22px 50px 12px 50px !important;
+            }
+
+            .comment-container {
+                padding: 0 60px 16px 60px;
+            }
+        }
+
+        .distribute-approve-wrap {
+            .doc-preview-container {
+                margin: 10px 30px 30px 30px;
+            }
+
+            .approval-status-container {
+                margin: 0;
+                padding: 22px 50px 12px 50px !important;
+            }
+
+            .comment-container {
+                padding: 0 60px 16px 60px;
+            }
+        }
+
+        .distribute-upload-wrap {
+            .doc-preview-container {
+                margin-top: 30px !important;
+            }
+
+            .custom-text {
+                font-size: 14px;
+            }
+        }
+
+        .publish-scheme-wrap {
+           .ant-table-body {
+               margin: 0 !important;
+
+               td {
+                   background-color: $white;                               
+                   
+                   a {
+                       color: $blue;
+                       font-weight: 500;
+                   }
+               }
+
+               tr {
+                    &:first-child {
+                        td {
+                            padding-top: 19.5px;
+                        }
+                    }
+                }   
+
+               .ant-table-selection-column {
+                   padding-left: 22px;
+               }
+           }
+        }
+
+        .change-approve-wrp {
+            .approval-status-container {
+                margin: 0;
+                padding: 22px !important;
+            }
+        }
+
+        .empty-view {
+            .ant-empty-description {
+                font-size: 13px;
+                color: $black;
+            }
+        }
+        
+        .margin-30 {
+            margin: 0 30px !important;
+
+            .approval-status-container-single {
+                padding: 22px 30px;
+            }
+        }
+
+        .header {
+           padding: 16px 16px 16px 30px !important;
+        }
+
+        .form-title {
+            padding-left: 30px !important;
+            font-size: 15px;
+        }
+
+        .form-body {
+            padding: 30px !important;
+        }
+
+        .header {
+            .title {
+                font-size: 15px !important;
+            }
+        }
+
+        .content {
+            padding: 0 !important;
+            margin-top: 4px;
+        }
+
+        .card {
+            border: none;
+        }
+
+        .ant-table-body {
+            font-size: 14px;
+        }
+
+        .ant-table-small {
+            border: 0px!important;
+        }
+
+        .comment-container h3.header { 
+            padding: 0 !important;
+            font-size: 14px;
+        }
+
+        .add-comment-container {
+            .tpip-btn-blue {
+                padding: 8px 28px;
+            }
+        }
+
+        .table-wrap {
+            .ant-table-tbody > tr > td {
+                border-bottom: 0px!important;
+                background-color: none;;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+            .table-row {
+                padding-top: 5px !important;
+                padding-left: 0 !important;
+
+                .anticon-search {
+                    background: none !important;
+                    right: 5%;
+                }
+            .ant-table-thead > tr > th {
+                border-top: 1px solid $light-grey;
+                border-bottom: 1px solid $light-grey;
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
+
+            td, th {
+                background: transparent;
+                padding-left: 0;
+
+                &:first-child {
+                    padding-left: 48px;
+                }
+
+                .grey-text {
+                    color: $black-wo;
+                    font-style: italic;
+                }
+
+                .italic-text {
+                    font-style: italic;
+                }
+
+                .report-checkbox {
+                    min-width: 120px;
+                    font-size: 13px;
+                    outline: none;
+                }
+
+
+            }
+
+            .dot {
+                border-radius: 50%;
+                display: inline-block;
+                height: 8px;
+                margin-right: 6px;
+                width: 8px;
+
+                &.green-dot {
+                    background-color: $green;
+                }
+
+                &.orange-dot {
+                    background-color: $yellow;
+                }
+
+                &.blue-dot {
+                    background-color: $blue;
+                }
+
+                &.pink-dot {
+                    background-color: $red-light;
+                }
+
+                &.red-dot {
+                    background-color: $red;
+                }
+
+                &.grey-dot {
+                    background-color: $black-wo;
+                }
+            }
+            }
+        }
+
+        .root-form-wrapper-client {
+            background-color: #ffffff;
+            min-height: 450px;
+            //margin: 30px 0;
+
+            .information-form-header {
+               background-color: #F1F1F1;
+               @include flex-row;
+               justify-content: space-between;
+
+               .left-wrap {
+                   padding: 0 24px;
+
+                   .title {
+                       @include font-size(14);
+                       font-weight: $bold;
+                   }
+               }
+
+               .right-wrap {
+
+                .icon-wrap {
+                    cursor: pointer;
+                    margin-right: 15px;
+
+                    .icon {
+                        @include font-size(25);
+                        vertical-align: middle;
+                    }
+                }
+
+                .btn-continue {
+                    border-radius: 0 2px 5px 0;
+                    height: 53px;
+                }
+               }
+            }
+        }
+       
+
+        .ant-menu-submenu-title {
+            padding: 0 16px !important;
+            font-size: 16px;
+            padding-left: 30px !important;
+            height: 50px;
+        }
+
+        .ant-steps-item {
+            padding: 16px 12px;
+            
+            &:first-child {
+                padding-top: 10px !important;
+            }
+        }
+
+        .ant-steps {
+            padding: 0px 18px !important;
+            padding-bottom: 0;
+
+            .ant-steps-item-title {
+                font-size: 14px;
+            }
+        }
+
+
+        .buttons-holder {
+            float: right;
+            @include flex-row;
+            align-items: flex-start;
+            width: 240px;
+
+            .field-wrapper {
+                display: inline-block;
+                width: 100%;
+                z-index: 1;
+
+                .btn-upload {
+                border-radius: 3px;
+                height: 35px;
+                width: 100%;
+                text-align: center;
+                padding: 0px;
+                }
+
+                .ant-upload {
+                width: 121px;
+                }
+
+            }
+
+            .btn-generate {
+
+                border-radius: 0px 3px 3px 0px;
+                background-color: $light-grey;
+                border: 1px solid $light-grey;
+                box-shadow: none;
+                color: $white;
+
+                @include font-size(14);
+                font-weight: $bold;
+                height: 35px;
+                outline: 0;
+                opacity: 1;
+                position: absolute;
+                right: 0;
+                text-transform: capitalize;
+                z-index: 10;
+                width: 120px;
+
+                .icon {
+                margin-right: 3px;
+                }
+            }
+
+            .resource-wrapper {
+                clear: both;
+
+
+                .resource-name {
+                width: 200px !important;
+                }
+
+            }
+            }
+
+        .custom-text {
+            font-size: 14px;
+        }
+
+        .menu-text {
+            color: $black !important;
+            @include font-size(14);
+        }
+    }
+
+    .select-width {
+        width: 170px;
+    }
+
+    .doc-preview-container {
+        margin: 0;
+    }
+}
+.abort-popup{
+    cursor: pointer;
+}
+
+.input-title {
+    @include font-size(14);
+    color: $black;
+}
+
+.card-wrapper {
+    border: none;
+    margin: 0 0!important;
+}
+.unordered-list-style{
+    list-style-type: none;
+    padding-left: 0px;
+}
+
+.clickable-icon{
+    padding-left: 5px;
+    padding-right: 5px;
+    cursor: pointer;
+    height: 15px;
+    margin-right: -15px;
+}
+.subFileType-dropdown {
+    width: 200px;
+    padding-right: 20px;
+
+}
+
+.btn-min-width {
+    min-width: 130px;
+}
+

@@ -1,0 +1,296 @@
+.portfoloio-wrapper {
+  padding: 30px 0;
+
+  .mb-30 {
+    margin-bottom: 30px;
+
+    @include desktop {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }  
+  }
+
+  .header {
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+
+    .title {
+      color: $black;
+      font-size: 25px;
+      font-weight: $bold;
+    }
+
+    .close-wrap {
+      font-weight: 500;
+      font-size: 14px;
+      color: #ed2121;
+      cursor: pointer;
+
+      .icon {
+        margin-right: 5px;
+        font-size: 14px;
+      }
+    }
+
+    .icon {
+      margin-right: 5px;
+      font-size: 18px;
+    }
+  }
+
+  .content {
+    .card {
+      background-color: $white;
+      border-radius: 2px;
+      border: none;
+      color: $black;
+      padding: 0;
+      text-align: left;
+
+      .card-header {
+        background: transparent;
+        border-bottom: 1px solid #dedede;
+        padding: 14px 25px;
+        @include flex-row;
+        justify-content: space-between;
+        align-items: center;
+
+        .title {
+          font-size: 15px;
+          color: $black;
+          font-weight: $bold;
+        }
+
+        .right-title {
+          color: #ff0000;
+          font-size: 11px;
+          font-weight: 500;
+        }
+
+        &.grey-bg {
+          background-color: #f1f1f1;
+        }
+      }
+
+      .card-content {
+        .chart-wrapper {      
+
+          .chart-title {
+            color: #498fe4;
+            font-size: 14px;
+            font-weight: $bold;
+
+            .light-text {
+              font-weight: lighter !important;
+            }
+          }
+
+          @include desktop {
+            height: calc(100% - 55px) !important;
+          }
+        }
+
+        .chart-wrapper label {
+          color: #0099cc;
+          font-weight: bold;
+          font-size: 14px;
+        }
+
+        .content {
+          padding: 20px;
+          font-size: 14px;
+
+          &.special-content {
+            padding-top:10px;
+            padding-bottom: 0;
+          }
+
+          .input-row {
+            margin-bottom: 20px;
+
+            .input-wrapper {
+              .prefix {
+                font-size: 13px;
+                color: $black-wo;
+                left: 20px;
+                line-height: 0;
+                position: absolute;
+                top: 18px;
+                z-index: 2;
+              }
+
+              .suffix {
+                font-size: 13px;
+                color: $black-wo;
+                right: 20px;
+                line-height: 0;
+                position: absolute;
+                top: 18px;
+                z-index: 2;
+              }
+
+              .input-field {
+                padding: 0 20px;
+              }
+
+              .button-group {
+                background-color: $white;
+                border-radius: 5px;
+                border: 1px solid $light-grey;
+
+                color: $black-wo;
+                cursor: pointer;
+                display: inline-block;
+                flex: 0 0 auto;
+                text-align: center;
+
+                font-size: 14px;
+
+                margin-bottom: 0;
+                outline: none;
+                overflow: hidden;
+                text-transform: none;
+                width: 50%;
+                text-align: center;
+                padding: 8px 15px;
+
+                &.active {
+                  background-color: $blue;
+                  border: 1px solid $blue;
+                  color: $white;
+                }
+
+                &.disabled {
+                  background-color: $light-grey;
+                  border: 1px solid $light-grey;
+                  color: $white;
+                }
+
+                .button-icon {
+                  margin-right: 8px;
+                }
+
+                &:first-letter {
+                  text-transform: uppercase;
+                }
+
+                input {
+                  display: none;
+                }
+
+                &:nth-child(1) {
+                  border-radius: 2px 0 0 2px;
+                  border-right: none;
+                }
+
+                &:nth-child(2) {
+                  border-radius: 0 2px 2px 0;
+                }
+              }
+            }
+
+            .ant-input {
+              font-size: 14px;
+              padding: 4px 14px;
+            }
+
+            @include desktop {
+              padding: 0;
+            }
+          }
+
+          .button-wrap {
+            .btn-alayse {
+              width: 48%;
+              height: 40px;
+              font-size: 14px;
+              padding: 0px 5px !important;
+            }
+
+            .btn-apply {
+              width: 48%;
+              height: 40px;
+              font-size: 14px;
+              margin-right: 10px;
+              padding: 0px 5px !important;
+            }
+
+            .fa-spin {
+              margin-left: 10px;
+            }
+          }
+
+          .reject-icon-wrap {
+            margin-top: 10px;
+            font-size: 13px;
+            display: flex;
+
+            .icon {
+              padding-left: 10px;
+              color: #1899cc;
+              font-size: 1.125em;
+              margin-right: 10px;
+              vertical-align: middle;
+            }
+          }
+
+          &.border-content {
+            border-top: 1px solid #dedede;
+          }
+
+          &.radio-content {
+            padding-bottom: 10px !important;
+
+            .title {
+              font-size: 14px;
+              font-weight: $medium;
+              display: block;
+              margin-bottom: 10px;
+            }
+
+            .radio-wrap {
+              @include flex-row;
+              justify-content: space-between;
+
+              .ant-radio-wrapper {
+                font-size: 14px;
+                margin-bottom: 10px;
+                width: 46%;
+              }
+            }
+          }
+
+          .blue-wrapper {
+            border: 1px solid #498fe4;
+            color: #498fe4;
+            background-color: #ecf4fc;
+            border-radius: 4px;
+            padding: 20px;
+
+            .btn-wrapper {
+              text-align: center;
+
+              .btn-back {
+                border: 1px solid #498fe4;
+                border-radius: 3px;
+                background-color: $white;
+                font-size: 14px;
+                width: 100%;
+                height: 40px;
+                margin-top: 20px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .loading-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

@@ -1,0 +1,95 @@
+.solution-wrap {
+    padding: 60px 0;
+    @include mobile{
+        padding: 32px 16px;
+    }
+    text-align: center;
+     
+    .card-row {
+        margin-top: 32px;
+        @include flex-row; 
+        justify-content: space-between;   
+  
+        .card-col{
+            width: 31%;
+
+            .card {
+                border-radius: 4px;
+                border: 1px solid #eeeeee;
+                cursor: pointer;
+                overflow: hidden;
+                min-height: 365px;
+
+                .ant-card-body {
+                    padding: 24px;
+                }
+
+                &:hover {
+                    box-shadow: 0 2px 39px 0 rgba(0, 0, 0, 0.11);
+
+                    .image {
+                        transform: scale(1.03);
+                        transition: 0.25s ease-in-out;
+                    }
+                }
+
+                .card-title {
+                    color: $black;
+                    @include font-size(20);
+                    font-weight: $bold;
+                    height: 45px;
+                    line-height: 1.1;
+                    margin-bottom: 12px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .card-description {
+                    color: $black-wo;
+                    @include font-size(13);
+                    font-weight: $medium ;
+                    line-height: 20px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    .text-link {
+                        color: $blue;
+                    }
+                }
+
+                .card-data {
+                    text-align: left;
+                }
+
+                @include mobile {
+                    margin-bottom: 30px;
+                    min-height: 300px;
+                }
+
+                @include tablet-portrait{ 
+                    margin-bottom: 30px;
+                    min-height: 340px;
+                }
+
+                @include tablet-landscape {
+                    min-height: 340px;
+                }
+            } 
+            
+            @include mobile{
+                width: 100%;
+            }
+
+            @include tablet-portrait{
+                width: 47%;
+            }
+        }
+    }
+
+    .section-title {
+        color: $black;
+        @include font-size(30);
+        font-weight: $bold;
+    }
+}
+   

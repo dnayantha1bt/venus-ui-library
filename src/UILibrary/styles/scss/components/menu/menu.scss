@@ -1,0 +1,19 @@
+&.menu-item-wrapper {
+    .fa-icons {
+        margin-right: 9.6px;
+    }
+
+    .menu-item {
+       color: $black-wo;
+       @include font-size(14);
+       
+       &:active {
+          color: $black;
+       }
+
+       &:hover {
+          color: $black;
+       }
+    }
+}
+

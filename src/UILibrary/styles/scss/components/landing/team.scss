@@ -1,0 +1,65 @@
+.team-wrap {
+    padding: 60px 0;
+    text-align: center;
+    background-color: $blue;
+    color: $white !important;  
+ 
+    .member-inline {
+        cursor: pointer;
+        display: inline-block;
+        padding: 16px 64px;
+        text-align: center;
+
+        .image {
+          border-radius: 50%;
+          margin: 0 auto;
+          width: 160px;
+
+          @include mobile {
+            width: 100px;
+          }
+        }   
+
+        .member-name {
+          color: $white;
+          @include font-size(18);
+          font-weight: $medium;
+          margin-top: 10px;
+          margin-bottom: 0;
+          text-align: center;
+        }
+        
+        .member-position {
+          color: $white-wo;
+          @include font-size(13);
+          font-weight: $medium;
+          margin-bottom: 48px;
+        }
+
+        @include mobile {
+          padding: 5px 33px;
+        }
+
+        @include tablet-portrait {
+          padding: 5px 28px;
+        }
+
+    }
+
+    .section-title {
+        color: $white !important;
+        @include font-size(30);
+        font-weight: $bold;
+    }
+
+    .section-subtitle {
+        color: $white-wo !important;
+        @include font-size(15);
+        font-weight: $medium;
+    }
+
+    .team-member {
+        margin-top: 32px;
+    }
+
+}

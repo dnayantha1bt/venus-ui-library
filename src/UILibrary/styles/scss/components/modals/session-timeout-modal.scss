@@ -1,0 +1,59 @@
+&.session-modal {
+  .ant-modal-body {
+    padding: 0;
+    font-size: 16px;
+  }
+
+  .session-modal-wrapper {
+    padding: 30px 20px;
+  }
+
+  .footer {
+    @include font-size(14);
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: right;
+
+    .btn-blue {
+      cursor: pointer;
+      @include font-size(14);
+      margin-left: 20px;
+      padding: 10px 30px;
+    }
+  }
+  .user-form-modal-footer {
+    align-items: center;
+  }
+
+  .body {
+    color: $black;
+
+    .title {
+      font-size: 16px;
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    .content {
+      @include font-size(14);
+      text-align: left;
+    }
+
+    .counter-time {
+      @include font-size(30);
+      text-align: center;
+      font-weight: $bold;
+    }
+  }
+}
+
+&.graph-warning-modal {
+  .ant-btn-primary {
+      color: $white !important;
+      font-weight: $bold;
+  }
+
+  .ant-modal-confirm-title {
+    font-size: 15px;
+  }
+}

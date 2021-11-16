@@ -1,0 +1,54 @@
+.information-navigator {
+    margin: 30px 0;
+
+    .card-wrap {
+        border: none;
+        background-color: $white;
+        min-height: 303px;
+
+        .header {
+            padding: 16px;
+            border-bottom: 1px solid $light-grey;
+
+            .title {
+                color: $black;
+                @include font-size(16);
+                font-weight: $bold;
+                text-transform: capitalize;
+            }
+        }
+
+        .icon {
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    }
+    
+ }
+
+ .anticon {
+    vertical-align: middle;
+    height: auto;
+    width: 14px;
+
+    // svg {
+    //     height: auto;
+    //     width: auto;
+    // }
+ }
+
+ .ant-menu-inline, .ant-menu-vertical, .ant-menu-vertical-left {
+    border-right: 0px; 
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: $blue;
+    color : $white;
+}
+
+.ant-menu-inline .ant-menu-item:after,
+ .ant-menu-vertical-left .ant-menu-item:after,
+ .ant-menu-vertical-right .ant-menu-item:after, 
+ .ant-menu-vertical .ant-menu-item:after {
+    border-right: 0px; 
+ }

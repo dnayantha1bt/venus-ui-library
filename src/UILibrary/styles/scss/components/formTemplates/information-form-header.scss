@@ -1,0 +1,85 @@
+.information-form-header{
+
+    border-bottom: 1px solid #dedede;
+    @include flex-row;
+    align-items: center;
+    justify-content: space-between;
+
+    .form-title {
+
+        color: $black;
+        @include font-size(14);
+        font-weight: $bold;
+        margin-bottom: 0;
+        text-align: left;
+        padding: 0 11px 0 16px;
+        float: left;
+
+
+        @include mobile {
+            width: 100%;
+            margin: 16px 0;
+        }
+
+    }
+
+    .form-action-wrapper {
+        text-align: right;
+        float: right;
+        height: 57px;
+
+        .btn-outline {
+            outline: 0;
+            box-shadow: none;
+            height: 100%;
+            @include font-size(14);
+            margin-right: 5px;
+            text-transform: capitalize;
+
+            .fa-icon {
+                margin-right: 5px;
+            }
+
+            &:hover {
+                outline: 0;
+            }
+        }
+
+        .btn-download {
+            color: $blue;
+        }
+
+        .btn-red {
+            min-width: 110px;
+            padding: 6px 19px;
+        }
+
+        .btn-green {
+            min-width: 110px;
+            padding: 6px 19px;
+        }
+
+        .btn-submit {
+            height: 100%;
+            border-radius: 1px;
+        }
+
+ 
+        .btn-add{
+
+            margin: 12px;
+
+            .fa-icon{
+                margin-right: 5px;
+            }
+        }       
+ 
+        @include mobile { 
+            width: 100%;
+            height: auto;
+        
+        }
+    
+
+    }
+}

@@ -1,0 +1,66 @@
+&.alert-holder{
+
+        padding: 0;
+
+        .alert-header-wrapper {
+            border-bottom: 1px solid $light-grey;
+            padding: 20px;
+
+            .title {
+                @include font-size(16);
+                font-weight: $bold;
+                margin-bottom: 0;
+                text-align: left;
+                // text-transform: uppercase;
+                color: $black;
+            }
+        }
+
+
+        .alert-body-wrapper {
+          padding: 20px 20px 0px;
+            color: $black;
+
+              .message {
+                @include font-size(14);
+                color: $black;
+              }
+
+              .alert-input-field {
+                  box-shadow: none;
+                  border: 1px solid $light-grey;
+                  color: $black;
+
+                  @include font-size(14);
+                  height: 35px;
+                  outline: none;
+
+                  &:hover{
+                    border: 1px solid $light-grey;
+                  }
+
+              }
+
+              .has-error {
+                color: $red;
+                @include font-size(12);
+              }
+
+        }
+
+        .alert-actions-wrapper {
+            padding: 20px;
+            text-align: right;
+
+            .btn-happy {
+               margin-left: 10px;
+            }
+        }
+
+        .ant-modal-body {
+            padding: 0;
+        }
+
+}
+
+

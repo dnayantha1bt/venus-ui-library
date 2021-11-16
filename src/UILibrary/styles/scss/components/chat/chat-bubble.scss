@@ -1,0 +1,22 @@
+.chat-bubble-wrapper {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;  
+   
+    @include flex-row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: $dark-blue;
+    box-shadow: 0 1px 6px rgba(0,0,0,.1), 0 2px 24px rgba(0,0,0,.2);
+    border-radius: 50%;  
+    cursor: pointer;
+    height: 50px;
+    transition: box-shadow .1s ease-in-out;
+    width: 50px;
+
+    .comment-icon {
+        color: $white;
+        @include font-size(24);
+    }
+  }

@@ -1,0 +1,55 @@
+&.login-modal {    
+        .ant-modal-body {
+         padding: 0;
+        }
+
+        .login-content {
+            padding: 19.2px;
+        }
+
+        .image-row {
+            border-bottom: 1px solid $light-grey;
+            padding: 16px;
+            text-align: center;
+        }
+
+        .login-footer {
+            text-align: center;
+            @include font-size(14);
+            margin-top: 6.4px;
+        }
+
+        .login-title {
+            font-weight: $bold;
+            text-align: left;
+            @include font-size(16);
+            margin-bottom: 19.2px;
+            color: $black;
+        }
+        
+        .text-link {
+            color: $blue;
+            cursor: pointer;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        .text-signup {
+          margin-left: 4.8px;
+          display: inline-block;
+        }
+
+        .forgot-password {
+            padding: 19.2px;
+            
+        }
+
+        .forgot-password .forgot-text {
+            @include font-size(14);
+            text-align: left;
+        }
+}
+
+

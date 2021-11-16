@@ -1,0 +1,35 @@
+.pdf-viewer-container {
+  @include flex-column;
+  flex-grow: 1;
+  background-color: $black-wo;
+  padding: 12px 0;
+  margin: 24px;
+  overflow: hidden;
+
+  .loading-container {
+    height: 600px;
+  }
+
+  .document-wrapper {
+    height: 600px;
+  }
+
+  .document-page {
+    margin-bottom: 6px;
+  }
+
+  .doc-preview-container {
+    margin: 0 !important;
+  }
+}
+
+.loading-pdf-viewer-container {
+  @include flex-column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  background-color: $white;
+  padding: 80px 12px 0 12px;
+  overflow: hidden;
+  overflow-y: auto;
+  height: 600px;
+}

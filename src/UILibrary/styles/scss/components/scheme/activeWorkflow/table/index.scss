@@ -1,0 +1,166 @@
+.activeWorkflowWrapper {
+    padding-bottom: 30px;
+    
+    .ant-table-tbody {
+      overflow-y: scroll;
+    }
+    .card-wrapper {
+      margin-top: 0px;
+    }
+
+    .sponser-wrapper {
+      padding: 25px 35px;
+    }
+
+    .active-heading {
+        font-size: 14px;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+
+    .ant-table-body > table {
+      border: thin solid $gray-wo;
+    }
+
+    .ant-table-thead > tr > th {
+      background: $gray-wo;
+      color: $black;
+      font-weight: $bold;
+      @include font-size(14);
+    }
+
+    .ant-table-tbody > tr > td {
+      border-bottom: none;
+      @include font-size(14);
+      max-width: 100px;
+      min-width: 100px;
+
+      .delete-text {
+        color: $red;
+      }
+
+      .update-text {
+        color: $green;
+      }
+
+      &.scheme-name {
+        max-width: 200px;
+        min-width: 200px;
+      }
+    }
+
+    .padding-wrap {
+      padding: 10px 30px 20px 30px;
+    }
+
+    .fma-table {
+      .manual-column {
+        .ant-select {
+            min-width: 140px;
+        }
+      }
+    }
+
+    .fma-title {
+      font-size: 14px;
+      font-weight: $bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+
+    .request-return-wrpper {
+        margin: 20px auto;
+        max-width: 70%;
+
+        .flex-wrape {
+          @include flex-row;
+          flex-wrap: nowrap;
+        }
+    }
+
+    .ant-steps-item{
+      cursor: pointer;
+      height: auto;
+      padding: 12px 24px;
+
+      .ant-steps-item-content {
+          min-height: auto;
+      }
+
+      &:last-child {
+          border-bottom: none;
+      }
+  }
+
+  .ant-steps-item-finish .ant-steps-item-icon > .ant-steps-icon {
+      color: $green;
+  }
+
+  .ant-steps-item-custom.ant-steps-item-process .ant-steps-item-icon > .ant-steps-icon {
+      color: $green;
+  }
+
+  .ant-steps-item-finish > .ant-steps-item-tail:after {
+      background-color: $green;
+  }
+
+  .ant-steps-vertical.ant-steps-small .ant-steps-item-tail {
+      left: 34px;
+
+      &::after {
+        width: 2px;
+        height: 276%;
+      }
+  }
+
+  .ant-menu-submenu-arrow {
+    right: 24px !important;
+  }
+
+  .funding-trigger-table {
+    margin-bottom: 20px;
+
+    .btn-add {
+      height: 40px;
+      vertical-align: middle;
+      width: 100px;
+      padding: 0;
+      font-weight: $bold;
+  
+      .anticon {
+        vertical-align: middle;
+        line-height: 0;
+        margin: 0;
+      } 
+    
+    }
+  
+    .delete-text {
+      color: $red;
+      font-weight: 500;
+    }
+
+    .date-column {
+      min-width: 120px;
+      max-width: 120px;
+      text-align: left !important;
+    }
+
+    .ant-table-body {
+      color: $black;
+  
+      .text-grey {
+        color: $black-wo;
+      }
+  
+      th {
+        text-align: center;
+      }
+  
+      tr {
+        text-align: center;
+      }
+    }
+  }
+  
+}

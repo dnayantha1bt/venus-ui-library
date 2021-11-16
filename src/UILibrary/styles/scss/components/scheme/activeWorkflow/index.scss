@@ -1,0 +1,29 @@
+@import 'requestToCancel/index';
+@import 'table/index';
+
+.active-workflow-menu-spin {
+  padding: 5px 25px;
+}
+
+.tsk-image {
+  height: 100%;
+  width: 20px;
+}
+
+.ant-step-cursor {
+  cursor: pointer;
+}
+
+.empty-view-container {
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .empty-view {
+
+    .ant-empty-description {
+      margin: 0px !important;
+    }
+  }
+}

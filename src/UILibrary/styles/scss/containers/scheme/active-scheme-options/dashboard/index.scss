@@ -1,0 +1,361 @@
+.active-dashboard-section {
+
+  .header-section {
+    padding: 30px 0;
+    padding-bottom: 20px;
+    @include flex-row;
+    align-items: center;
+
+    .btn-chart {
+      margin-left: 10px;
+
+      @include mobile {
+        margin-top: 20px;
+      }
+    }
+
+    .info-icon {
+      color: $blue;
+      cursor: pointer;
+      @include font-size(20);
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+
+    .btn-rearrange {
+      color: $black-wo;
+      cursor: pointer;
+      @include font-size(15);
+      float: right;
+      flex: auto;
+      text-align: right;
+
+      .arrange-icon {
+        margin-right: 10px;
+      }
+
+      @include desktop {
+        margin-top: 10px;
+      }
+
+      @include mobile {
+        margin-bottom: 20px;
+      }
+    }
+
+    .filter-input {
+      input {
+          padding-left: 3px;
+          padding-right: 3px;
+      }
+
+      label {
+        color: $black;
+        @include font-size(14);
+        margin: 0;
+        padding-right: 0;
+        font-weight: $bold;
+        display: block;
+        margin-bottom: 5px;
+      }
+
+      .range-picker-container {
+        margin-right: 10px;
+
+        @include mobile {
+          &:last-child {
+            margin-right: 0;
+          }
+        }
+      }
+
+      .daterange-picker  {
+        height: 32px;
+        width: 200px;
+        margin-bottom: 10px;
+
+        @include mobile {
+          width: 100%;
+          min-width: 100%;
+        }
+      }
+
+      .flex-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .btn-wrapper {
+          display: block;
+          margin-right: 10px;
+
+           .btn-download-separate {
+              margin-right: 0px !important;
+
+              @include mobile {
+                width: 100% !important;
+              }
+            }
+
+          .btn-grp {
+            text-align: center;
+            padding: 0;
+            margin-bottom: 10px;
+
+            &.btn-generate {
+               border-radius: 5px 0 0 5px;
+               height: 32px;
+               width: 128px;
+
+               @include mobile {
+                 width: 76%;
+                 min-width: 50%;
+               }
+            }
+
+            &.btn-dwld {
+              border-radius: 0 5px 5px 0;
+              height: 32px;
+              width: 45px;
+
+              @include mobile {
+                width: 23%;
+                min-width: 50%;
+              }
+            }
+          }
+
+          @include desktop {
+            display: inline-block;
+            margin-top: 5px;
+          }
+
+          @include tablet-landscape {
+            display: inline-block;
+            margin-top: 5px;
+          }
+
+          @include mobile {
+            width: 50%;
+            margin-right: 10px;
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+
+        @include desktop {
+          display: inline-block;
+        }
+
+        @include tablet-landscape {
+          display: inline-block;
+        }
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    @include mobile {
+      justify-content: center;
+      flex-wrap: wrap-reverse;
+    }
+
+  }
+
+  .dashboard-card {
+    border: none;
+    height: 400px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &.dashboard-card-list {
+      height: 800px;
+      margin-top: 30px;
+
+      .abs {
+        position: absolute;
+        pointer-events: none;
+      }
+
+      .top-left {
+        left: 0;
+        top: 0;
+        width: 552px;
+        height: 320px;
+        // border-left: 1px solid #ccc;
+        // border-top: 1px solid #ccc;
+      }
+
+      .top-left::before {
+        position: absolute;
+        left: 10px;
+        top: 4px;
+        content: 'Page 1';
+      }
+
+      .top-right {
+        right: 0;
+        top: 0;
+        width: 552px;
+        height: 320px;
+        // border-right: 1px solid #ccc;
+        // border-top: 1px solid #ccc;
+      }
+
+      .top-right::before {
+        position: absolute;
+        right: 10px;
+        top: 4px;
+        content: 'Page 2';
+      }
+
+      .bottom-left {
+        left: 0;
+        bottom: 0;
+        width: 552px;
+        height: 320px;
+        // border-left: 1px solid #ccc;
+        // border-bottom: 1px solid #ccc;
+      }
+
+      .bottom-left::before {
+        position: absolute;
+        bottom: 4px;
+        left: 10px;
+        content: 'Page 3';
+      }
+
+      .bottom-right {
+        right: 0;
+        bottom: 0;
+        width: 552px;
+        height: 320px;
+        // border-right: 1px solid #ccc;
+        // border-bottom: 1px solid #ccc;
+      }
+
+      .bottom-right::before {
+        position: absolute;
+        bottom: 4px;
+        right: 10px;
+        content: 'Page 4';
+      }
+    }
+
+    .title {
+      color: $black;
+      @include font-size(14);
+      font-weight: $bold;
+    }
+
+    .graph-container-wrap {
+      width: 100%;
+      margin: 0 auto;      
+      flex: 1;
+      align-items: center;
+
+      .base-chart-content {
+        border: none !important
+      }
+    }
+
+    .chart-box {
+      width: 276px;
+      height: 160px;
+      position: absolute;
+    }
+
+    @include mobile {
+      height: 100%;
+    }
+  }
+
+  .range-picker-container {    
+
+    @include mobile {
+       margin-bottom: 10px;
+       display: block;
+
+       label {
+         min-width: 120px;
+      }
+    }
+    
+    @include tablet-portrait {
+      margin-bottom: 10px;
+      display: block;
+
+      label {
+        min-width: 120px;
+     }
+    }
+    
+  }
+
+  .custom-dashboard-card {
+    border: 1px solid $light-grey;
+    border-radius: 0;
+    margin: 5px;
+
+    .custom-graph-container {
+      margin: 10px auto;
+      overflow: hidden;
+      height: 90px;
+
+      .img {
+        width: 140px;
+
+        @include tablet-portrait {
+          width: 100px;
+        }
+      }
+    }
+
+    .img-footer {
+      border-top: 1px solid $light-grey;
+      padding: 6px 8px;
+      text-align: center;
+      cursor: move;
+
+      .title {
+        color: $black;
+        @include font-size(14);
+        font-weight: $regular;
+        margin-left: 10px;
+      }
+
+      .icon {
+        color: $light-grey;
+        @include font-size(19);
+        float: left;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .chart-wrapper{
+    background-color: white;
+  }
+
+  .chart-wrapper label {
+    color: #0099CC;
+    font-weight: bold;
+    font-size: 14px;
+    position: absolute;
+    top: -35px;
+    background-color: #ffffff;
+    width: 100%;
+    right: 0;
+    padding: 20px;
+    padding-bottom: 0;
+  }
+
+  .custom-dashboard-wrap {
+    margin: 35px 0 !important;
+  }
+
+}
+

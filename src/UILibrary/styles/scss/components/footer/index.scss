@@ -1,0 +1,110 @@
+.footer-wrap {
+    margin-top: 32px;
+
+    .footer-col{
+
+        .img-wrap {
+          text-align: center;
+        }
+
+        .footer-list {
+            list-style: none;
+            padding-left: 0;  
+            text-align: left;
+
+            .pd-0 {
+              padding-top: 0 !important;
+            }
+
+            .footer-items {      
+              color: $black-wo;
+              display: block;
+              @include font-size(14);
+              font-weight: $bold;
+              padding: 8px 0;
+
+              a {
+                color: $black-wo;
+                text-decoration: none;
+              }
+
+              &.custom-item {
+                padding: 2px 0 !important;
+              }
+            }
+    
+            .footer-heading {
+              color: $black;
+              @include font-size(14);
+              font-weight: $bold;
+              letter-spacing: 2px;
+              line-height: 2.57;
+
+              &.heading-contact {
+                line-height: 2 !important;
+              }
+            }
+        
+            @include mobile {
+              text-align: center;
+              margin: 0 auto;
+            }
+      
+            @include tablet-portrait {
+              text-align: left !important;
+            }
+        }
+
+        @include mobile {
+          margin-bottom: 16px;
+          text-align: center;
+        }
+
+        @include tablet-portrait {
+          margin-bottom: 24px;
+
+        }
+    }
+
+    .footer-main {
+        .footer-text {
+            color: $black-wo;
+            @include font-size(14);
+            margin-bottom: 0;
+            padding: 16px 0;
+            text-align: center;
+        }
+      
+        .blue-line {
+          background-color: $blue;
+          display: inline-block;
+          height: 3px;
+          width: 50%;
+        }
+        
+        .green-line {
+          background-color: $green;
+          display: inline-block;
+          height: 3px;
+          width: 25%;
+        }
+        
+        .red-line {
+          background-color: $red;
+          display: inline-block;
+          height: 3px;
+          width: 15%;
+        }
+        
+        .yellow-line {
+          background-color: $yellow;
+          display: inline-block;
+          height: 3px;
+          width: 10%;
+        }
+    }
+
+} 
+  
+
+    

@@ -1,0 +1,135 @@
+.proposal-information-section{
+
+    .loading-wrapper {
+        background-color: rgba(202, 202, 202, 0.2);
+        height: 100%;
+        @include  flex-row;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        margin: 0 auto;
+        width: 100%;
+        z-index: 10;
+    }
+    
+    .input-field {
+        color: $black;
+        @include font-size(14);
+        height: 35px;
+        border: 1px solid $light-grey;
+
+        outline: none;
+        box-shadow: none;
+
+        @include placeholder {
+        color: $black-wo;
+        }
+
+        &.has-error {
+        border-color: $red;
+        }
+    }
+
+    .custom-input {
+        max-width: 208px !important;
+    }
+
+    .no-card-padding {
+        .ant-card-body {
+            padding: 0px !important;
+        }
+    }
+
+    &.information-update-wrapper {
+        .information-navigator {
+            min-height: 663px;
+            .card-wrap {
+                min-height: 663px;
+            }
+        }
+
+        .mt-30 {
+            margin-top: 30px;
+        }
+
+        .mt-20 {
+            margin-top: 20px;
+        }
+
+        .mb0 {
+            margin-bottom: 0 !important;
+        }
+
+        .mb-20 {
+            margin-bottom: 20px;
+        }
+
+        .mb-30 {
+            margin-bottom: 30px;
+        }
+
+        .mb-10 {
+            margin-bottom: 10px;
+        }
+
+        .mt-10 {
+            margin-top: 10px;
+        }
+
+        .mr0 {
+            margin-right: 0 !important;
+        }
+
+        .mr5 {
+            margin-right: 5px;
+        }
+
+        .mr20 {
+            margin-right: 20px;
+        }
+
+        .mr10 {
+            margin-right: 10px;
+        }
+
+        .pr10 {
+            padding-right: 10px;
+        }
+
+        .pr20 {
+            padding-right: 20px;
+        }
+
+        .pl20 {
+            padding-left: 20px;
+        }
+    
+        .btn-max-200 {
+            min-width: 130px;
+            max-width: 130px;
+            padding: 6px 12px;
+        }
+
+        .flex-row-wrap {
+            @include flex-row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+        }
+
+        .flex-row-fe {
+            @include flex-row;
+            flex-wrap: nowrap;
+            justify-content: flex-end;
+        }
+
+        .flex-row-sb {
+            @include flex-row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+        }
+
+        .empty-view-container {
+            min-height: 663px;
+        }       
+    }
+}

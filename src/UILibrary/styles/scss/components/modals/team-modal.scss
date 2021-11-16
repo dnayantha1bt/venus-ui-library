@@ -1,0 +1,79 @@
+&.team-modal {
+  width: 650px !important;
+
+  .member-inline {
+    cursor: pointer;
+    display: inline-block;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 0 32px;
+    text-align: center;
+
+    .image {
+      border-radius: 50%;
+      margin: 0 auto;
+      width: 160px;
+
+      @include mobile {
+        width: 100px;
+      }
+    }
+
+    .member-description {
+      @include font-size(13);
+    }
+
+    .member-name {
+      color: $black;
+      @include font-size(18);
+      font-weight: $medium;
+      margin-top: 10px;
+      margin-bottom: 0;
+      text-align: center;
+    }
+
+    .member-position {
+      color: $black-wo;
+      font-weight: $medium;
+      @include font-size(13);
+    }
+
+    .team-content {
+      @include flex-column;
+      align-items: center;
+    }
+
+    @include tablet-portrait {
+      margin: 0;
+      padding: 0;
+    }
+
+    @include mobile {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @include mobile {
+    width: auto;
+  }
+
+  @include tablet-portrait {
+    width: auto;
+  }
+}
+
+&.delete-modal {
+  .ant-modal-footer {
+    .ant-btn {
+      height: 40px;
+      min-width: 120px;
+
+      &.ant-btn-primary {
+        background-color: $red !important;
+        border: 1px solid $red !important;
+        color: $white;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+
+    .active-user-navigator {   
+        margin: 20px 0;
+     
+        .list-items {
+            cursor: pointer;
+            color: $black-wo;
+            @include font-size(14);
+            margin: 12px 0;
+            padding: 12px 24px;
+
+            &:hover{
+                background-color: $blue;
+                color: $white;
+            }
+
+            &.active{
+                background-color: $blue;
+                color: $white;
+            }
+
+
+            .list-item-title{
+                margin-left: 10px;
+            }
+
+        }
+    }
+   

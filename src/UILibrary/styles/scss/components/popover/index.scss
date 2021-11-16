@@ -1,0 +1,10 @@
+.ant-popover-inner-content {
+    padding: 0;
+
+    ul {
+        padding: 16px 32px;
+    }
+
+    @import "notification-popover";
+    @import "report-popover";
+}

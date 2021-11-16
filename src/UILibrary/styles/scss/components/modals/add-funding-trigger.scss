@@ -1,0 +1,60 @@
+&.add-trigger-modal {
+  .title {
+    font-weight: $bold;
+    text-align: left;
+    text-transform: uppercase;
+    @include font-size(14);
+    color: $black;
+    border-bottom: 1px solid $light-grey;
+    padding: 21px 30px;
+  }
+
+  .ant-modal-body {
+    padding: 0;
+
+    .form-body {
+      padding: 30px;
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
+  }
+
+  .ant-modal-footer {
+    border-top: none !important;
+    padding-bottom: 30px;
+    padding-top: 0;
+  }
+
+  .btn-create {
+    min-width: 122px;
+    border-radius: 3px;
+    font-weight: bold !important;
+    height: 40px;
+  }
+
+  .btn-cancel {
+    padding: 6px 30px;
+
+    color: $black;
+    @include font-size(14);
+    font-weight: $bold;
+    text-transform: capitalize;
+
+    background-color: $white;
+    border: 1px solid $light-grey !important;
+    margin-right: 10px;
+    height: 40px;
+  }
+}
+
+&.add-trigger-modal {
+  .modal-form-wrapper {
+    border-radius: 10px;
+  }
+}
+
+&.add-trigger-modal {
+  .modal-form-wrapper {
+    border-radius: 10px;
+  }
+}

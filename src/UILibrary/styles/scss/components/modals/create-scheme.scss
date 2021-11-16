@@ -1,0 +1,39 @@
+&.create-scheme-modal {  
+
+    .ant-modal-close-x {
+        line-height: 52px;
+        width: 70px;
+
+        .ant-modal-close-icon {
+            font-size: 14px;
+            color: $black;
+            font-weight: 900;
+        }
+    }
+    
+    .ant-modal-body {
+        padding: 0;
+    }
+
+   
+    .title {
+        border-bottom: 1px solid #dcdddf;
+        color: $black;
+        font-weight: $bold;
+        @include font-size(15);
+        margin-bottom: 0;
+        padding: 18px 30px;
+        text-align: left;
+    }
+
+    .create-scheme-form {
+        padding: 30px 30px;
+        padding-top: 0px;
+
+        .input-row {
+            margin-top: 15px !important;
+        }
+    }
+}
+
+
