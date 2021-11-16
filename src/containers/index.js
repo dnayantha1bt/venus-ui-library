@@ -5,7 +5,9 @@ import { AppstoreOutlined } from '@ant-design/icons';
 import SimpleForm from './simpleForm';
 import TabForm from './tabForm';
 import PickUsers from './pickUsers';
+import FileUploader from './fileUploader';
 import '../UILibrary/styles/scss/layout.scss';
+import connectApi from '../apis';
 
 const { SubMenu } = Menu;
 
@@ -21,6 +23,10 @@ const steps = [
     {
         key: '3',
         component: <PickUsers />
+    },
+    {
+        key: '4',
+        component: <FileUploader api={connectApi} />
     }
 ];
 
@@ -55,6 +61,7 @@ const Container = () => {
                                     <Menu.Item key="1">Simple Form</Menu.Item>
                                     <Menu.Item key="2">Tabs Form</Menu.Item>
                                     <Menu.Item key="3">User Selector</Menu.Item>
+                                    <Menu.Item key="4">File Uploader</Menu.Item>
                                 </SubMenu>
                             </Menu>
                         </Col>

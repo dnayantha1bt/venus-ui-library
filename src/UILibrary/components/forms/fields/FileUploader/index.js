@@ -3,12 +3,10 @@ import { Upload as AntUpload } from 'antd';
 import uuidv1 from 'uuid/v1';
 import _ from 'lodash';
 
-// import api from '../../../../../../middlewares/connectApi';
-
 import FileDownloader from '../FileDownloader';
 import CustomLoader from '../../../progressLoader';
 import NotificationHelper from '../../../../helpers/NotificationHelper';
-import constants from '../../../../constants';
+
 import {
     getSignUrlInProgress,
     getSignUrlSuccess,
@@ -16,6 +14,7 @@ import {
     uploadTOS3BucketSuccess
 } from './actions';
 
+import constants from '../../../../constants';
 import store from '../../../../../redux/store';
 // import AwsIotSingleton from '../../../../../../helpers/awsIot';
 
@@ -69,18 +68,21 @@ export default class FileUploader extends Component {
     async convertDocument(data) {
         const { privateBucketName, dstFilePath, key, tenant, templateKey } = data;
         try {
-            // await api.convertDocumentRequest({
-            //     tenant,
-            //     s3bucketurl: privateBucketName,
-            //     s3pathurl: dstFilePath,
-            //     fileName: key,
-            //     suffixFileName: templateKey === 'pmcProposal' ? 'pmc_1' : undefined
-            // });
+            const { options } = this.props;
+            const { api } = options;
+            await api.convertDocumentRequest({
+                tenant,
+                s3bucketurl: privateBucketName,
+                s3pathurl: dstFilePath,
+                fileName: key,
+                suffixFileName: templateKey === 'pmcProposal' ? 'pmc_1' : undefined
+            });
         } catch (error) {}
     }
 
     async handleUpload(file) {
         const { input, options } = this.props;
+        const { api } = options;
 
         let key = null;
 
@@ -100,20 +102,20 @@ export default class FileUploader extends Component {
         const bucketName = options.bucketName;
         try {
             store.dispatch(getSignUrlInProgress());
-            // const { data } = await api.getUploadUrl({ bucketName, filePath });
-            const { data } = {} // change
+            const { data } = await api.getUploadUrl({ bucketName, filePath });
 
             store.dispatch(getSignUrlSuccess());
             store.dispatch(uploadTOS3BucketInProgress());
             const url = data.content.url;
 
-            // await api.uploadFile({ file, url });
+            await api.uploadFile({ file, url });
             store.dispatch(uploadTOS3BucketSuccess());
 
             this.setState({ inProgress: false, status: 'success' }, () => {
                 input.onChange(filePath);
             });
         } catch (error) {
+            console.log('>>>>M', error)
             this.setState({ inProgress: false, status: 'error' }, () => {
                 input.onChange(null);
             });
@@ -161,23 +163,22 @@ export default class FileUploader extends Component {
                         templateKey
                     });
                 } catch (error) {}
-
-                // const { data } = await api.getGeneratedDocumentRequest({
-                //     dstBucketName: options.bucketName,
-                //     dstFilePath,
-                //     dstDocxFilename: key,
-                //     dstPdfFilename,
-                //     schemeId,
-                //     step,
-                //     flowKey,
-                //     tenant,
-                //     templateKey,
-                //     draftKey,
-                //     dataKey,
-                //     rest
-                // });
-
-                const { data } = {} // change
+                const { options } = this.props;
+                const { api } = options;
+                const { data } = await api.getGeneratedDocumentRequest({
+                    dstBucketName: options.bucketName,
+                    dstFilePath,
+                    dstDocxFilename: key,
+                    dstPdfFilename,
+                    schemeId,
+                    step,
+                    flowKey,
+                    tenant,
+                    templateKey,
+                    draftKey,
+                    dataKey,
+                    rest
+                });
 
                 if (
                     data &&
@@ -410,10 +411,11 @@ export class MultipleFileUploader extends FileUploader {
         const bucketName = options.bucketName;
 
         try {
-            // const { data } = await api.getUploadUrl({ bucketName, filePath });
-            const { data } = {} // change
+            const { options } = this.props;
+            const { api } = options;
+            const { data } = await api.getUploadUrl({ bucketName, filePath });
             const url = data.content.url;
-            // await api.uploadFile({ file, url });
+            await api.uploadFile({ file, url });
 
             this.setState({ inProgress: false, status: 'success' }, () => {
                 datam.push({ url: filePath, uid: file.uid });
