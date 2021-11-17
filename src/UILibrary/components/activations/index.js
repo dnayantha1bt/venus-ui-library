@@ -18,30 +18,34 @@ let CreateActivateSection = props => {
     return (
         <>
             <div className="lgim-styles-wrapper">
-                {activationType === ACTIVATION_TYPE_DEFAULT ? (
-                    <DefaultActivation {...props} />
-                ) : activationType === ACTIVATION_TYPE_USING_FORM ? (
-                    <CreateForm
-                        submitAction={STEP_ACTION_ACTIVATE}
-                        formFieldData={formFieldData}
-                        formFieldFunction={formFieldFunction}
-                        formHooks={formHooks}
-                        formName={formName}
-                        formType={FORM_TYPE_SINGLE_PAGE}
-                        options={options}
-                        {...props}
-                    />
-                ) : activationType === ACTIVATION_TYPE_USING_FORM_TABS ? (
-                    <CreateForm
-                        submitAction={STEP_ACTION_ACTIVATE}
-                        formTabs={formTabs}
-                        formHooks={formHooks}
-                        formName={formName}
-                        formType={FORM_TYPE_WITH_TABS}
-                        options={options}
-                        {...props}
-                    />
-                ) : null}
+                <section className="active-scheme-options">
+                    <div className="content clearfix">
+                        {activationType === ACTIVATION_TYPE_DEFAULT ? (
+                            <DefaultActivation {...props} />
+                        ) : activationType === ACTIVATION_TYPE_USING_FORM ? (
+                            <CreateForm
+                                submitAction={STEP_ACTION_ACTIVATE}
+                                formFieldData={formFieldData}
+                                formFieldFunction={formFieldFunction}
+                                formHooks={formHooks}
+                                formName={formName}
+                                formType={FORM_TYPE_SINGLE_PAGE}
+                                options={options}
+                                {...props}
+                            />
+                        ) : activationType === ACTIVATION_TYPE_USING_FORM_TABS ? (
+                            <CreateForm
+                                submitAction={STEP_ACTION_ACTIVATE}
+                                formTabs={formTabs}
+                                formHooks={formHooks}
+                                formName={formName}
+                                formType={FORM_TYPE_WITH_TABS}
+                                options={options}
+                                {...props}
+                            />
+                        ) : null}
+                    </div>
+                </section>
             </div>
         </>
     );
