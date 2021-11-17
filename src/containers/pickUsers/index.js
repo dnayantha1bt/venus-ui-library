@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import PickUsersComponent from '../../UILibrary/components/pickUsers';
 import data from './dataset.json';
+import constants from '../../UILibrary/constants';
+
+const { PICK_USER_TYPE_SIMPLE } = constants;
 
 const PickUsers = () => {
     const [dataset, setDataset] = useState();
@@ -16,6 +19,7 @@ const PickUsers = () => {
     return (
         <div className="lgim-styles-wrapper">
             <PickUsersComponent
+                pickUserType={PICK_USER_TYPE_SIMPLE}
                 iIconText={'Pick LGIM Directors'}
                 title={'Pick LGIM Directors'}
                 maxCount={2}
