@@ -4,27 +4,11 @@ import constants from '../../UILibrary/constants';
 import { Divider } from 'antd';
 
 const { FORM_TEMPLATES, FORM_FIELDS } = constants;
-const { FULL_CONTAINER, HALF_CONTAINER, ROW, FULL_VIEW_CONTAINER } = FORM_TEMPLATES;
-const { INPUT_FIELD, DATE_PICKER, ASSETS_VALUE_SEPARATOR } = FORM_FIELDS;
+const { FULL_CONTAINER, HALF_CONTAINER, ROW } = FORM_TEMPLATES;
+const { INPUT_FIELD, DATE_PICKER } = FORM_FIELDS;
 
 export const formFields = (props = {}) => {
     return [
-        {
-            type: FULL_VIEW_CONTAINER,
-            bool: true,
-            field: {
-                __order: 'a',
-                name: 'assets',
-                className: 'form-control',
-                component: ASSETS_VALUE_SEPARATOR,
-                options: {
-                    tabKey: 'assets',
-                    formName: props.formName,
-                    asyncFormData: props,
-                    currentAssetAT: 'simple'
-                }
-            }
-        },
         {
             type: FULL_CONTAINER,
             bool: true,

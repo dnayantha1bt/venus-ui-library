@@ -2,12 +2,15 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import { Menu, Row, Col } from 'antd';
 import { AppstoreOutlined } from '@ant-design/icons';
+
+import '../UILibrary/styles/scss/layout.scss'; // import scss from UILibrary
+
 import SimpleForm from './simpleForm';
 import TabForm from './tabForm';
 import PickUsers from './pickUsers';
 import FileUploader from './fileUploader';
-import '../UILibrary/styles/scss/layout.scss';
 import connectApi from '../apis';
+import ActiveMandate from './activeMandate';
 
 const { SubMenu } = Menu;
 
@@ -27,6 +30,10 @@ const steps = [
     {
         key: '4',
         component: <FileUploader api={connectApi} />
+    },
+    {
+        key: '5',
+        component: <ActiveMandate />
     }
 ];
 
@@ -62,6 +69,7 @@ const Container = () => {
                                     <Menu.Item key="2">Tabs Form</Menu.Item>
                                     <Menu.Item key="3">User Selector</Menu.Item>
                                     <Menu.Item key="4">File Uploader</Menu.Item>
+                                    <Menu.Item key="5">Active Mandate</Menu.Item>
                                 </SubMenu>
                             </Menu>
                         </Col>

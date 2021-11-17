@@ -1,5 +1,6 @@
 import React from 'react';
 import { formFields } from './formConfig';
+import { formFields2 } from './formConfig2';
 import CreateFormComponent from '../../UILibrary/components/forms';
 import constants from '../../UILibrary/constants';
 import { FORM_NAME, FORM_TITLE, REQUEST_A_FORMAL_PROPOSAL_FROM_US } from './constants';
@@ -29,7 +30,7 @@ const TabForm = props => {
             type: FORM_SECTION_INCLUDE_NEW,
             tabKey: 'tab2',
             tabName: 'Form 2',
-            formFieldFunction: formFields
+            formFieldFunction: formFields2
         }
     ];
 
