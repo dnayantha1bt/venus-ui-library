@@ -1,33 +1,22 @@
 import React from 'react';
 import { List, Avatar, Tooltip } from 'antd';
-import constants from '../../../constants';
 import _ from 'lodash';
-
-const { APPROVERS_SELECTION, SIGNATORIES_SELECTION } = constants;
 
 const SimplePickUsersContainer = props => {
     const {
         dataset = {},
         handleChangeDataset,
-        pickupType = APPROVERS_SELECTION,
         disabled,
         maxCount,
-        pickUserTitle,
         iIconText,
-        userType,
-        document
+        subPathToGet,
+        subPathToSet,
+        title
     } = props;
 
-    const datasetKey =
-        pickupType === APPROVERS_SELECTION
-            ? 'approvers'
-            : pickupType === SIGNATORIES_SELECTION
-            ? 'signatories'
-            : 'selectedUsers';
-
-    const handleChange = (type, anchor) => {
-        const typeKey = type === 'LGIM' ? 'admin' : type === 'clientTeam' ? type : type.toLowerCase();
-        const selectedPool = _.get(dataset, `${datasetKey}.${document}.${typeKey}`, []);
+    const handleChange = (anchor) => {
+        let _dataset = _.cloneDeep(dataset);
+        const selectedPool = _.get(_dataset, subPathToSet, []);
 
         const selectedUserIndex = selectedPool.findIndex(_u => _u.userId === anchor.userId);
         if (selectedUserIndex < 0) {
@@ -35,13 +24,13 @@ const SimplePickUsersContainer = props => {
             selectedPool.push(anchor);
         } else selectedPool.splice(selectedUserIndex, 1);
 
-        dataset[datasetKey] = dataset[datasetKey] || {};
-        dataset[datasetKey][document] = dataset[datasetKey][document] || {};
-        dataset[datasetKey][document][typeKey] = selectedPool;
-        handleChangeDataset(dataset);
+        let subPathToSetArr = subPathToSet.split('.');
+        subPathToSetArr = "["+subPathToSetArr.join('][')+"]"
+        _.setWith(_dataset, subPathToSetArr, selectedPool, Object);
+        handleChangeDataset(_dataset);
     };
 
-    const listUsers = (type, users, selectedList) => {
+    const listUsers = (users, selectedList) => {
         users.forEach(u => {
             const isSelectedUser = selectedList.find(_u => _u.userId === u.userId);
             if (isSelectedUser) u.isSelected = true;
@@ -82,7 +71,7 @@ const SimplePickUsersContainer = props => {
                             }
                             className={`btn-approval btn-${user.isSelected}`}
                             onClick={() => {
-                                handleChange(type, user);
+                                handleChange(user);
                             }}
                         >
                             {user.isSelected ? 'Deselect' : 'Select'}
@@ -96,12 +85,7 @@ const SimplePickUsersContainer = props => {
             <>
                 <div className="inner-header clearfix">
                     <label className="title">
-                        {/* Select {type} users for {pickupType === APPROVERS_SELECTION ? 'approval' : 'execution'} */}
-                        {pickupType === APPROVERS_SELECTION
-                            ? `Select ${type} users for approval`
-                            : pickUserTitle
-                            ? pickUserTitle
-                            : 'Select signatories'}
+                        {title}
                         {iIconText ? (
                             <Tooltip placement="top" title={iIconText}>
                                 <span className="i-icon">
@@ -128,30 +112,13 @@ const SimplePickUsersContainer = props => {
         );
     };
 
-    let lgimPool = _.get(dataset, `userPool.${datasetKey}.${document}.admin`, []);
-    let clientPool = _.get(dataset, `userPool.${datasetKey}.${document}.client`, []);
-    let clientTeamPool = _.get(dataset, `userPool.${datasetKey}.${document}.clientTeam`, []);
-
-    let lgimSelectors = _.get(dataset, `${datasetKey}.${document}.admin`, []);
-    let clientSelectors = _.get(dataset, `${datasetKey}.${document}.client`, []);
-    let clientTeamSelectors = _.get(dataset, `${datasetKey}.${document}.clientTeam`, []);
+    let userPool = _.get(dataset, subPathToGet, []);
+    let selectedUserPool = _.get(dataset, subPathToSet, []);
 
     return (
         <div className="users-for-approval-wrapper">
-            {lgimPool.length
-                ? !['client', 'clientTeam'].includes(userType)
-                    ? listUsers('LGIM', lgimPool, lgimSelectors)
-                    : null
-                : null}
-            {clientPool.length
-                ? !['admin', 'clientTeam'].includes(userType)
-                    ? listUsers('client', clientPool, clientSelectors)
-                    : null
-                : null}
-            {clientTeamPool.length
-                ? !['client', 'admin'].includes(userType)
-                    ? listUsers('clientTeam', clientTeamPool, clientTeamSelectors)
-                    : null
+            {userPool.length
+                ? listUsers(userPool, selectedUserPool)
                 : null}
         </div>
     );

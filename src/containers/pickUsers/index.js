@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PickUsersComponent from '../../UILibrary/components/pickUsers';
-import constants from '../../UILibrary/constants';
 import data from './dataset.json';
 
-const { PICK_USER_TYPE_SIMPLE, SIGNATORIES_SELECTION } = constants;
-
 const PickUsers = () => {
-    const [dataset, setDataset] = useState(data);
+    const [dataset, setDataset] = useState();
+
+    useEffect(() => {
+        setDataset(data);
+    }, []);
 
     const handleChangeDataset = (changedDataset, cb) => {
         setDataset({ ...dataset, ...changedDataset });
@@ -15,14 +16,13 @@ const PickUsers = () => {
     return (
         <div className="lgim-styles-wrapper">
             <PickUsersComponent
-                pickUserType={PICK_USER_TYPE_SIMPLE}
                 iIconText={'Pick LGIM Directors'}
-                userType={'admin'}
+                title={'Pick LGIM Directors'}
                 maxCount={2}
-                dataset={dataset}
-                pickupType={SIGNATORIES_SELECTION}
-                document={'IAA'}
                 handleChangeDataset={handleChangeDataset}
+                dataset={dataset}
+                subPathToGet={'userPool.signatories.IAA.admin'} // get data from dataset.userPool.signatories.IAA.admin
+                subPathToSet={'signatories.IAA.admin'}  // set data to dataset.signatories.IAA.admin
             />
         </div>
     );
