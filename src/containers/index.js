@@ -11,7 +11,7 @@ import PickUsers from "./pickUsers";
 import FileUploader from "./fileUploader";
 import connectApi from "../apis";
 import ActiveMandate from "./activeMandate";
-import NewForm from "./initialProposalDemo";
+import InitialProposalForm from "./initialProposalForm";
 
 const { SubMenu } = Menu;
 
@@ -38,7 +38,7 @@ const steps = [
   },
   {
     key: "6",
-    component: <NewForm />,
+    component: <InitialProposalForm />,
   },
 ];
 
@@ -79,7 +79,7 @@ const Container = () => {
                   <Menu.Item key="3">User Selector</Menu.Item>
                   <Menu.Item key="4">File Uploader</Menu.Item>
                   <Menu.Item key="5">Active Mandate</Menu.Item>
-                  <Menu.Item key="6">Initial proposal form (Demo)</Menu.Item>
+                  <Menu.Item key="6">Initial Proposal Form</Menu.Item>
                 </SubMenu>
               </Menu>
             </Col>

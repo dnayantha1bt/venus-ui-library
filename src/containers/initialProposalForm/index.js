@@ -3,6 +3,7 @@ import { formFields } from "./formConfig";
 import { formFields2 } from "./formConfig2";
 import { formFields3 } from "./formConfig3";
 import CreateFormComponent from "../../UILibrary/components/forms";
+import PickUsersContainer from "../../UILibrary/components/pickUsers";
 import constants from "../../UILibrary/constants";
 import data from "./dataset.json";
 import {
@@ -14,9 +15,6 @@ import {
   LIABILITIES_FORM_SECTION,
   REQUEST_A_FORMAL_PROPOSAL_FROM_US,
 } from "./constants";
-import { FORM_SECTION_INCLUDE_COMPONENT } from "../../UILibrary/constants/formConstants";
-import PickUsersContainer from "../../UILibrary/components/pickUsers";
-import { PICK_USER_TYPE_SIMPLE } from "../../UILibrary/constants/pickUserConstants";
 
 const {
   FORM_TYPE_WITH_TABS,
@@ -25,9 +23,11 @@ const {
   ON_SAVE_MESSAGE,
   ON_SUBMIT_MESSAGE,
   FORM_SECTION_INCLUDE_NEW,
+  FORM_SECTION_INCLUDE_COMPONENT,
+  PICK_USER_TYPE_SIMPLE
 } = constants;
 
-const NewForm = (props) => {
+const InitialProposalForm = (props) => {
   const formSubmit = (formData) => {
     console.log("formData", formData);
   };
@@ -105,4 +105,4 @@ const NewForm = (props) => {
   );
 };
 
-export default NewForm;
+export default InitialProposalForm;

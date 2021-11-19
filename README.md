@@ -1,6 +1,43 @@
-# Getting Started with Create React App
+# Getting Started with Venus UI Library
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1) Copy UILibrary folder to your working directory
+
+2) Import styles from UILibrary folder to your `App.js` e.x: `import "~/UILibrary/styles/scss/layout.scss";`
+
+3) Run the App `npm start`
+
+**Note: You need to have...**
+
+1) React `<17` (Recommended: `16.9.0`)
+
+2) Redux & Saga configured
+
+3) Following libraries installed in your project
+
+`@ant-design/icons: ^4.0.5,`
+`antd: 3.22.2,`
+`axios: ^0.24.0,`
+`bootstrap: ^4.3.1,`
+`connected-react-router: ^6.3.1,`
+`file-saver: ^2.0.1,`
+`font-awesome: ^4.7.0,`
+`history: ^4.7.2,`
+`lodash: ^4.17.15,`
+`moment: 2.24.0,`
+`node-sass: ^6.0.1,`
+`prop-types: ^15.7.2,`
+`react-google-recaptcha: ^1.0.5,`
+`react-number-format: ^4.0.7,`
+`react-redux: 7.1.0,`
+`react-router: ^4.3.1,`
+`redux: ^4.0.5,`
+`redux-form: ^8.1.0,`
+`redux-form-validators: ^3.3.2,`
+`redux-saga: ^1.0.1,`
+`reselect: ^4.0.0,`
+`uuid: ^3.4.0`
+
+<!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -67,4 +104,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 ### `npm run build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify) -->

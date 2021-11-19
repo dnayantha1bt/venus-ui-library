@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from "react-redux";
 import { Upload as AntUpload } from 'antd';
 import uuidv1 from 'uuid/v1';
 import _ from 'lodash';
@@ -26,7 +27,7 @@ const { INVALID_FILE_FORMAT, INVALID_FILE_SIZE, FILE_ALREADY_UPLOADED } = consta
  * generateoptions: loggedUser
  */
 
-export default class FileUploader extends Component {
+class FileUploader extends Component {
     state = {
         inProgress: false,
         generate_inProgress: false,
@@ -81,7 +82,7 @@ export default class FileUploader extends Component {
     }
 
     async handleUpload(file) {
-        const { input, options } = this.props;
+        const { input, options, getSignUrlInProgress, getSignUrlSuccess, uploadTOS3BucketInProgress, uploadTOS3BucketSuccess } = this.props;
         const { api } = options;
 
         let key = null;
@@ -101,21 +102,20 @@ export default class FileUploader extends Component {
         const filePath = options.url(...options.params, key, timeStamp);
         const bucketName = options.bucketName;
         try {
-            store.dispatch(getSignUrlInProgress());
+            getSignUrlInProgress();
             const { data } = await api.getUploadUrl({ bucketName, filePath });
 
-            store.dispatch(getSignUrlSuccess());
-            store.dispatch(uploadTOS3BucketInProgress());
+            getSignUrlSuccess();
+            uploadTOS3BucketInProgress();
             const url = data.content.url;
 
             await api.uploadFile({ file, url });
-            store.dispatch(uploadTOS3BucketSuccess());
+            uploadTOS3BucketSuccess();
 
             this.setState({ inProgress: false, status: 'success' }, () => {
                 input.onChange(filePath);
             });
         } catch (error) {
-            console.log('>>>>M', error)
             this.setState({ inProgress: false, status: 'error' }, () => {
                 input.onChange(null);
             });
@@ -391,7 +391,26 @@ export default class FileUploader extends Component {
             </div>
         );
     }
-}
+};
+
+const mapDispatchToProps = dispatch => {
+    return {
+        getSignUrlInProgress: () => {
+            dispatch(getSignUrlInProgress())
+        },
+        getSignUrlSuccess: () => {
+            dispatch(getSignUrlSuccess())
+        },
+        uploadTOS3BucketInProgress: () => {
+            dispatch(uploadTOS3BucketInProgress())
+        },
+        uploadTOS3BucketSuccess: () => {
+            dispatch(uploadTOS3BucketSuccess())
+        },
+    };
+};
+
+export default connect(null, mapDispatchToProps)(FileUploader);
 
 export class MultipleFileUploader extends FileUploader {
     state = {
