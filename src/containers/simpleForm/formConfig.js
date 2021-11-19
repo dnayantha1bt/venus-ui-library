@@ -19,7 +19,6 @@ export const formFields = (props = {}) => {
         className: "form-control",
         component: ASSETS_VALUE_SEPARATOR,
         options: {
-          // tabKey: 'assets',
           formName: props.formName,
           asyncFormData: props,
           currentAssetAT: "simple",
