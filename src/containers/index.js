@@ -11,7 +11,7 @@ import PickUsers from "./pickUsers";
 import FileUploader from "./fileUploader";
 import connectApi from "../apis";
 import ActiveMandate from "./activeMandate";
-import NewForm from "./newForm";
+import NewForm from "./initialProposalDemo";
 
 const { SubMenu } = Menu;
 
@@ -79,7 +79,7 @@ const Container = () => {
                   <Menu.Item key="3">User Selector</Menu.Item>
                   <Menu.Item key="4">File Uploader</Menu.Item>
                   <Menu.Item key="5">Active Mandate</Menu.Item>
-                  <Menu.Item key="6">New form</Menu.Item>
+                  <Menu.Item key="6">Initial proposal form (Demo)</Menu.Item>
                 </SubMenu>
               </Menu>
             </Col>
