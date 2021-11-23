@@ -22,6 +22,7 @@
 `file-saver: ^2.0.1,`
 `font-awesome: ^4.7.0,`
 `history: ^4.7.2,`
+`jszip: 3.1.5`
 `lodash: ^4.17.15,`
 `moment: 2.24.0,`
 `node-sass: ^6.0.1,`
@@ -35,7 +36,8 @@
 `redux-form-validators: ^3.3.2,`
 `redux-saga: ^1.0.1,`
 `reselect: ^4.0.0,`
-`uuid: ^3.4.0`
+`uuid: ^3.4.0,`
+`xlsx: ^0.14.2`
 
 <!-- This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

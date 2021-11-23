@@ -19,18 +19,20 @@ let CreateDownloadSection = props => {
 
     return (
         <>
-            {downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_SIMPLE && (formFieldData || formFieldFunction) ? (
-                <SimpleFormDataDownload {...props} />
-            ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_TABS && formTabs ? (
-                <TabFormDataDownload {...props} />
-            ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_SIMPLE_WITH_DATA_CHANGE &&
-              (formFieldData || formFieldFunction) ? (
-                <FormDataChangeAndDownload {...props} />
-            ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_SIMPLE_WITH_DATA_CHANGE && formTabs ? (
-                <FormTabDataChangeAndDownload {...props} />
-            ) : downloadType === DOWNLOAD_USING_DOCUMENT_LINK ? (
-                <DownloadUsingDocumentLink {...props} />
-            ) : null}
+            <div className="lgim-styles-wrapper">
+                {downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_SIMPLE && (formFieldData || formFieldFunction) ? (
+                    <SimpleFormDataDownload {...props} />
+                ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_TABS && formTabs ? (
+                    <TabFormDataDownload {...props} />
+                ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_SIMPLE_WITH_DATA_CHANGE &&
+                (formFieldData || formFieldFunction) ? (
+                    <FormDataChangeAndDownload {...props} />
+                ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_SIMPLE_WITH_DATA_CHANGE && formTabs ? (
+                    <FormTabDataChangeAndDownload {...props} />
+                ) : downloadType === DOWNLOAD_USING_DOCUMENT_LINK ? (
+                    <DownloadUsingDocumentLink {...props} />
+                ) : null}
+            </div>
         </>
     );
 };
