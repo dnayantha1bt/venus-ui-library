@@ -87,7 +87,14 @@ let SimpleForm = props => {
             return NotificationHelper.getInstance().error(errors.message);
         }
 
-        handleFormSubmit({ formData: data });
+        handleFormSubmit(
+            submissionType,
+            { formData: data },
+            () => {
+                handleSubmit(null);
+            },
+            message
+        );
     };
 
     const formHeaderProps = {

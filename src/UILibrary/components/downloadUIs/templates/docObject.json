@@ -1,0 +1,33 @@
+{
+    "ltaDocumentsPublished": "PB",
+    "sclDocumentsPublished": "PB",
+    "sclDocuments": "[{\"uid\":\"rc-upload-1604647455441-7\",\"url\":\"uploads/scheme/76b1ecb0-0dd1-11eb-be74-c982c8334218/scl/107c1490-2003-11eb-a568-034375f30439/advisoryreport_generate_76b1ecb0-0dd1-11eb-be74-c982c8334218_e57d0010-2002-11eb-a568-034375f30439.docx\",\"isPublished\":true}, {\"uid\":\"rc-upload-1604647455441-7\",\"url\":\"uploads/scheme/76b1ecb0-0dd1-11eb-be74-c982c8334218/scl/107c1490-2003-11eb-a568-034375f30439/advisoryreport_generate_76b1ecb0-0dd1-11eb-be74-c982c8334218_e57d0010-2002-11eb-a568-034375f30439.docx\",\"isPublished\":true}]",
+    "advisoryReport": {
+        "isPublished": true,
+        "lgimStatus": "A",
+        "clientStatus": "P",
+        "documentStatus": "PB",
+        "generate": true,
+        "url": "uploads/scheme/76b1ecb0-0dd1-11eb-be74-c982c8334218/advisoryReport/e57d0010-2002-11eb-a568-034375f30439/advisoryreport_generate_76b1ecb0-0dd1-11eb-be74-c982c8334218_e57d0010-2002-11eb-a568-034375f30439.docx",
+        "enableAppLgim": true
+    },
+    "ltaDocuments": "[{\"uid\":\"rc-upload-1604647455441-9\",\"url\":\"uploads/scheme/76b1ecb0-0dd1-11eb-be74-c982c8334218/lta/11ff0b10-2003-11eb-a568-034375f30439/advisoryreport_generate_76b1ecb0-0dd1-11eb-be74-c982c8334218_e57d0010-2002-11eb-a568-034375f30439.docx\",\"isPublished\":true}]",
+    "fmaDocument": {
+        "isPublished": false,
+        "lgimStatus": "P",
+        "clientStatus": "P",
+        "documentStatus": "G",
+        "generate": true,
+        "url": "uploads/scheme/76b1ecb0-0dd1-11eb-be74-c982c8334218/fma/fee44bd0-2002-11eb-a568-034375f30439/imadocument_generate_76b1ecb0-0dd1-11eb-be74-c982c8334218_fee44bd0-2002-11eb-a568-034375f30439.docx",
+        "enableAppLgim": true
+    },
+    "pmcProposal": {
+        "isPublished": false,
+        "lgimStatus": "P",
+        "clientStatus": "P",
+        "documentStatus": "G",
+        "generate": true,
+        "url": "uploads/scheme/76b1ecb0-0dd1-11eb-be74-c982c8334218/pmcProposal/073533d0-2003-11eb-a568-034375f30439/pmcproposal_generate_76b1ecb0-0dd1-11eb-be74-c982c8334218_073533d0-2003-11eb-a568-034375f30439.docx",
+        "enableAppLgim": true
+    }
+}

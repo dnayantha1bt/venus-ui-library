@@ -85,7 +85,7 @@ export const HalfContainer = ({ childComponents, disabled }) => {
 
 export const FullViewContainer = ({ field, rawComponents, disabled, classN, hide }) => {
     return (
-        <Row>
+        <Row className="input-row">
             {rawComponents ? (
                 <> {rawComponents} </>
             ) : Array.isArray(field) ? (
