@@ -10,23 +10,21 @@ let DefaultActivation = props => {
 
     const {
         text,
-        actionInProgress,
+        action_inProgress,
         handleFormSubmit,
         options: { title = null, titleIicon = null, submitButton = true }
     } = props;
 
     const handleSubmit = action => {
         setSubmissionType(action);
-        handleFormSubmit(action);
-        // updateWorkflowStepData(
-        //     action,
-        //     {},
-        //     () => {
-        //         setSubmissionType(null);
-        //     },
-        //     { message: onSubmitMessage, fetchEntityDataAfterSubmit, navigateAfterSubmit, fetchWorkflowAfterSubmit },
-        //     updateType
-        // );
+        handleFormSubmit(
+            action,
+            {},
+            () => {
+                setSubmissionType(null);
+            },
+            message
+        );
     };
 
     const formHeaderProps = {
@@ -39,7 +37,7 @@ let DefaultActivation = props => {
                           type: FORM_ACTION_TYPES.SUBMIT,
                           title: submitButton.title || BUTTON_TITLE_REQUEST,
                           state: {
-                              inProgress: submissionType === ACTIVE_MANDATE_ACTION && actionInProgress
+                              inProgress: submissionType === ACTIVE_MANDATE_ACTION && action_inProgress
                           },
                           onClick: () => {
                               handleSubmit(ACTIVE_MANDATE_ACTION);
