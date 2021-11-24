@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import FormHeaderComponent from '../../forms/formHeader';
 import constants from '../../../constants';
 
-const { ACTIVE_MANDATE_ACTION, BUTTON_TITLE_REQUEST, FORM_ACTION_TYPES } = constants;
+const { ACTIVE_MANDATE_ACTION, BUTTON_TITLE_REQUEST, FORM_ACTION_TYPES, ON_SUBMIT_MESSAGE } = constants;
 
 let DefaultActivation = props => {
     const [submissionType, setSubmissionType] = useState(null);
@@ -12,10 +12,11 @@ let DefaultActivation = props => {
         text,
         action_inProgress,
         handleFormSubmit,
-        options: { title = null, titleIicon = null, submitButton = true }
+        options: { title = null, titleIicon = null, submitButton = true, onSubmitMessage = ON_SUBMIT_MESSAGE }
     } = props;
 
     const handleSubmit = action => {
+        let message = onSubmitMessage;
         setSubmissionType(action);
         handleFormSubmit(
             action,
