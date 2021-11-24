@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import CurrencyInput from './currencyInput';
 
 const CurrencyField = ({ input, meta: { touched, error }, options, ...props }) => {

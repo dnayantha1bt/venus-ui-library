@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { Input } from 'antd';
 import { passwordStrength } from '../../validations/fieldValidations';
 

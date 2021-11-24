@@ -18,7 +18,7 @@ const {
     GENERATE_FORMS_TYPE_SIMPLE,
     BUTTON_TITLE_DOWNLOAD,
     BUTTON_TITLE_REQUEST,
-    STEP_ACTION_PROCEED,
+    SUBMIT_ACTION,
     FORM_ACTION_TYPES
 } = constants;
 
@@ -46,12 +46,12 @@ let SimpleFormDataDownload = props => {
             labelOverRide = null,
             zipName = 'scheme',
             excelTabNames = 'tab1',
-            attachmentArray = [],
+            attachmentArray = []
         },
         action_inProgress,
         dataset,
         handleFormSubmit,
-        submitAction = STEP_ACTION_PROCEED,
+        submitAction = SUBMIT_ACTION,
         disabled = true
     } = props;
 
@@ -167,7 +167,7 @@ let SimpleFormDataDownload = props => {
                               handleDownload();
                           },
                           bool: downloadButton.showButton
-                        //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
+                          //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
                       }
                   ]
                 : []),
@@ -183,9 +183,9 @@ let SimpleFormDataDownload = props => {
                               formSubmit(submitAction);
                           },
                           bool: submitButton.showButton
-                            //   !step.completed &&
-                            //   !step.rejected &&
-                            //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
+                          //   !step.completed &&
+                          //   !step.rejected &&
+                          //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
                       }
                   ]
                 : [])

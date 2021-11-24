@@ -13,7 +13,7 @@ export const getSignedURL = async (url, bucket) => {
 
         try {
             // const { data } = await connectApi.getDownloadUrl({ bucketName, filePath: `${_url}` });
-            const { data } = { } // change
+            const { data } = {}; // change
             resolve({ status: 'success', data });
         } catch (e) {
             reject({ status: 'error' });
@@ -33,8 +33,8 @@ export const readFile = async data => {
 
             // const { data } = await connectApi.getDownloadUrl({ bucketName, filePath: `${_url}` });
             // const resource = await connectApi.getResource(data.content.url);
-            const { data } = {} // change
-            const resource = {}
+            const { data } = {}; // change
+            const resource = {};
             fileSource = resource.data;
         }
 
@@ -59,7 +59,7 @@ export const checkFileAvailability = async param => {
     const bucketName = bucketNameProp;
     try {
         // const { data } = await connectApi.checkFileAvailability({ bucketName, dirName: url });
-        const { data } = {} // change
+        const { data } = {}; // change
 
         if (data && data.result) return true;
         return false;
@@ -83,7 +83,7 @@ export const convertFile = async param => {
         //     fileName
         // });
 
-        const { data } = {} // change
+        const { data } = {}; // change
 
         if (data && data.result) {
             const exist = await checkFileAvailability({ url });

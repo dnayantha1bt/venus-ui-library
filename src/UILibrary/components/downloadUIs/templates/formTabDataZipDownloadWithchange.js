@@ -25,9 +25,9 @@ const {
     BUTTON_TITLE_DOWNLOAD,
     FORM_SECTION_INCLUDE_NEW,
     BUTTON_TITLE_REQUEST,
-    STEP_ACTION_PROCEED_WORKFLOW,
+    SUBMIT_ACTION,
     ON_SUBMIT_MESSAGE,
-    STEP_ACTION_DATA_SAVE,
+    DATA_SAVE_ACTION,
     FORM_ACTION_TYPES
 } = constants;
 
@@ -62,7 +62,7 @@ let FormTabDataChangeAndDownload = props => {
         action_inProgress,
         dataset,
         disabled = true,
-        submitAction = STEP_ACTION_PROCEED_WORKFLOW,
+        submitAction = SUBMIT_ACTION,
         asyncErrors,
         handleFormSubmit
     } = props;
@@ -194,7 +194,7 @@ let FormTabDataChangeAndDownload = props => {
             if (formHooks && formHooks.whenSubmitValidation) errors = formHooks.whenSubmitValidation(data, asyncErrors);
         }
 
-        if (submissionType === STEP_ACTION_DATA_SAVE) {
+        if (submissionType === DATA_SAVE_ACTION) {
             if (formHooks && formHooks.whenSaveDataFormat) data = formHooks.whenSaveDataFormat(data);
             if (formHooks && formHooks.whenSaveValidation) errors = formHooks.whenSaveValidation(data, asyncErrors);
         }
@@ -227,7 +227,7 @@ let FormTabDataChangeAndDownload = props => {
                               handleDownload();
                           },
                           bool: downloadButton.showButton
-                        //    claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
+                          //    claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
                       }
                   ]
                 : []),
@@ -244,9 +244,9 @@ let FormTabDataChangeAndDownload = props => {
                               handleSubmit(submitAction);
                           },
                           bool: submitButton.showButton
-                            //   !step.completed &&
-                            //   !step.rejected &&
-                            //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
+                          //   !step.completed &&
+                          //   !step.rejected &&
+                          //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
                       }
                   ]
                 : [])

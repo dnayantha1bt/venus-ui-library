@@ -16,8 +16,8 @@ const {
     BUTTON_TITLE_REQUEST,
     ON_SUBMIT_MESSAGE,
     ON_SAVE_MESSAGE,
-    STEP_ACTION_DATA_CHANGE,
-    STEP_ACTION_PROCEED,
+    DATA_SAVE_ACTION,
+    SUBMIT_ACTION,
     FORM_ACTION_TYPES
 } = constants;
 
@@ -40,7 +40,7 @@ let SimpleForm = props => {
         action_inProgress,
         dataset,
         asyncErrors,
-        submitAction = STEP_ACTION_PROCEED,
+        submitAction = SUBMIT_ACTION,
         handleFormSubmit
     } = props;
 
@@ -78,7 +78,7 @@ let SimpleForm = props => {
             if (formHooks && formHooks.whenSubmitValidation) errors = formHooks.whenSubmitValidation(data, asyncErrors);
         }
 
-        if (submissionType === STEP_ACTION_DATA_CHANGE) {
+        if (submissionType === DATA_SAVE_ACTION) {
             if (formHooks && formHooks.whenSaveDataFormat) data = formHooks.whenSaveDataFormat(data);
             if (formHooks && formHooks.whenSaveValidation) errors = formHooks.whenSaveValidation(data, asyncErrors);
         }
@@ -107,10 +107,10 @@ let SimpleForm = props => {
                           type: FORM_ACTION_TYPES.SAVE,
                           title: saveButton.title || BUTTON_TITLE_SAVE,
                           state: {
-                              inProgress: submissionType === STEP_ACTION_DATA_CHANGE && action_inProgress
+                              inProgress: submissionType === DATA_SAVE_ACTION && action_inProgress
                           },
                           onClick: () => {
-                              handleSubmit(STEP_ACTION_DATA_CHANGE);
+                              handleSubmit(DATA_SAVE_ACTION);
                           },
                           bool: saveButton.showButton
                       }

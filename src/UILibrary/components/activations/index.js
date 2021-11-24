@@ -4,7 +4,7 @@ import CreateForm from '../forms';
 
 import constants from '../../constants';
 const {
-    STEP_ACTION_ACTIVATE,
+    ACTIVE_MANDATE_ACTION,
     ACTIVATION_TYPE_DEFAULT,
     ACTIVATION_TYPE_USING_FORM,
     ACTIVATION_TYPE_USING_FORM_TABS,
@@ -24,7 +24,7 @@ let CreateActivateSection = props => {
                             <DefaultActivation {...props} />
                         ) : activationType === ACTIVATION_TYPE_USING_FORM ? (
                             <CreateForm
-                                submitAction={STEP_ACTION_ACTIVATE}
+                                submitAction={ACTIVE_MANDATE_ACTION}
                                 formFieldData={formFieldData}
                                 formFieldFunction={formFieldFunction}
                                 formHooks={formHooks}
@@ -35,7 +35,7 @@ let CreateActivateSection = props => {
                             />
                         ) : activationType === ACTIVATION_TYPE_USING_FORM_TABS ? (
                             <CreateForm
-                                submitAction={STEP_ACTION_ACTIVATE}
+                                submitAction={ACTIVE_MANDATE_ACTION}
                                 formTabs={formTabs}
                                 formHooks={formHooks}
                                 formName={formName}

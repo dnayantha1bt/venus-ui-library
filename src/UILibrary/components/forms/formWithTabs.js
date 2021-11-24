@@ -22,8 +22,8 @@ const {
     ON_SAVE_MESSAGE,
     FORM_SECTION_INCLUDE_NEW,
     FORM_SECTION_INCLUDE_COMPONENT,
-    STEP_ACTION_DATA_CHANGE,
-    STEP_ACTION_PROCEED,
+    DATA_SAVE_ACTION,
+    SUBMIT_ACTION,
     FORM_ACTION_TYPES
 } = constants;
 
@@ -45,7 +45,7 @@ let FormWithTabs = props => {
         action_inProgress,
         dataset,
         asyncErrors,
-        submitAction = STEP_ACTION_PROCEED,
+        submitAction = SUBMIT_ACTION,
         handleFormSubmit
     } = props;
 
@@ -99,7 +99,7 @@ let FormWithTabs = props => {
             if (formHooks && formHooks.whenSubmitValidation) errors = formHooks.whenSubmitValidation(data, asyncErrors);
         }
 
-        if (submissionType === STEP_ACTION_DATA_CHANGE) {
+        if (submissionType === DATA_SAVE_ACTION) {
             if (formHooks && formHooks.whenSaveDataFormat) data = formHooks.whenSaveDataFormat(data);
             if (formHooks && formHooks.whenSaveValidation) errors = formHooks.whenSaveValidation(data, asyncErrors);
         }
@@ -128,10 +128,10 @@ let FormWithTabs = props => {
                           type: FORM_ACTION_TYPES.SAVE,
                           title: saveButton.title || BUTTON_TITLE_SAVE,
                           state: {
-                              inProgress: submissionType === STEP_ACTION_DATA_CHANGE && action_inProgress
+                              inProgress: submissionType === DATA_SAVE_ACTION && action_inProgress
                           },
                           onClick: () => {
-                              handleSubmit(STEP_ACTION_DATA_CHANGE);
+                              handleSubmit(DATA_SAVE_ACTION);
                           },
                           bool: saveButton.showButton
                       }

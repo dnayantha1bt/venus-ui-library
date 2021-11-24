@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import NotificationHelper from '../../../../helpers/NotificationHelper';
 
 const formatMsg = /[#$%^*()+\=\[\]{};':"\\|<>\/]+/;

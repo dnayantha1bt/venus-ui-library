@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const ButtonGroup = ({ input, meta: { touched, error }, options, defaultValue, ...props }) => {
     let hasError = touched && error !== undefined;

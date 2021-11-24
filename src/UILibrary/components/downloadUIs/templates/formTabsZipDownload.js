@@ -24,7 +24,7 @@ const {
     BUTTON_TITLE_REQUEST,
     FORM_SECTION_INCLUDE_NEW,
     FORM_ACTION_TYPES,
-    STEP_ACTION_PROCEED
+    SUBMIT_ACTION
 } = constants;
 
 const isArrayOrNot = data => {
@@ -54,7 +54,7 @@ let TabFormDataDownload = props => {
         dataset,
         disabled = true,
         action_inProgress,
-        submitAction = STEP_ACTION_PROCEED,
+        submitAction = SUBMIT_ACTION,
         handleFormSubmit
     } = props;
 
@@ -85,7 +85,7 @@ let TabFormDataDownload = props => {
         try {
             const attachments = [];
 
-            const sheets = formTabs.map((tab) => {
+            const sheets = formTabs.map(tab => {
                 const tabKey = tab.tabKey;
 
                 const sheetData = [];
@@ -139,10 +139,7 @@ let TabFormDataDownload = props => {
                 return {
                     name: tab.tabName,
                     data: sheetData,
-                    columns: [
-                        { label: 'Question', value: 'key' },
-                        { label: 'Answer', value: 'value' }
-                    ]
+                    columns: [{ label: 'Question', value: 'key' }, { label: 'Answer', value: 'value' }]
                 };
             });
 
@@ -163,7 +160,7 @@ let TabFormDataDownload = props => {
                 }
             }
 
-            zip.generateAsync({ type: 'blob' }).then(function (content) {
+            zip.generateAsync({ type: 'blob' }).then(function(content) {
                 saveAs(content, `${zipName.split(' ').join('-')}.zip`);
             });
             setDownloadInProgress(false);
@@ -171,7 +168,7 @@ let TabFormDataDownload = props => {
             setDownloadInProgress(false);
         }
     };
-    
+
     const formSubmit = submissionType => {
         let message = null;
         handleFormSubmit(submissionType, { formData: dataset && dataset.formData }, () => {}, message);
@@ -191,7 +188,7 @@ let TabFormDataDownload = props => {
                               handleDownload();
                           },
                           bool: downloadButton.showButton
-                        //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
+                          //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
                       }
                   ]
                 : []),
@@ -207,9 +204,9 @@ let TabFormDataDownload = props => {
                               formSubmit(submitAction);
                           },
                           bool: submitButton.showButton
-                            //   !step.completed &&
-                            //   !step.rejected &&
-                            //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
+                          //   !step.completed &&
+                          //   !step.rejected &&
+                          //   claimHelper.getPermission(getLoggedUserClaims_data, step, BUTTON_CLAIM_DOWNLOAD)
                       }
                   ]
                 : [])

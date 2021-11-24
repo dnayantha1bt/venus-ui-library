@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import NumberFormat from 'react-number-format';
 
 const PhoneNumberFormat = /^[0-9 ()+-]+$/;

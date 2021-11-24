@@ -25,7 +25,7 @@ let CreateDownloadSection = props => {
                 ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_TABS && formTabs ? (
                     <TabFormDataDownload {...props} />
                 ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_SIMPLE_WITH_DATA_CHANGE &&
-                (formFieldData || formFieldFunction) ? (
+                  (formFieldData || formFieldFunction) ? (
                     <FormDataChangeAndDownload {...props} />
                 ) : downloadType === DOWNLOAD_FORM_DATA_ZIP_TYPE_SIMPLE_WITH_DATA_CHANGE && formTabs ? (
                     <FormTabDataChangeAndDownload {...props} />

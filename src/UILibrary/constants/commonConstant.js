@@ -1,0 +1,33 @@
+/**
+ * ACTIONS
+ *
+ */
+const DATA_SAVE_ACTION = 'DATA_SAVE_ACTION';
+const SUBMIT_ACTION = 'SUBMIT_ACTION';
+const ACTIVE_MANDATE_ACTION = 'ACTIVE_MANDATE_ACTION';
+
+/**
+ * BUTTON TITLES
+ *
+ */
+const BUTTON_TITLE_SAVE = 'save';
+const BUTTON_TITLE_REQUEST = 'request';
+const BUTTON_TITLE_DOWNLOAD = 'download';
+
+/**
+ * DEFAULT MESSAGES
+ *
+ */
+const ON_SUBMIT_MESSAGE = 'Successfully submitted.';
+const ON_SAVE_MESSAGE = 'Successfully saved.';
+
+export {
+    DATA_SAVE_ACTION,
+    SUBMIT_ACTION,
+    ACTIVE_MANDATE_ACTION,
+    BUTTON_TITLE_SAVE,
+    BUTTON_TITLE_REQUEST,
+    BUTTON_TITLE_DOWNLOAD,
+    ON_SUBMIT_MESSAGE,
+    ON_SAVE_MESSAGE
+};

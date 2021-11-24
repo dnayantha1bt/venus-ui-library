@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 import { Upload as AntUpload } from 'antd';
 import uuidv1 from 'uuid/v1';
 import _ from 'lodash';
@@ -82,7 +82,14 @@ class FileUploader extends Component {
     }
 
     async handleUpload(file) {
-        const { input, options, getSignUrlInProgress, getSignUrlSuccess, uploadTOS3BucketInProgress, uploadTOS3BucketSuccess } = this.props;
+        const {
+            input,
+            options,
+            getSignUrlInProgress,
+            getSignUrlSuccess,
+            uploadTOS3BucketInProgress,
+            uploadTOS3BucketSuccess
+        } = this.props;
         const { api } = options;
 
         let key = null;
@@ -391,26 +398,29 @@ class FileUploader extends Component {
             </div>
         );
     }
-};
+}
 
 const mapDispatchToProps = dispatch => {
     return {
         getSignUrlInProgress: () => {
-            dispatch(getSignUrlInProgress())
+            dispatch(getSignUrlInProgress());
         },
         getSignUrlSuccess: () => {
-            dispatch(getSignUrlSuccess())
+            dispatch(getSignUrlSuccess());
         },
         uploadTOS3BucketInProgress: () => {
-            dispatch(uploadTOS3BucketInProgress())
+            dispatch(uploadTOS3BucketInProgress());
         },
         uploadTOS3BucketSuccess: () => {
-            dispatch(uploadTOS3BucketSuccess())
-        },
+            dispatch(uploadTOS3BucketSuccess());
+        }
     };
 };
 
-export default connect(null, mapDispatchToProps)(FileUploader);
+export default connect(
+    null,
+    mapDispatchToProps
+)(FileUploader);
 
 export class MultipleFileUploader extends FileUploader {
     state = {

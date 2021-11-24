@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import GoogleReCAPTCHA from 'react-google-recaptcha';
 
 const ReCAPTCHA = ({ input, meta: { touched, error }, ...props }) => {

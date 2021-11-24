@@ -108,5 +108,7 @@ export {
     DatePicker,
     MonthDatePicker,
     GenerateDownloader,
-    FileDownloader
+    FileDownloader,
+    FileUploader,
+    MultipleFileUploader
 };

@@ -4,10 +4,8 @@ import FormHeaderComponent from '../../forms/formHeader';
 import constants from '../../../constants';
 
 const {
-    STEP_ACTION_ACTIVATE,
+    ACTIVE_MANDATE_ACTION,
     BUTTON_TITLE_REQUEST,
-    ON_SUBMIT_MESSAGE,
-    STEP_UPDATE_TYPE_ACTIVE,
     FORM_ACTION_TYPES
 } = constants;
 
@@ -18,17 +16,12 @@ let DefaultActivation = props => {
         text,
         actionInProgress,
         handleFormSubmit,
-        options: {
-            title = null,
-            titleIicon = null,
-            submitButton = true,
-        }
+        options: { title = null, titleIicon = null, submitButton = true }
     } = props;
 
     const handleSubmit = action => {
         setSubmissionType(action);
-        const updateType = STEP_UPDATE_TYPE_ACTIVE;
-        handleFormSubmit(action, updateType);
+        handleFormSubmit(action);
         // updateWorkflowStepData(
         //     action,
         //     {},
@@ -50,10 +43,10 @@ let DefaultActivation = props => {
                           type: FORM_ACTION_TYPES.SUBMIT,
                           title: submitButton.title || BUTTON_TITLE_REQUEST,
                           state: {
-                              inProgress: submissionType === STEP_ACTION_ACTIVATE && actionInProgress
+                              inProgress: submissionType === ACTIVE_MANDATE_ACTION && actionInProgress
                           },
                           onClick: () => {
-                              handleSubmit(STEP_ACTION_ACTIVATE);
+                              handleSubmit(ACTIVE_MANDATE_ACTION);
                           },
                           bool: submitButton.showButton
                       }

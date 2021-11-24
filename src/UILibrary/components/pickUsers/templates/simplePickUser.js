@@ -14,7 +14,7 @@ const SimplePickUsersContainer = props => {
         title
     } = props;
 
-    const handleChange = (anchor) => {
+    const handleChange = anchor => {
         let _dataset = _.cloneDeep(dataset);
         const selectedPool = _.get(_dataset, subPathToSet, []);
 
@@ -25,7 +25,7 @@ const SimplePickUsersContainer = props => {
         } else selectedPool.splice(selectedUserIndex, 1);
 
         let subPathToSetArr = subPathToSet.split('.');
-        subPathToSetArr = "["+subPathToSetArr.join('][')+"]"
+        subPathToSetArr = '[' + subPathToSetArr.join('][') + ']';
         _.setWith(_dataset, subPathToSetArr, selectedPool, Object);
         handleChangeDataset(_dataset);
     };
@@ -117,9 +117,7 @@ const SimplePickUsersContainer = props => {
 
     return (
         <div className="users-for-approval-wrapper">
-            {userPool.length
-                ? listUsers(userPool, selectedUserPool)
-                : null}
+            {userPool.length ? listUsers(userPool, selectedUserPool) : null}
         </div>
     );
 };
