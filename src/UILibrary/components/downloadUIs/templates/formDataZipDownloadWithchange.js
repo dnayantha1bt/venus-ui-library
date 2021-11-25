@@ -60,7 +60,10 @@ let FormDataChangeAndDownload = props => {
         handleFormSubmit,
         asyncErrors,
         submitAction = SUBMIT_ACTION,
-        api
+        downloadOptions: {
+            api,
+            isPublicBucket = false
+        }
     } = props;
 
     const dispatch = useDispatch();
@@ -132,7 +135,7 @@ let FormDataChangeAndDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url, bucketNameProp: privateBucketName, api });
+                const fileSource = await readFile({ url: attachment.url, bucketNameProp: isPublicBucket ? publicBucketName : privateBucketName, api });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 

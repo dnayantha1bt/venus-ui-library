@@ -55,7 +55,10 @@ let SimpleFormDataDownload = props => {
         handleFormSubmit,
         submitAction = SUBMIT_ACTION,
         disabled = true,
-        api
+        downloadOptions: {
+            api,
+            isPublicBucket = false
+        }
     } = props;
 
     const dispatch = useDispatch();
@@ -129,7 +132,7 @@ let SimpleFormDataDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url, bucketNameProp: privateBucketName, api });
+                const fileSource = await readFile({ url: attachment.url, bucketNameProp: isPublicBucket ? publicBucketName : privateBucketName, api });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 

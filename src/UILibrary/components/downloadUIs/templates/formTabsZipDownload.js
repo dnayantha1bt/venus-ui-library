@@ -58,7 +58,10 @@ let TabFormDataDownload = props => {
         action_inProgress,
         submitAction = SUBMIT_ACTION,
         handleFormSubmit,
-        api
+        downloadOptions: {
+            api,
+            isPublicBucket = false
+        }
     } = props;
 
     const dispatch = useDispatch();
@@ -151,7 +154,7 @@ let TabFormDataDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url, bucketNameProp: privateBucketName, api });
+                const fileSource = await readFile({ url: attachment.url, bucketNameProp: isPublicBucket ? publicBucketName : privateBucketName, api });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 
