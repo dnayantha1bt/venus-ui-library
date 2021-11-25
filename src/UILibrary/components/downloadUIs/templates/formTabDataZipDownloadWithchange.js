@@ -7,6 +7,7 @@ import moment from 'moment';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { Tabs } from 'antd';
+import config from 'appConfig';
 
 import constants from '../../../constants';
 import ExcelWorkbook from '../../../helpers/ExcelWorkbook';
@@ -30,6 +31,7 @@ const {
     DATA_SAVE_ACTION,
     FORM_ACTION_TYPES
 } = constants;
+const { bucket: privateBucketName, publicBucket: publicBucketName } = config;
 
 const isArrayOrNot = data => {
     try {
@@ -64,7 +66,8 @@ let FormTabDataChangeAndDownload = props => {
         disabled = true,
         submitAction = SUBMIT_ACTION,
         asyncErrors,
-        handleFormSubmit
+        handleFormSubmit,
+        api
     } = props;
 
     const dispatch = useDispatch();
@@ -163,7 +166,7 @@ let FormTabDataChangeAndDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url });
+                const fileSource = await readFile({ url: attachment.url, bucketNameProp: privateBucketName, api });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 

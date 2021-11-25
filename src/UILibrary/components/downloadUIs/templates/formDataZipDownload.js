@@ -6,6 +6,7 @@ import _ from 'lodash';
 import moment from 'moment';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
+import config from 'appConfig';
 
 import constants from '../../../constants';
 import ExcelWorkbook from '../../../helpers/ExcelWorkbook';
@@ -14,6 +15,7 @@ import FormGenerator from '../../forms/formBase';
 import FormHeaderComponent from '../../forms/formHeader';
 import hooks from '../hooks';
 
+const { bucket: privateBucketName, publicBucket: publicBucketName } = config;
 const {
     GENERATE_FORMS_TYPE_SIMPLE,
     BUTTON_TITLE_DOWNLOAD,
@@ -52,7 +54,8 @@ let SimpleFormDataDownload = props => {
         dataset,
         handleFormSubmit,
         submitAction = SUBMIT_ACTION,
-        disabled = true
+        disabled = true,
+        api
     } = props;
 
     const dispatch = useDispatch();
@@ -126,7 +129,7 @@ let SimpleFormDataDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url });
+                const fileSource = await readFile({ url: attachment.url, bucketNameProp: privateBucketName, api });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 

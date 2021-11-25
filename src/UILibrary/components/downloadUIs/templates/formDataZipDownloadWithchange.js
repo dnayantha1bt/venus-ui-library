@@ -6,6 +6,7 @@ import _ from 'lodash';
 import moment from 'moment';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
+import config from 'appConfig';
 
 import constants from '../../../constants';
 import ExcelWorkbook from '../../../helpers/ExcelWorkbook';
@@ -15,6 +16,7 @@ import FormHeaderComponent from '../../forms/formHeader';
 import NotificationHelper from '../../../helpers/NotificationHelper';
 import { removeInvalidData } from '../../forms/validations/dataFormatter';
 
+const { bucket: privateBucketName, publicBucket: publicBucketName } = config;
 const {
     GENERATE_FORMS_TYPE_SIMPLE,
     SUBMIT_ACTION,
@@ -24,6 +26,7 @@ const {
     DATA_SAVE_ACTION,
     FORM_ACTION_TYPES
 } = constants;
+
 const isArrayOrNot = data => {
     try {
         const convertedData = JSON.parse(data);
@@ -56,7 +59,8 @@ let FormDataChangeAndDownload = props => {
         dataset,
         handleFormSubmit,
         asyncErrors,
-        submitAction = SUBMIT_ACTION
+        submitAction = SUBMIT_ACTION,
+        api
     } = props;
 
     const dispatch = useDispatch();
@@ -128,7 +132,7 @@ let FormDataChangeAndDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url });
+                const fileSource = await readFile({ url: attachment.url, bucketNameProp: privateBucketName, api });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 

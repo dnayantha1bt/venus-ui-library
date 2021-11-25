@@ -16,7 +16,6 @@ import {
 } from './actions';
 
 import constants from '../../../../constants';
-import store from '../../../../../redux/store';
 // import AwsIotSingleton from '../../../../../../helpers/awsIot';
 
 const { INVALID_FILE_FORMAT, INVALID_FILE_SIZE, FILE_ALREADY_UPLOADED } = constants;
@@ -93,6 +92,7 @@ class FileUploader extends Component {
         const { api } = options;
 
         let key = null;
+        let filePath;
 
         const timeStamp = uuidv1();
         this.setState({ inProgress: true });
@@ -105,8 +105,11 @@ class FileUploader extends Component {
         } else {
             key = file.name ? file.name.trim().replace(/ /g, '__') : '';
         }
-
-        const filePath = options.url(...options.params, key, timeStamp);
+        if (options.url) {
+            filePath = options.url(...options.params, key, timeStamp);
+        } else if (options.path) {
+            filePath = options.path + '/' + key;
+        }
         const bucketName = options.bucketName;
         try {
             getSignUrlInProgress();
@@ -353,6 +356,8 @@ class FileUploader extends Component {
                                     fileName={options.name}
                                     url={input.value}
                                     isPublic={options.isPublic}
+                                    bucketNameProp={options.bucketName}
+                                    api={options.api}
                                 />
                             </div>
                             {!rest.disabled && (
@@ -556,6 +561,8 @@ export class MultipleFileUploader extends FileUploader {
                                 fileName={options.name}
                                 url={file.url}
                                 isPublic={options.isPublic}
+                                bucketNameProp={options.bucketName}
+                                api={options.api}
                             />
                         </div>
                         {!rest.disabled && !file.isPublished && (

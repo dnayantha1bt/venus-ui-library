@@ -19,7 +19,7 @@ const isArrayOrNot = data => {
 let DownloadUsingDocumentLink = props => {
     const {
         dataset,
-        options: { title = null, titleIicon = null },
+        options: { title = null, titleIicon = null, bucketName, api },
         documentConfig
     } = props;
 
@@ -52,14 +52,14 @@ let DownloadUsingDocumentLink = props => {
                                         JSON.parse(documentData[doc.key]).map((docItem, key) => (
                                             <Row className="input-row" key={key}>
                                                 <Col className="files-sclla">
-                                                    <FileDownloader type="resource" url={docItem.url} />
+                                                    <FileDownloader type="resource" url={docItem.url} bucketName={bucketName} api={api} />
                                                 </Col>
                                             </Row>
                                         ))
                                     ) : (
                                         <Row className="input-row" key={key}>
                                             <Col className="files-sclla">
-                                                <FileDownloader type="resource" url={docData[doc.key].url} />
+                                                <FileDownloader type="resource" url={docData[doc.key].url} bucketName={bucketName} api={api} />
                                             </Col>
                                         </Row>
                                     )}

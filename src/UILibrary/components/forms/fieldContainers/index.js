@@ -105,7 +105,7 @@ export const FullViewContainer = ({ field, rawComponents, disabled, classN, hide
     );
 };
 
-export const PublishCheckbox = ({ name, label, resourceName, resourceUrl, props, disabled, ...rest }) => {
+export const PublishCheckbox = ({ name, label, resourceName, resourceUrl, props, disabled, bucketName, api, ...rest }) => {
     return (
         <Row className="input-row checkbox-row">
             <Col xl={14} lg={12} sm={12} xs={24} className="label-wrapper">
@@ -121,7 +121,7 @@ export const PublishCheckbox = ({ name, label, resourceName, resourceUrl, props,
             <Col xl={10} lg={12} sm={12} xs={24} className="pull-right">
                 {resourceUrl && (
                     <div className="resource-wrapper">
-                        <FileDownloader type="resource" fileName={resourceName} url={resourceUrl} />
+                        <FileDownloader type="resource" fileName={resourceName} url={resourceUrl} bucketNameProp={bucketName} api={api} />
                     </div>
                 )}
             </Col>

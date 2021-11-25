@@ -110,11 +110,13 @@ const DynamicComponent = ({ element, disabled, children, formHooks }) => {
             resourceUrl={element.resourceUrl}
             props={element.props}
             disabled={disabled}
+            bucketName={element.bucketName}
+            api={element.api}
         />
     ) : element.type === ADD_MORE_CONTAINER ? (
         <AddMoreContainer element={element} />
     ) : element.type === PUBLISH_MULTI_CHECKBOX_CONTAINER ? (
-        <MultiPublishContainer rows={element.data} formName={element.formName} />
+        <MultiPublishContainer rows={element.data} formName={element.formName} bucketName={element.bucketName} api={element.api} />
     ) : null;
 };
 

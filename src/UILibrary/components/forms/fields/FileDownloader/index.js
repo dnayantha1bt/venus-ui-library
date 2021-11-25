@@ -1,28 +1,10 @@
 import React, { Component } from 'react';
 import { saveAs } from 'file-saver';
-
-// import connectApi from '../../../../../../middlewares/connectApi';
 import excelIcon from '../../../../icons/excelLogo.svg';
 
-// pass bucket (privateBucketName or publicBucketName) as prop
-export const getSignedURL = async (url, bucket) => {
-    return new Promise(async (resolve, reject) => {
-        let _url = url.trim();
-        _url = _url.replace(/ /g, '_');
-        const bucketName = bucket;
-
-        try {
-            // const { data } = await connectApi.getDownloadUrl({ bucketName, filePath: `${_url}` });
-            const { data } = {}; // change
-            resolve({ status: 'success', data });
-        } catch (e) {
-            reject({ status: 'error' });
-        }
-    });
-};
-
+// pass bucket (privateBucketName or publicBucketName) & api as prop
 export const readFile = async data => {
-    const { url, file, bucketNameProp } = data;
+    const { url, file, bucketNameProp, api } = data;
 
     return new Promise(async (resolve, reject) => {
         let fileSource = null;
@@ -31,10 +13,8 @@ export const readFile = async data => {
             _url = _url.replace(/ /g, '_');
             const bucketName = bucketNameProp;
 
-            // const { data } = await connectApi.getDownloadUrl({ bucketName, filePath: `${_url}` });
-            // const resource = await connectApi.getResource(data.content.url);
-            const { data } = {}; // change
-            const resource = {};
+            const { data } = await api.getDownloadUrl({ bucketName, filePath: `${_url}` });
+            const resource = await api.getResource(data.content.url);
             fileSource = resource.data;
         }
 
@@ -54,51 +34,7 @@ export const readFile = async data => {
     });
 };
 
-export const checkFileAvailability = async param => {
-    const { url, bucketNameProp } = param;
-    const bucketName = bucketNameProp;
-    try {
-        // const { data } = await connectApi.checkFileAvailability({ bucketName, dirName: url });
-        const { data } = {}; // change
-
-        if (data && data.result) return true;
-        return false;
-    } catch (error) {
-        return false;
-    }
-};
-
-export const convertFile = async param => {
-    const { url, bucketNameProp } = param;
-    const bucketName = bucketNameProp;
-
-    try {
-        const fileName = url.split(`/`).pop();
-        const s3pathurl = url.split(`/${fileName}`)[0];
-
-        // const { data } = await connectApi.convertDocumentRequest({
-        //     tenant: 'LGIM',
-        //     s3bucketurl: bucketName,
-        //     s3pathurl,
-        //     fileName
-        // });
-
-        const { data } = {}; // change
-
-        if (data && data.result) {
-            const exist = await checkFileAvailability({ url });
-            if (exist) return url;
-        }
-        return false;
-    } catch (error) {
-        return false;
-    }
-};
-
-export const downloadFile = async (file, fileName) => {
-    saveAs(new Blob([file], { type: 'application/octet-stream' }), fileName);
-};
-
+// pass bucket (privateBucketName or publicBucketName) & api as prop
 export default class FileDownloader extends Component {
     static defaultProps = {
         editable: true
