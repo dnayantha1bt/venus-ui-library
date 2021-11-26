@@ -109,5 +109,7 @@ export {
     GenerateDownloader,
     FileDownloader,
     FileUploader,
-    MultipleFileUploader
+    MultipleFileUploader,
+    SelectOptions,
+    AutoComplete
 };

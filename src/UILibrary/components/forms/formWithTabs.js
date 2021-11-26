@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useRef } from 'react';
 import { compose } from 'redux';
 import { getFormValues, submit, initialize, getFormSyncErrors } from 'redux-form';
 import { useDispatch, useSelector, connect } from 'react-redux';
@@ -54,6 +54,16 @@ let FormWithTabs = props => {
     const [submissionType, setSubmissionType] = useState(null);
     const [activeTabKey, changeActiveTaKey] = useState(null);
 
+    const prevDataset = usePrevious(dataset);
+
+    function usePrevious(value) {
+        const ref = useRef();
+        useEffect(() => {
+            ref.current = value;
+        });
+        return ref.current;
+    }
+
     useEffect(() => {
         if (submissionType === submitAction) {
             submitFormWithTabs(formName);
@@ -65,7 +75,8 @@ let FormWithTabs = props => {
 
     useEffect(() => {
         if (dataset && dataset.formData) {
-            dispatch(initialize(formName, dataset.formData));
+            if (!prevDataset || !_.isEqual(prevDataset.formData, dataset.formData))
+                dispatch(initialize(formName, dataset.formData));
         }
     }, [dataset]);
 
