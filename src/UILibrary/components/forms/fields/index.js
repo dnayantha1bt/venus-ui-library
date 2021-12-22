@@ -22,7 +22,7 @@ import NonAssetsSection from './NonAssetsSection';
 import SelectOptions from './SelectOptions';
 import AssetsValueSeparator from './AssetsValueSeparator';
 import AutoComplete from './AutoComplete';
-import FileUploader, { MultipleFileUploader }  from './FileUploader';
+import FileUploader, { MultipleFileUploader } from './FileUploader';
 import FileDownloader from './FileDownloader';
 import GenerateDownloader from './GenerateDownloader';
 

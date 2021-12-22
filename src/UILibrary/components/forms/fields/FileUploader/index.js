@@ -35,9 +35,8 @@ class FileUploader extends Component {
     };
 
     generationSocket(topic, rest) {
-        const { input } = this.props;
-        const { filePath } = rest;
-
+        // const { input } = this.props;
+        // const { filePath } = rest;
         // AwsIotSingleton.getPayloadFromSocket(topic, data =>
         //     this.setState({ socketData: { ...data }, generate_inProgress: false }, () => {
         //         if (
@@ -135,7 +134,7 @@ class FileUploader extends Component {
     async handleGenerate(file) {
         const timeStamp = uuidv1();
 
-        const { generateoptions = {}, input, options } = this.props;
+        const { generateoptions = {}, input } = this.props;
         const {
             step,
             flowKey,
@@ -145,7 +144,7 @@ class FileUploader extends Component {
             templateKey,
             draftKey,
             dataKey,
-            suffixFileName = undefined,
+            // suffixFileName = undefined,
             loggedUser,
             ...rest
         } = generateoptions;
@@ -207,6 +206,7 @@ class FileUploader extends Component {
             }
         } catch (error) {
             if (_.get(error, 'response.data.message') === 'Endpoint request timed out') {
+                //ignore 'Endpoint request timed out'
             } else if (_.get(error, 'response.status') === 505) {
                 this.setState({ generate_inProgress: false });
                 // const errorObj = getError(error, 'An error occurred while generating the document. Please try again.');
@@ -436,12 +436,17 @@ export class MultipleFileUploader extends FileUploader {
     async handleUpload(file) {
         const { input, options } = this.props;
         this.setState({ inProgress: true });
+        let filePath;
 
-        let datam = input.value && input.value !== '' ? JSON.parse(input.value) : [];
+        let datam = input.value ? (typeof input.value == 'string' ? JSON.parse(input.value) : input.value) : [];
 
         const key = file.name ? file.name.trim().replace(/ /g, '__') : '';
         const timeStamp = uuidv1();
-        const filePath = options.url(...options.params, key, timeStamp);
+        if (options.url) {
+            filePath = options.url(...options.params, key, timeStamp);
+        } else if (options.path) {
+            filePath = options.path + '/' + key;
+        }
         const bucketName = options.bucketName;
 
         try {
@@ -453,7 +458,7 @@ export class MultipleFileUploader extends FileUploader {
 
             this.setState({ inProgress: false, status: 'success' }, () => {
                 datam.push({ url: filePath, uid: file.uid });
-                input.onChange(JSON.stringify(datam));
+                input.onChange(datam);
             });
         } catch (error) {
             this.setState({ inProgress: false, status: 'error' }, () => {
@@ -464,12 +469,12 @@ export class MultipleFileUploader extends FileUploader {
 
     async removeFile(key) {
         const { input } = this.props;
-        let data = JSON.parse(input.value);
+        let data = typeof input.value == 'string' ? JSON.parse(input.value) : input.value;
 
         try {
             this.setState({ status: null }, () => {
                 data.splice(key, 1);
-                input.onChange(JSON.stringify(data));
+                input.onChange(data);
             });
         } catch (error) {}
     }
@@ -484,7 +489,7 @@ export class MultipleFileUploader extends FileUploader {
         } = this.props;
         let hasError = touched && error !== undefined;
 
-        const dataTemp = input.value && input.value !== '' ? JSON.parse(input.value) : [];
+        const dataTemp = input.value ? (typeof input.value == 'string' ? JSON.parse(input.value) : input.value) : [];
         const uploadProps = {
             showUploadList: false,
             beforeUpload: file => {
@@ -534,7 +539,7 @@ export class MultipleFileUploader extends FileUploader {
             },
             ...options
         };
-        const data = input.value && input.value !== '' ? JSON.parse(input.value) : [];
+        const data = input.value ? (typeof input.value == 'string' ? JSON.parse(input.value) : input.value) : [];
         return (
             <div className="field-wrapper">
                 <input type="text" {...input} {...rest} hidden={true} />

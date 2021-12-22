@@ -7,7 +7,6 @@ import moment from 'moment';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { Tabs } from 'antd';
-import config from 'appConfig';
 
 import constants from '../../../constants';
 import ExcelWorkbook from '../../../helpers/ExcelWorkbook';
@@ -15,9 +14,9 @@ import { readFile } from '../../forms/fields/FileDownloader';
 import FormGenerator from '../../forms/formBase';
 import FormHeaderComponent from '../../forms/formHeader';
 import NotificationHelper from '../../../helpers/NotificationHelper';
-import { removeInvalidData } from '../../forms/validations/dataFormatter';
 import TabChange from '../../tabChangeComponent';
 import FormSectionBase from '../../forms/formBase/FormSectionBase';
+import ValidationModule from '../../../validation-module';
 
 const {
     GENERATE_FORMS_TYPE_WITH_CHILDREN,
@@ -31,7 +30,6 @@ const {
     DATA_SAVE_ACTION,
     FORM_ACTION_TYPES
 } = constants;
-const { bucket: privateBucketName, publicBucket: publicBucketName } = config;
 
 const isArrayOrNot = data => {
     try {
@@ -67,10 +65,7 @@ let FormTabDataChangeAndDownload = props => {
         submitAction = SUBMIT_ACTION,
         asyncErrors,
         handleFormSubmit,
-        downloadOptions: {
-            api,
-            isPublicBucket = false
-        }
+        downloadOptions: { api, bucketName = null }
     } = props;
 
     const dispatch = useDispatch();
@@ -80,10 +75,10 @@ let FormTabDataChangeAndDownload = props => {
     const [submissionType, setSubmissionType] = useState(null);
 
     useEffect(() => {
-        if (dataset.formData) {
+        if (dataset && dataset.formData) {
             dispatch(initialize(formName, dataset.formData));
         }
-    }, [dataset.formData]);
+    }, [dataset]);
 
     useEffect(() => {
         if (submissionType === submitAction) {
@@ -169,7 +164,11 @@ let FormTabDataChangeAndDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url, bucketNameProp: isPublicBucket ? publicBucketName : privateBucketName, api });
+                const fileSource = await readFile({
+                    url: attachment.url,
+                    bucketNameProp: bucketName,
+                    api
+                });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 
@@ -190,7 +189,7 @@ let FormTabDataChangeAndDownload = props => {
         }
     };
     const formSubmit = formData => {
-        let data = removeInvalidData(formData, formFieldData, formFieldFunction);
+        let data = ValidationModule.removeInvalidData(formData, formFieldData, formFieldFunction);
         let message = onSubmitMessage;
         let errors = {};
 

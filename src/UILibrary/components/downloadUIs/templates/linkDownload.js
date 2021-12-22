@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col } from 'antd';
-import config from 'appConfig';
 
 import FormHeaderComponent from '../../forms/formHeader';
 import { FileDownloader } from '../../forms/fields';
-
 import docData from './docObject.json';
 
-const { bucket: privateBucketName, publicBucket: publicBucketName } = config;
 const isArrayOrNot = data => {
     try {
         const convertedData = JSON.parse(data);
@@ -22,10 +19,7 @@ let DownloadUsingDocumentLink = props => {
     const {
         dataset,
         options: { title = null, titleIicon = null },
-        downloadOptions: {
-            api,
-            isPublicBucket = false
-        },
+        downloadOptions: { api, bucketName = null },
         documentConfig
     } = props;
 
@@ -58,14 +52,26 @@ let DownloadUsingDocumentLink = props => {
                                         JSON.parse(documentData[doc.key]).map((docItem, key) => (
                                             <Row className="input-row" key={key}>
                                                 <Col className="files-sclla">
-                                                    <FileDownloader type="resource" url={docItem.url} bucketName={isPublicBucket ? publicBucketName : privateBucketName} api={api} />
+                                                    <FileDownloader
+                                                        type="resource"
+                                                        url={docItem.url}
+                                                        bucketName={
+                                                            bucketName
+                                                        }
+                                                        api={api}
+                                                    />
                                                 </Col>
                                             </Row>
                                         ))
                                     ) : (
                                         <Row className="input-row" key={key}>
                                             <Col className="files-sclla">
-                                                <FileDownloader type="resource" url={docData[doc.key].url} bucketName={isPublicBucket ? publicBucketName : privateBucketName} api={api} />
+                                                <FileDownloader
+                                                    type="resource"
+                                                    url={docData[doc.key].url}
+                                                    bucketName={bucketName}
+                                                    api={api}
+                                                />
                                             </Col>
                                         </Row>
                                     )}

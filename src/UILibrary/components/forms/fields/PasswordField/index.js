@@ -1,12 +1,12 @@
 import React from 'react';
 import { Input } from 'antd';
-import { passwordStrength } from '../../validations/fieldValidations';
+import ValidationModule from '../../../../validation-module';
 
 const PasswordField = ({ input, meta: { touched, error }, ...props }) => {
     let hasError = touched && error !== undefined;
 
-    const className = `input-field ${hasError ? 'has-error' : ''} ${props.className ? props.className : ''}`;
-    const strengthMap = passwordStrength(input.value);
+    // const className = `input-field ${hasError ? 'has-error' : ''} ${props.className ? props.className : ''}`;
+    const strengthMap = ValidationModule.passwordStrength(input.value);
 
     return (
         <div className="field-wrapper">

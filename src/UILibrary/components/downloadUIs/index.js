@@ -15,7 +15,7 @@ const {
 } = constants;
 
 let CreateDownloadSection = props => {
-    const { downloadType, formFieldData, formHooks, formName, options, formTabs, formFieldFunction } = props;
+    const { downloadType, formFieldData, formTabs, formFieldFunction } = props;
 
     return (
         <>

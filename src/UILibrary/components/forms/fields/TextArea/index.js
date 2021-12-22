@@ -16,7 +16,7 @@ const TextArea = ({ input, meta: { touched, error }, ...props }) => {
         }
     }
 
-    const { onBlur: _, ...restInput } = input;
+    const { onBlur, ...restInput } = input;
 
     const className = `input-field text-area ${hasError ? 'has-error' : ''} ${props.className ? props.className : ''}`;
     return (

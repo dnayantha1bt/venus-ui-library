@@ -10,7 +10,8 @@ import TabChange from '../tabChangeComponent';
 import FormGenerator from './formBase';
 import FormSectionBase from './formBase/FormSectionBase';
 import FormHeaderComponent from './formHeader';
-import { removeInvalidData } from './validations/dataFormatter';
+import ValidationModule from '../../validation-module';
+
 import constants from '../../constants';
 
 const {
@@ -91,6 +92,20 @@ let FormWithTabs = props => {
     };
 
     const handleSubmit = type => {
+        if (type === submitAction && !_.isEmpty(asyncErrors)) {
+            setSubmissionType(null);
+
+            const formFieldTabs = formTabs.filter(tab => tab.formFieldData || tab.formFieldFunction);
+
+            asyncError: for (const [key] of Object.entries(asyncErrors)) {
+                for (const fieldTab of formFieldTabs) {
+                    if (fieldTab.tabKey === key) {
+                        onchangeTab(fieldTab.tabKey);
+                        break asyncError;
+                    }
+                }
+            }
+        }
         setSubmissionType(type);
     };
 
@@ -101,7 +116,8 @@ let FormWithTabs = props => {
 
         for (const [key, value] of Object.entries(formData)) {
             const tabData = formTabs.find(a => a.tabKey === key);
-            data[key] = tabData && removeInvalidData(value, tabData.formFieldData, tabData.formFieldFunction);
+            data[key] =
+                tabData && ValidationModule.removeInvalidData(value, tabData.formFieldData, tabData.formFieldFunction);
         }
 
         if (submissionType === submitAction) {

@@ -43,7 +43,7 @@ const steps = [
   },
   {
     key: "7",
-    component: <DownloadByDocumentLink />,
+    component: <DownloadByDocumentLink api={connectApi} />,
   }
 ];
 

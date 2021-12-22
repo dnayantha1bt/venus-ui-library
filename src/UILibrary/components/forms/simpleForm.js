@@ -7,7 +7,8 @@ import _ from 'lodash';
 import NotificationHelper from '../../helpers/NotificationHelper';
 import FormGenerator from './formBase';
 import FormHeaderComponent from './formHeader';
-import { removeInvalidData } from './validations/dataFormatter';
+import ValidationModule from '../../validation-module';
+
 import constants from '../../constants';
 
 const {
@@ -68,7 +69,7 @@ let SimpleForm = props => {
     };
 
     const formSubmit = formData => {
-        let data = removeInvalidData(formData, formFieldData, formFieldFunction);
+        let data = ValidationModule.removeInvalidData(formData, formFieldData, formFieldFunction);
         let message = onSaveMessage;
         let errors = {};
 

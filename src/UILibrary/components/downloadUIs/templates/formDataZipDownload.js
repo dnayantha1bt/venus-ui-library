@@ -6,16 +6,13 @@ import _ from 'lodash';
 import moment from 'moment';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
-import config from 'appConfig';
 
 import constants from '../../../constants';
 import ExcelWorkbook from '../../../helpers/ExcelWorkbook';
 import { readFile } from '../../forms/fields/FileDownloader';
 import FormGenerator from '../../forms/formBase';
 import FormHeaderComponent from '../../forms/formHeader';
-import hooks from '../hooks';
 
-const { bucket: privateBucketName, publicBucket: publicBucketName } = config;
 const {
     GENERATE_FORMS_TYPE_SIMPLE,
     BUTTON_TITLE_DOWNLOAD,
@@ -55,10 +52,7 @@ let SimpleFormDataDownload = props => {
         handleFormSubmit,
         submitAction = SUBMIT_ACTION,
         disabled = true,
-        downloadOptions: {
-            api,
-            isPublicBucket = false
-        }
+        downloadOptions: { api, bucketName = null }
     } = props;
 
     const dispatch = useDispatch();
@@ -86,11 +80,11 @@ let SimpleFormDataDownload = props => {
 
             let values = _values;
 
-            for (let obj of values) {
-                if (hooks[obj.field.component]) {
-                    values = hooks[obj.field.component](values);
-                }
-            }
+            // for (let obj of values) {
+            //     if (hooks[obj.field.component]) {
+            //         values = hooks[obj.field.component](values);
+            //     }
+            // }
 
             const orderedFormData = _.orderBy(values, ['field.__order'], ['asc']);
 
@@ -98,6 +92,7 @@ let SimpleFormDataDownload = props => {
                 const field = obj.field;
                 const name = field.name;
                 const label = labelOverRide && labelOverRide[name] ? labelOverRide[name] : obj.label;
+
                 const data = dirtyFormValues[name] || '';
 
                 if ((name.includes('Attachment') || attachmentArray.includes(name)) && data && label) {
@@ -132,7 +127,11 @@ let SimpleFormDataDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url, bucketNameProp: isPublicBucket ? publicBucketName : privateBucketName, api });
+                const fileSource = await readFile({
+                    url: attachment.url,
+                    bucketNameProp: bucketName,
+                    api: api
+                });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 
@@ -202,6 +201,7 @@ let SimpleFormDataDownload = props => {
         <>
             <FormHeaderComponent {...formHeaderProps} />
             <FormGenerator
+                formType={GENERATE_FORMS_TYPE_SIMPLE}
                 className="generate-iaa-manager-letters-form"
                 onSubmit={() => {}}
                 name={formName}
@@ -213,7 +213,6 @@ let SimpleFormDataDownload = props => {
                         : null
                 }
                 disabled={disabled}
-                formType={GENERATE_FORMS_TYPE_SIMPLE}
                 formHooks={formHooks}
             />
         </>

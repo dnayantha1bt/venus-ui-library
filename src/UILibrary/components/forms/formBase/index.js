@@ -9,7 +9,7 @@ import constants from '../../../constants';
 const { GENERATE_FORMS_TYPE_SIMPLE, GENERATE_FORMS_TYPE_WITH_CHILDREN } = constants;
 
 const simpleFormFormat = props => {
-    const { handleSubmit, name, schemeId, disabled, formFieldData, className, formHooks } = props;
+    const { handleSubmit, disabled, formFieldData, className, formHooks } = props;
 
     return (
         <form className={className} onSubmit={handleSubmit}>

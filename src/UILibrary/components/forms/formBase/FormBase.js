@@ -6,7 +6,7 @@ import constants from '../../../constants';
 import { FullContainer, HalfContainer, PublishCheckbox, AddMoreContainer, FullViewContainer } from '../fieldContainers';
 import MultiPublishContainer from '../../multiPublish';
 import { FormField } from '../fields';
-import { ValidationModules } from '../validations/ValidationModules';
+import ValidationModule from '../../../validation-module';
 
 const { FORM_TEMPLATES } = constants;
 
@@ -34,7 +34,7 @@ const DynamicComponent = ({ element, disabled, children, formHooks }) => {
     }
     // set validations to the form if use JSON config
     if (element.field && element.field.validationModules) {
-        const validations = ValidationModules(element.field.validationModules);
+        const validations = ValidationModule.JsonFormFieldValidator(element.field.validationModules);
         if (validations) {
             delete element.field.validationModules;
             element.field.validate = validations;
@@ -68,8 +68,7 @@ const DynamicComponent = ({ element, disabled, children, formHooks }) => {
             {element.removeBubble && element.removeBubble.bool && !disabled && (
                 <i {...element.removeBubble.actions} className="remove-icon  fa fa-times" aria-hidden="true"></i>
             )}
-            {element.rawComponents && element.rawComponents}
-            {children}
+            {element.rawComponents ? element.rawComponents : children ? children : null}
         </Row>
     ) : element.type === COL ? (
         <Col {...element.props}>{children}</Col>
@@ -116,7 +115,12 @@ const DynamicComponent = ({ element, disabled, children, formHooks }) => {
     ) : element.type === ADD_MORE_CONTAINER ? (
         <AddMoreContainer element={element} />
     ) : element.type === PUBLISH_MULTI_CHECKBOX_CONTAINER ? (
-        <MultiPublishContainer rows={element.data} formName={element.formName} bucketName={element.bucketName} api={element.api} />
+        <MultiPublishContainer
+            rows={element.data}
+            formName={element.formName}
+            bucketName={element.bucketName}
+            api={element.api}
+        />
     ) : null;
 };
 
@@ -384,7 +388,7 @@ const recursivelyAssignOrderNumbersToElements = (fields, orderMap, refNum) => {
     for (var i = 0; i < fields.length; i++) {
         let field = fields[i];
         if (!field) continue;
-        if (field && field.field) {
+        if (field.field) {
             if (Array.isArray(field.field)) {
                 let foundOrderMap = recursivelyAssignOrderNumbersToElements(field.field, orderMap, refNum);
                 localOrderMap = { ...localOrderMap, ...foundOrderMap };

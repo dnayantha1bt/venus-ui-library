@@ -25,6 +25,10 @@ let DownloadUsingDocumentLink = props => {
                     },
                     onSubmitMessage: null
                 }}
+                downloadOptions={{
+                    api: props.api,
+                    bucketName: 's3BucketName'
+                }}
                 {...props}
             />
         </>

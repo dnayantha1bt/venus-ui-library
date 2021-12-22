@@ -6,7 +6,6 @@ import _ from 'lodash';
 import moment from 'moment';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
-import config from 'appConfig';
 
 import constants from '../../../constants';
 import ExcelWorkbook from '../../../helpers/ExcelWorkbook';
@@ -14,9 +13,8 @@ import { readFile } from '../../forms/fields/FileDownloader';
 import FormGenerator from '../../forms/formBase';
 import FormHeaderComponent from '../../forms/formHeader';
 import NotificationHelper from '../../../helpers/NotificationHelper';
-import { removeInvalidData } from '../../forms/validations/dataFormatter';
+import ValidationModule from '../../../validation-module';
 
-const { bucket: privateBucketName, publicBucket: publicBucketName } = config;
 const {
     GENERATE_FORMS_TYPE_SIMPLE,
     SUBMIT_ACTION,
@@ -60,10 +58,7 @@ let FormDataChangeAndDownload = props => {
         handleFormSubmit,
         asyncErrors,
         submitAction = SUBMIT_ACTION,
-        downloadOptions: {
-            api,
-            isPublicBucket = false
-        }
+        downloadOptions: { api, bucketName = null }
     } = props;
 
     const dispatch = useDispatch();
@@ -72,10 +67,10 @@ let FormDataChangeAndDownload = props => {
     const [submissionType, setSubmissionType] = useState(null);
 
     useEffect(() => {
-        if (dataset.formData) {
+        if (dataset && dataset.formData) {
             dispatch(initialize(formName, dataset.formData));
         }
-    }, [dataset.formData]);
+    }, [dataset]);
 
     useEffect(() => {
         if (submissionType === submitAction) {
@@ -135,7 +130,11 @@ let FormDataChangeAndDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url, bucketNameProp: isPublicBucket ? publicBucketName : privateBucketName, api });
+                const fileSource = await readFile({
+                    url: attachment.url,
+                    bucketNameProp: bucketName,
+                    api
+                });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 
@@ -161,7 +160,7 @@ let FormDataChangeAndDownload = props => {
     };
 
     const formSubmit = formData => {
-        let data = removeInvalidData(formData, formFieldData, formFieldFunction);
+        let data = ValidationModule.removeInvalidData(formData, formFieldData, formFieldFunction);
         let message = onSubmitMessage;
         let errors = {};
 

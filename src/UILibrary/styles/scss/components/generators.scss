@@ -218,6 +218,12 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    cursor: pointer;
+
+    .fa-icon {
+      vertical-align: top;
+      margin-top: 2.3px;
+    }
   }
 
   .download-file-wrap {
@@ -250,14 +256,6 @@
     }
   }
 
-  .right-wrap {
-    cursor: pointer;
-
-    .fa-icon {
-      vertical-align: top;
-      margin-top: 2.3px;
-    }
-  }
 }
 
 .autocomplete {

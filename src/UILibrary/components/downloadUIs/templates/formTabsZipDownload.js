@@ -6,16 +6,14 @@ import moment from 'moment';
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
 import { Tabs } from 'antd';
-import config from 'appConfig';
 
-import constants from '../../../constants';
 import ExcelWorkbook from '../../../helpers/ExcelWorkbook';
 import { readFile } from '../../forms/fields/FileDownloader';
 import FormGenerator from '../../forms/formBase';
 import FormHeaderComponent from '../../forms/formHeader';
 import TabChange from '../../tabChangeComponent';
 import FormSectionBase from '../../forms/formBase/FormSectionBase';
-import hooks from '../hooks';
+import constants from '../../../constants';
 
 const {
     GENERATE_FORMS_TYPE_WITH_CHILDREN,
@@ -27,7 +25,6 @@ const {
     FORM_ACTION_TYPES,
     SUBMIT_ACTION
 } = constants;
-const { bucket: privateBucketName, publicBucket: publicBucketName } = config;
 
 const isArrayOrNot = data => {
     try {
@@ -58,10 +55,7 @@ let TabFormDataDownload = props => {
         action_inProgress,
         submitAction = SUBMIT_ACTION,
         handleFormSubmit,
-        downloadOptions: {
-            api,
-            isPublicBucket = false
-        }
+        downloadOptions: { api, bucketName = null }
     } = props;
 
     const dispatch = useDispatch();
@@ -104,11 +98,11 @@ let TabFormDataDownload = props => {
 
                 let values = _values;
 
-                for (let obj of values) {
-                    if (hooks[obj.field.component]) {
-                        values = hooks[obj.field.component](values);
-                    }
-                }
+                // for (let obj of values) {
+                //     if (hooks[obj.field.component]) {
+                //         values = hooks[obj.field.component](values);
+                //     }
+                // }
 
                 const orderedFormData = _.orderBy(values, ['field.__order'], ['asc']);
 
@@ -154,7 +148,11 @@ let TabFormDataDownload = props => {
             const fileDataMap = [];
 
             for (let attachment of attachments) {
-                const fileSource = await readFile({ url: attachment.url, bucketNameProp: isPublicBucket ? publicBucketName : privateBucketName, api });
+                const fileSource = await readFile({
+                    url: attachment.url,
+                    bucketNameProp: bucketName,
+                    api
+                });
                 fileDataMap.push({ name: attachment.key, source: fileSource });
             }
 

@@ -17,36 +17,36 @@ let CreateActivateSection = props => {
 
     return (
         <>
-            <div className="lgim-styles-wrapper">
-                <section className="active-scheme-options">
-                    <div className="content clearfix">
-                        {activationType === ACTIVATION_TYPE_DEFAULT ? (
+            {activationType === ACTIVATION_TYPE_DEFAULT ? (
+                <div className="lgim-styles-wrapper">
+                    <section className="active-scheme-options">
+                        <div className="content clearfix">
                             <DefaultActivation {...props} />
-                        ) : activationType === ACTIVATION_TYPE_USING_FORM ? (
-                            <CreateForm
-                                submitAction={ACTIVE_MANDATE_ACTION}
-                                formFieldData={formFieldData}
-                                formFieldFunction={formFieldFunction}
-                                formHooks={formHooks}
-                                formName={formName}
-                                formType={FORM_TYPE_SINGLE_PAGE}
-                                options={options}
-                                {...props}
-                            />
-                        ) : activationType === ACTIVATION_TYPE_USING_FORM_TABS ? (
-                            <CreateForm
-                                submitAction={ACTIVE_MANDATE_ACTION}
-                                formTabs={formTabs}
-                                formHooks={formHooks}
-                                formName={formName}
-                                formType={FORM_TYPE_WITH_TABS}
-                                options={options}
-                                {...props}
-                            />
-                        ) : null}
-                    </div>
-                </section>
-            </div>
+                        </div>
+                    </section>
+                </div>
+            ) : activationType === ACTIVATION_TYPE_USING_FORM ? (
+                <CreateForm
+                    submitAction={ACTIVE_MANDATE_ACTION}
+                    formFieldData={formFieldData}
+                    formFieldFunction={formFieldFunction}
+                    formHooks={formHooks}
+                    formName={formName}
+                    formType={FORM_TYPE_SINGLE_PAGE}
+                    options={options}
+                    {...props}
+                />
+            ) : activationType === ACTIVATION_TYPE_USING_FORM_TABS ? (
+                <CreateForm
+                    submitAction={ACTIVE_MANDATE_ACTION}
+                    formTabs={formTabs}
+                    formHooks={formHooks}
+                    formName={formName}
+                    formType={FORM_TYPE_WITH_TABS}
+                    options={options}
+                    {...props}
+                />
+            ) : null}
         </>
     );
 };
