@@ -1,6 +1,6 @@
 import moment from "moment";
 import { required, numericality } from "redux-form-validators";
-import constants from "../../UILibrary/constants";
+import constants from "../../../UILibrary/constants";
 import { ASSETS_FORM_SECTION } from "./constants";
 
 const { FORM_TEMPLATES, FORM_FIELDS } = constants;

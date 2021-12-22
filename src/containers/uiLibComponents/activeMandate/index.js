@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { TEXT, FORM_TITLE, REQUEST_A_FORMAL_PROPOSAL_FROM_US } from './constants';
-import CreateActivateSection from '../../UILibrary/components/activations';
-import constants from '../../UILibrary/constants';
+import CreateActivateSection from '../../../UILibrary/components/activations';
+import constants from '../../../UILibrary/constants';
 
 const { ACTIVATION_TYPE_DEFAULT, BUTTON_TITLE_ACTIVATE } = constants;
 

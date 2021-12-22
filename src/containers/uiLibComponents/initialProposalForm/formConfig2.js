@@ -1,4 +1,4 @@
-import constants from "../../UILibrary/constants";
+import constants from "../../../UILibrary/constants";
 import { required, numericality } from "redux-form-validators";
 import moment from "moment";
 import {

@@ -1,28 +1,44 @@
 import React from 'react';
 import { formFields } from './formConfig';
-import CreateFormComponent from '../../UILibrary/components/forms';
-import constants from '../../UILibrary/constants';
+import { formFields2 } from './formConfig2';
+import CreateFormComponent from '../../../UILibrary/components/forms';
+import constants from '../../../UILibrary/constants';
 import { FORM_NAME, FORM_TITLE, REQUEST_A_FORMAL_PROPOSAL_FROM_US } from './constants';
 
 const {
-    FORM_TYPE_SINGLE_PAGE,
+    FORM_TYPE_WITH_TABS,
     BUTTON_TITLE_SAVE,
     BUTTON_TITLE_REQUEST,
     ON_SAVE_MESSAGE,
-    ON_SUBMIT_MESSAGE
+    ON_SUBMIT_MESSAGE,
+    FORM_SECTION_INCLUDE_NEW
 } = constants;
 
-const FileUploader = props => {
-    
+const TabForm = props => {
     const formSubmit = formData => {
         console.log('formData', formData);
     };
 
+    const formTabs = [
+        {
+            type: FORM_SECTION_INCLUDE_NEW,
+            tabKey: 'tab1',
+            tabName: 'Form 1',
+            formFieldFunction: formFields
+        },
+        {
+            type: FORM_SECTION_INCLUDE_NEW,
+            tabKey: 'tab2',
+            tabName: 'Form 2',
+            formFieldFunction: formFields2
+        }
+    ];
+
     return (
         <CreateFormComponent
-            formFieldFunction={formFields}
+            formTabs={formTabs}
             formName={FORM_NAME}
-            formType={FORM_TYPE_SINGLE_PAGE}
+            formType={FORM_TYPE_WITH_TABS}
             disabled={false}
             action_inProgress={false}
             handleFormSubmit={formSubmit}
@@ -40,9 +56,8 @@ const FileUploader = props => {
                 onSubmitMessage: ON_SUBMIT_MESSAGE,
                 onSaveMessage: ON_SAVE_MESSAGE
             }}
-            { ...props }
         />
     );
 };
 
-export default FileUploader;
+export default TabForm;

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import PickUsersComponent from '../../UILibrary/components/pickUsers';
+import PickUsersComponent from '../../../UILibrary/components/pickUsers';
 import data from './dataset.json';
-import constants from '../../UILibrary/constants';
+import constants from '../../../UILibrary/constants';
 
 const { PICK_USER_TYPE_SIMPLE } = constants;
 

@@ -33,8 +33,27 @@ const DynamicComponent = ({ element, disabled, children, formHooks }) => {
         return null;
     }
     // set validations to the form if use JSON config
+
+    if (element.type === FIELD && element.props) {
+        const validations = ValidationModule.formFieldValidations(element.props.validationModules);
+        if (validations) {
+            delete element.props.validationModules;
+            element.props.validate = validations;
+        }
+    }
+    if (element.childComponents) {
+        element.childComponents.map((data, key) => {
+            if (data.field && data.field.validationModules) {
+                const validations = ValidationModule.formFieldValidations(data.field.validationModules);
+                if (validations) {
+                    delete element.childComponents[key].field.validationModules;
+                    element.childComponents[key].field.validate = validations;
+                }
+            }
+        });
+    }
     if (element.field && element.field.validationModules) {
-        const validations = ValidationModule.JsonFormFieldValidator(element.field.validationModules);
+        const validations = ValidationModule.formFieldValidations(element.field.validationModules);
         if (validations) {
             delete element.field.validationModules;
             element.field.validate = validations;

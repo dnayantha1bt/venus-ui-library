@@ -1,6 +1,6 @@
 import React from "react";
 import { required } from "redux-form-validators";
-import constants from "../../UILibrary/constants";
+import constants from "../../../UILibrary/constants";
 import { Divider } from "antd";
 
 const { FORM_TEMPLATES, FORM_FIELDS } = constants;

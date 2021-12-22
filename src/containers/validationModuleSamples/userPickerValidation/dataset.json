@@ -1,0 +1,114 @@
+{
+    "formData": {
+        "schemeCategory": "navGuide"
+    },
+    "documents": {
+        "IAA": {
+            "url": "sample.pdf",
+            "path": "uploads/entity/3957cd00-5748-11ec-a453-d5d3807444da/uploadPublish/step4/e53ff360-574b-11ec-8bbf-3dd66cde77a8/IAA",
+            "title": "IAA Document",
+            "isContinue": false
+        },
+        "FMA": {
+            "url": "sample.pdf",
+            "path": "uploads/entity/3957cd00-5748-11ec-a453-d5d3807444da/uploadPublish/step4/e53ff360-574b-11ec-8bbf-3dd66cde77a8/IAA",
+            "title": "FMA Document",
+            "isContinue": false
+        }
+    },
+    "commentId": null,
+    "approvers": {},
+    "signatories": {},
+    "userPool": {
+        "signatories": {
+            "IAA": {
+                "admin": [
+                    {
+                        "userId": 1,
+                        "firstName": "Admin",
+                        "lastName": "One",
+                        "email": "venus.ad2021@gmail.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png"
+                    },
+                    {
+                        "userId": 19,
+                        "firstName": "Thivanka",
+                        "lastName": "Nimesh",
+                        "email": "thivankanimshan@gmail.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png"
+                    },
+                    {
+                        "userId": 24,
+                        "firstName": "test",
+                        "lastName": "test",
+                        "email": "test3@gmail.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png"
+                    },
+                    {
+                        "userId": 25,
+                        "firstName": "",
+                        "lastName": "test",
+                        "email": "test4@gmail.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png"
+                    },
+                    {
+                        "userId": 26,
+                        "firstName": "test55",
+                        "lastName": "test55",
+                        "email": "test55@gmail.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png"
+                    },
+                    {
+                        "userId": 28,
+                        "firstName": "test555",
+                        "lastName": "test555",
+                        "email": "test555@gmail.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png"
+                    }
+                ]
+            }
+        },
+        "approvers": {
+            "IAA": {
+                "admin": [
+                    {
+                        "userId": 1,
+                        "firstName": "Admin",
+                        "lastName": "One",
+                        "email": "venus.ad2021@gmail.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png",
+                        "baseType": ["preSelectedBased"],
+                        "status": "P"
+                    },
+                    {
+                        "userId": 3,
+                        "firstName": "Danthila",
+                        "lastName": "Kasun",
+                        "email": "danthila.dissanayake@1billiontech.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png",
+                        "baseType": ["preSelectedBased"],
+                        "status": "P"
+                    },
+                    {
+                        "userId": 4,
+                        "firstName": "anuj",
+                        "lastName": "shashimal",
+                        "email": "anujshashimal45@gmail.com",
+                        "userType": "platformAdmin",
+                        "imageUrl": "https://tpip-venus-dev-public.s3.eu-west-2.amazonaws.com/profile.png",
+                        "baseType": ["preSelectedBased"],
+                        "status": "P"
+                    }
+                ]
+            }
+        }
+    }
+}

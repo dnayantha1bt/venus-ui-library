@@ -1,4 +1,4 @@
-import constants from '../../UILibrary/constants';
+import constants from '../../../UILibrary/constants';
 
 const { FORM_TEMPLATES, FORM_FIELDS } = constants;
 const { FULL_VIEW_CONTAINER } = FORM_TEMPLATES;

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { formFields } from "./formConfig";
 import { formFields2 } from "./formConfig2";
 import { formFields3 } from "./formConfig3";
-import CreateFormComponent from "../../UILibrary/components/forms";
-import PickUsersContainer from "../../UILibrary/components/pickUsers";
-import constants from "../../UILibrary/constants";
+import CreateFormComponent from "../../../UILibrary/components/forms";
+import PickUsersContainer from "../../../UILibrary/components/pickUsers";
+import constants from "../../../UILibrary/constants";
 import data from "./dataset.json";
 import {
   APPROVAL_FORM_SECTION,

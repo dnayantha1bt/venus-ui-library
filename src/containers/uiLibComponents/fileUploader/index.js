@@ -1,7 +1,7 @@
 import React from 'react';
 import { formFields } from './formConfig';
-import CreateFormComponent from '../../UILibrary/components/forms';
-import constants from '../../UILibrary/constants';
+import CreateFormComponent from '../../../UILibrary/components/forms';
+import constants from '../../../UILibrary/constants';
 import { FORM_NAME, FORM_TITLE, REQUEST_A_FORMAL_PROPOSAL_FROM_US } from './constants';
 
 const {
@@ -12,7 +12,8 @@ const {
     ON_SUBMIT_MESSAGE
 } = constants;
 
-const SimpleForm = props => {
+const FileUploader = props => {
+    
     const formSubmit = formData => {
         console.log('formData', formData);
     };
@@ -39,8 +40,9 @@ const SimpleForm = props => {
                 onSubmitMessage: ON_SUBMIT_MESSAGE,
                 onSaveMessage: ON_SAVE_MESSAGE
             }}
+            { ...props }
         />
     );
 };
 
-export default SimpleForm;
+export default FileUploader;

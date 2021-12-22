@@ -1,0 +1,304 @@
+[
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Required Validate",
+        "field": {
+            "__order": "a",
+            "name": "requiredvalidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                }
+            ]
+        }
+    },
+
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Email Validate",
+        "field": {
+            "name": "emailvalidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "isEmail": true,
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "EmailValidate"
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Number Validate",
+        "field": {
+            "name": "numbervalidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "NumberValidate"
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Greater Than Zero Validate",
+        "field": {
+            "name": "greaterthanzerocalidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "GreaterThanZeroValidate"
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Numerical Validate (Max 2 Decimal Points)",
+        "field": {
+            "name": "numericalvalidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "NumericalValidate",
+                    "options": {
+                        ">": 6,
+                        "<": 100
+                    }
+                },
+                {
+                    "moduleName": "DecimalValidate",
+                    "options": {
+                        "precision": 2,
+                        "message": "should contain 3 decimal points"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Date Validate",
+        "field": {
+            "name": "DateValidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "options": {
+                "ignoreCharacterValidation": true
+            },
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "DateValidate",
+                    "options": {
+                        "format": "dd/mm/yyyy"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Length Validate",
+        "field": {
+            "name": "Length Validate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "LengthValidate",
+                    "options": {
+                        "in": [3, 5]
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "type": "half_container",
+        "bool": true,
+        "childComponents": [
+            {
+                "type": "full_container",
+                "label": "ConfirmationValidate1",
+                "field": {
+                    "name": "confirmationValidate1",
+                    "className": "form-control",
+                    "component": "INPUT_FIELD",
+                    "validationModules": [
+                        {
+                            "moduleName": "RequiredValidate"
+                        }
+                    ]
+                }
+            },
+            {
+                "type": "full_container",
+                "bool": true,
+                "label": "ConfirmationValidate2",
+                "field": {
+                    "name": "ConfirmationValidate2",
+                    "className": "form-control",
+                    "component": "INPUT_FIELD",
+                    "validationModules": [
+                        {
+                            "moduleName": "RequiredValidate"
+                        },
+                        {
+                            "moduleName": "ConfirmationValidate",
+                            "options": {
+                                "field": "confirmationValidate1",
+                                "fieldLabel": "ConfirmationValidate1"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    },
+
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "String only Validate",
+        "field": {
+            "name": "Format Validate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "StringValidate"
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Includes Validate",
+        "field": {
+            "name": "IncludesValidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "IncludesValidate",
+                    "options": {
+                        "in": ["red", "green"],
+                        "message": "not included in the list"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "Exclude Validate",
+        "field": {
+            "name": "ExcludeValidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "ExcludeVaidate",
+                    "options": {
+                        "in": ["apple", "banana"],
+                        "message": "is excluded"
+                    }
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "UrlValidate",
+        "field": {
+            "__order": "a",
+            "name": "urlvalidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "options": {
+                "ignoreCharacterValidation": true
+            },
+            "validationModules": [
+                {
+                    "moduleName": "UrlValidate"
+                }
+            ]
+        }
+    },
+
+    {
+        "type": "full_container",
+        "bool": true,
+        "label": "SpecialCharacterValidate",
+        "field": {
+            "__order": "a",
+            "name": "specialChanractervalidate",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
+                {
+                    "moduleName": "SpecialCharacterValidate"
+                }
+            ]
+        }
+    },
+    {
+        "type": "full_container",
+        "bool": false,
+        "label": "removeInvalidData",
+        "field": {
+            "name": "removeInvalidData",
+            "className": "form-control",
+            "component": "INPUT_FIELD",
+            "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                }
+            ]
+        }
+    }
+]

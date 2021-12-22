@@ -4,15 +4,21 @@ import { Menu, Row, Col } from "antd";
 import { AppstoreOutlined } from "@ant-design/icons";
 
 import "../UILibrary/styles/scss/layout.scss"; // import scss from UILibrary
-
-import SimpleForm from "./simpleForm";
-import TabForm from "./tabForm";
-import PickUsers from "./pickUsers";
-import FileUploader from "./fileUploader";
 import connectApi from "../apis";
-import ActiveMandate from "./activeMandate";
-import InitialProposalForm from "./initialProposalForm";
-import DownloadByDocumentLink from "./downloadLinks";
+
+// ui lib components
+import SimpleForm from "./uiLibComponents/simpleForm";
+import TabForm from "./uiLibComponents/tabForm";
+import PickUsers from "./uiLibComponents/pickUsers";
+import FileUploader from "./uiLibComponents/fileUploader";
+import ActiveMandate from "./uiLibComponents/activeMandate";
+import InitialProposalForm from "./uiLibComponents/initialProposalForm";
+import DownloadByDocumentLink from "./uiLibComponents/downloadLinks";
+
+// validation module samples
+import VMFormFunctional from './validationModuleSamples/simpleFormFunctional';
+import VMFormJSON from './validationModuleSamples/simpleFormJson';
+import VMUserPicker from './validationModuleSamples/userPickerValidation';
 
 const { SubMenu } = Menu;
 
@@ -44,6 +50,18 @@ const steps = [
   {
     key: "7",
     component: <DownloadByDocumentLink api={connectApi} />,
+  },
+  {
+    key: "8",
+    component: <VMFormFunctional />,
+  },
+  {
+    key: "9",
+    component: <VMFormJSON />,
+  },
+  {
+    key: "10",
+    component: <VMUserPicker />,
   }
 ];
 
@@ -77,7 +95,7 @@ const Container = () => {
                 <SubMenu
                   key="sub1"
                   icon={<AppstoreOutlined />}
-                  title="Navigation Two"
+                  title="UI Library Components"
                 >
                   <Menu.Item key="1">Simple Form</Menu.Item>
                   <Menu.Item key="2">Tabs Form</Menu.Item>
@@ -86,6 +104,15 @@ const Container = () => {
                   <Menu.Item key="5">Active Mandate</Menu.Item>
                   <Menu.Item key="6">Initial Proposal Form</Menu.Item>
                   <Menu.Item key="7">Document Download</Menu.Item>
+                </SubMenu>
+                <SubMenu
+                  key="sub2"
+                  icon={<AppstoreOutlined />}
+                  title="Validation Module"
+                >
+                  <Menu.Item key="8">Fuctional Field Validations</Menu.Item>
+                  <Menu.Item key="9">JSON Field Validations</Menu.Item>
+                  <Menu.Item key="10">User Picker Validations</Menu.Item>
                 </SubMenu>
               </Menu>
             </Col>
