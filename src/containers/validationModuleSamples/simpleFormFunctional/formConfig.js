@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import BaseTemplate from '../../../UILibrary/components/forms/formBase/FormBase';
 import constants from '../../../UILibrary/constants';
 
@@ -65,15 +66,12 @@ export const formFields = props => {
         {
             type: FULL_CONTAINER,
             bool: true,
-            label: 'Number Validate',
+            label: 'Number Validate (Without Required Validation)',
             field: {
                 name: `numbervalidate`,
                 className: 'form-control',
                 component: INPUT_FIELD,
                 validationModules: [
-                    {
-                        moduleName: 'RequiredValidate'
-                    },
                     {
                         moduleName: 'NumberValidate'
                     }
@@ -83,15 +81,12 @@ export const formFields = props => {
         {
             type: FULL_CONTAINER,
             bool: true,
-            label: 'Greater Than Zero Validate',
+            label: 'Greater Than Zero Validate (Without Required Validation)',
             field: {
                 name: `greaterthanzerocalidate`,
                 className: 'form-control',
                 component: INPUT_FIELD,
                 validationModules: [
-                    {
-                        moduleName: 'RequiredValidate'
-                    },
                     {
                         moduleName: 'GreaterThanZeroValidate'
                     }
@@ -150,6 +145,50 @@ export const formFields = props => {
                         moduleName: 'DateValidate',
                         options: {
                             format: 'dd/mm/yyyy'
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            type: FULL_CONTAINER,
+            bool: true,
+            label: 'Date Validate (Picker Incorrect Format)',
+            field: {
+                __order: 'i',
+                name: 'dateTrustDeed',
+                className: 'form-control',
+                component: DATE_PICKER,
+                options: {
+                    disabledDate: current => current && current > moment().startOf('day')
+                },
+                validationModules: [
+                    {
+                        moduleName: 'DateValidate',
+                        options: {
+                            format: 'dd/mm/yyyy'
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            type: FULL_CONTAINER,
+            bool: true,
+            label: 'Date Validate (Picker Correct Format)',
+            field: {
+                __order: 'i',
+                name: 'dateTrustDeed1',
+                className: 'form-control',
+                component: DATE_PICKER,
+                options: {
+                    disabledDate: current => current && current > moment().startOf('day')
+                },
+                validationModules: [
+                    {
+                        moduleName: 'DateValidate',
+                        options: {
+                            format: 'yyyy-mm-dd'
                         }
                     }
                 ]
