@@ -19,16 +19,13 @@
     {
         "type": "full_container",
         "bool": true,
-        "label": "Email Validate",
+        "label": "Email Validate (Without Required Validation)",
         "field": {
             "name": "emailvalidate",
             "className": "form-control",
             "component": "INPUT_FIELD",
             "isEmail": true,
             "validationModules": [
-                {
-                    "moduleName": "RequiredValidate"
-                },
                 {
                     "moduleName": "EmailValidate"
                 }
@@ -38,15 +35,12 @@
     {
         "type": "full_container",
         "bool": true,
-        "label": "Number Validate",
+        "label": "Number Validate (Without Required Validation)",
         "field": {
             "name": "numbervalidate",
             "className": "form-control",
             "component": "INPUT_FIELD",
             "validationModules": [
-                {
-                    "moduleName": "RequiredValidate"
-                },
                 {
                     "moduleName": "NumberValidate"
                 }
@@ -197,6 +191,9 @@
             "className": "form-control",
             "component": "INPUT_FIELD",
             "validationModules": [
+                {
+                    "moduleName": "RequiredValidate"
+                },
                 {
                     "moduleName": "StringValidate"
                 }
