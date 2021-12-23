@@ -258,6 +258,9 @@
             },
             "validationModules": [
                 {
+                    "moduleName": "RequiredValidate"
+                },
+                {
                     "moduleName": "UrlValidate"
                 }
             ]
