@@ -7,6 +7,7 @@ let confirmation = memoize(function ({ field, fieldLabel, caseSensitive, message
   fieldLabel = fieldLabel || fieldKeys[fieldKeys.length - 1]
 
   return prepare(ifCond, unless, false, function (value, allValues) {
+    if(!value || value === '') return;
     let fieldValue = '' + (getIn(allValues, fieldKeys) || '')
 
     let cs = caseSensitive != null ? caseSensitive : Validators.defaultOptions.caseSensitive

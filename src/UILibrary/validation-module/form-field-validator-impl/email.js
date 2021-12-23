@@ -10,6 +10,7 @@ let email = memoize(function ({ domainWhitelist, domainBlacklist, message, msg, 
   domainBlacklist = prepareList(domainBlacklist)
 
   return prepare(ifCond, unless, allowBlank, function (value) {
+    if(!value || value === '') return;
     let match = value.match(REG_EMAIL)
     if (!match) {
       return Validators.formatMessage(prepareMsg(msg, 'email', 'invalid'))

@@ -2,6 +2,7 @@ import { addValidator } from 'redux-form-validators';
 
 export const decimalValidator = addValidator({
     validator: function(options, value, allValues) {
+        if(!value || value === '') return;
         if (value.includes('.') && options && options.precision) {
             const decimalPart = value.split('.');
 

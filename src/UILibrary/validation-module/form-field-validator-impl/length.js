@@ -29,6 +29,7 @@ let length = memoize(function ({
   }
 
   return prepare(ifCond, unless, allowBlank, function (value) {
+    if(!value || value === '') return;
     if (equal !== null && value.length !== equal) {
       return Validators.formatMessage(prepareMsg(msg, 'wrongLength', 'is', '=', { count: equal }))
     }

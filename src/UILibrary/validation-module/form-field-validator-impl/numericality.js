@@ -36,8 +36,7 @@ let numericality = memoize(function ({
   lessOrEqual = selectNum(lessOrEqual, lessThanOrEqualTo)
 
   return prepare(ifCond, unless, allowBlank, function (value) {
-    console.log('validated val',value)
-    if(value === '') return;
+    if(!value || value === '') return;
     if (!isNumber(value)) {
       return Validators.formatMessage(prepareMsg(msg, 'notANumber', 'NaN'))
     }

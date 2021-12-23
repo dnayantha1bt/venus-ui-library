@@ -5,6 +5,7 @@ let format = memoize(function ({ with: wit, without, message, msg, if: ifCond, u
   msg = msg || message
 
   return prepare(ifCond, unless, allowBlank, function (value) {
+    if(!value || value === '') return;
     if ((wit && !value.match(wit)) || (without && value.match(without))) {
       return Validators.formatMessage(prepareMsg(msg, 'invalid'))
     }

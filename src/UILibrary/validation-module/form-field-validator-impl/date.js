@@ -35,6 +35,7 @@ let date = memoize(function ({
   msg = msg || message
 
   return prepare(ifCond, unless, allowBlank, function (value) {
+    if(!value || value === '') return;
     let normFormat = normalizeFormat(format, ymd)
     let date = normParseDate(value, normFormat, false)
     if (date === 'wrongFormat') {

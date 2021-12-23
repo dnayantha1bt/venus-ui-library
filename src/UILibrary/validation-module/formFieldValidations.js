@@ -1,5 +1,6 @@
 
-import {    required,
+import {
+    required,
     email,
     date,
     length,
@@ -9,7 +10,8 @@ import {    required,
     exclusion,
     url,
     file,
-    numericality} from './form-field-validator-impl'
+    numericality
+} from './form-field-validator-impl'
 import constants from '../constants';
 import NotificationHelper from '../helpers/NotificationHelper';
 import { specialCharacterValidation, urlValidate, emailValidate } from './regexValidations';

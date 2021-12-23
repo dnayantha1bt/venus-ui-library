@@ -43,6 +43,7 @@ let file = memoize(function ({
   let max = maxSize != null ? sizeToInt(maxSize) : null
 
   return prepare(ifCond, unless, false, function (value) {
+    if(!value || value === '') return;
     let isAFileList = isFileList(value)
 
     // special blank check
