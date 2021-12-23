@@ -18,6 +18,7 @@ export function regFormat (func, messageType) {
     let msg = options.msg || options.message
 
     return prepare(options['if'], options.unless, options.allowBlank, function (value) {
+      if (!value || value == '') return;
       if (!value.match(func(options))) {
         return Validators.formatMessage(prepareMsg(msg, messageType))
       }

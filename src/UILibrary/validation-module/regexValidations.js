@@ -61,7 +61,7 @@ const numberValidate = value => (value && isNaN(Number(value)) ? 'Must be a numb
 
 const urlValidate = value => {
     const reg = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/gm;
-    if (reg.test(value)) {
+    if (!value || value == '' || reg.test(value)) {
         return undefined;
     } else {
         return 'is not a valid url';
