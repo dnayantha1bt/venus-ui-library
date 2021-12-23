@@ -55,6 +55,9 @@ export const formFields = props => {
                 isEmail: true,
                 validationModules: [
                     {
+                        moduleName: 'RequiredValidate'
+                    },
+                    {
                         moduleName: 'EmailValidate'
                     }
                 ]
@@ -100,6 +103,9 @@ export const formFields = props => {
                 component: INPUT_FIELD,
                 validationModules: [
                     {
+                        moduleName: 'RequiredValidate'
+                    },
+                    {
                         moduleName: 'NumericalValidate',
                         options: {
                             otherThan: 10.05
@@ -132,6 +138,9 @@ export const formFields = props => {
                     ignoreCharacterValidation: true
                 },
                 validationModules: [
+                    {
+                        moduleName: 'RequiredValidate'
+                    },
                     {
                         moduleName: 'DateValidate',
                         options: {
@@ -194,6 +203,9 @@ export const formFields = props => {
                 className: 'form-control',
                 component: INPUT_FIELD,
                 validationModules: [
+                    {
+                        moduleName: 'RequiredValidate'
+                    },
                     {
                         moduleName: 'LengthValidate',
                         options: {
@@ -258,6 +270,9 @@ export const formFields = props => {
                 component: INPUT_FIELD,
                 validationModules: [
                     {
+                        moduleName: 'RequiredValidate'
+                    },
+                    {
                         moduleName: 'StringValidate'
                     }
                 ]
@@ -272,6 +287,9 @@ export const formFields = props => {
                 className: 'form-control',
                 component: INPUT_FIELD,
                 validationModules: [
+                    {
+                        moduleName: 'RequiredValidate'
+                    },
                     {
                         moduleName: 'IncludesValidate',
                         options: {
@@ -291,6 +309,9 @@ export const formFields = props => {
                 className: 'form-control',
                 component: INPUT_FIELD,
                 validationModules: [
+                    {
+                        moduleName: 'RequiredValidate'
+                    },
                     {
                         moduleName: 'ExcludeVaidate',
                         options: {
@@ -314,6 +335,9 @@ export const formFields = props => {
                 },
                 validationModules: [
                     {
+                        moduleName: 'RequiredValidate'
+                    },
+                    {
                         moduleName: 'UrlValidate'
                     }
                 ]
@@ -328,6 +352,9 @@ export const formFields = props => {
                 className: 'form-control',
                 component: INPUT_FIELD,
                 validationModules: [
+                    {
+                        moduleName: 'RequiredValidate'
+                    },
                     {
                         moduleName: 'SpecialCharacterValidate'
                     }

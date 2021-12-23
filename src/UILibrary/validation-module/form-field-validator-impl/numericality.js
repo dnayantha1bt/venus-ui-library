@@ -24,7 +24,6 @@ let numericality = memoize(function ({
   unless,
   allowBlank
 } = {}) {
-  console.log('got here moved 123')
   msg = msg || message
 
   int = int || integer

@@ -36,9 +36,7 @@ const validations = {
     NumberValidate: () => numericality({ int: true }),
     GreaterThanZeroValidate: () => numericality({ '>': 0, message: GREATER_THAN_ZERO_MESSAGE }),
     NumericalValidate: v => {
-        console.log('got here')
         if (v.options) {
-            console.log('got here 2')
             return numericality({
                 ...v.options
             });
