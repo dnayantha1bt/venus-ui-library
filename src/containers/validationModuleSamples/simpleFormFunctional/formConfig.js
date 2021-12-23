@@ -164,6 +164,9 @@ export const formFields = props => {
                 },
                 validationModules: [
                     {
+                        moduleName: 'RequiredValidate'
+                    },
+                    {
                         moduleName: 'DateValidate',
                         options: {
                             format: 'dd/mm/yyyy'
@@ -185,6 +188,9 @@ export const formFields = props => {
                     disabledDate: current => current && current > moment().startOf('day')
                 },
                 validationModules: [
+                    {
+                        moduleName: 'RequiredValidate'
+                    },
                     {
                         moduleName: 'DateValidate',
                         options: {
@@ -374,6 +380,9 @@ export const formFields = props => {
                     ignoreCharacterValidation: true
                 },
                 validationModules: [
+                    {
+                        moduleName: 'RequiredValidate'
+                    },
                     {
                         moduleName: 'FormatValidate',
                         options: {
