@@ -1,7 +1,6 @@
-import {
-    required,
+
+import {    required,
     email,
-    numericality,
     date,
     length,
     confirmation,
@@ -9,8 +8,8 @@ import {
     inclusion,
     exclusion,
     url,
-    file
-} from 'redux-form-validators';
+    file,
+    numericality} from './form-field-validator-impl'
 import constants from '../constants';
 import NotificationHelper from '../helpers/NotificationHelper';
 import { specialCharacterValidation, urlValidate, emailValidate } from './regexValidations';
@@ -35,7 +34,9 @@ const validations = {
     NumberValidate: () => numericality({ int: true }),
     GreaterThanZeroValidate: () => numericality({ '>': 0, message: GREATER_THAN_ZERO_MESSAGE }),
     NumericalValidate: v => {
+        console.log('got here')
         if (v.options) {
+            console.log('got here 2')
             return numericality({
                 ...v.options
             });
